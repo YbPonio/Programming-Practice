@@ -11,7 +11,24 @@ async function checkWeather(city){
     humidityText.innerHTML = data.main.humidity + "%";
     feelsLikeText.innerHTML = data.main.feels_like + "°";
 
-    console.log(data);
+    if(data.weather[0].main == "Thunderstorm"){
+        weatherIcon.src = "./img/rain.png";
+    } 
+    else if(data.weather[0].main == "Drizzle"){
+        weatherIcon.src = "./img/drizzle.png";
+    } 
+    else if(data.weather[0].main == "Rain"){
+        weatherIcon.src = "./img/rain.png";
+    }
+    else if(data.weather[0].main == "Snow"){
+        weatherIcon.src = "./img/snow.png";
+    }
+    else if(data.weather[0].main == "Clouds"){
+        weatherIcon.src = "./img/clouds.png";
+    }
+    else if(data.weather[0].main == "Clear"){
+        weatherIcon.src = "./img/clear.png";
+    }
 }
 
 function updateWeather(){
