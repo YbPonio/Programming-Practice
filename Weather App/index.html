@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div id="container" onsubmit="updateWeather()">
+            <form id="searchNav" method="dialog">
+                <input id="inputCity" type="text" placeholder="Input your City" required autocomplete="on">
+                <button type="submit"><img src="./img/loupe.png" alt="search"></button>
+            </form>
+            <div id="weatherDisplay">
+                <img src="./img/cloudy.png" alt="cloudy">
+                <h1 id="degreCelsius">31°</h1>
+                <h2 id="showCity">Philippines</h2>
+                <div class="infoContainer">
+                    <div class="wind">
+                        <img src="./img/wind.png" alt="">
+                        <p id="windText" class="infoText">24 km/h</p>
+                        <p>Wind</p>
+                    </div>
+                    <div class="humidity">
+                        <img src="./img/humidity.png" alt="">
+                        <p id="humidityText" class="infoText">60%</p>
+                        <p>Humidity</p>
+                    </div>
+                    <div class="precipitation">
+                        <img src="./img/weather.png" alt="">
+                        <p id="feelsLikeText" class="infoText">0°</p>
+                        <p>Feels Like</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="main.js"></script> 
+</html>
