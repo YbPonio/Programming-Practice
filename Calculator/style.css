@@ -19,12 +19,34 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    min-width: 380px;
-    min-height: 450px;
+    max-width: 380px;
+    min-height: 530px;
     align-items: center;
-    background: #fff;
+    background: #1B1212;
     border-radius: 20px;
     box-shadow: 2px 5px 10px 5px #00000088;
+
+    div{
+        display: flex;
+        gap: 0 20px;
+
+        button{
+            width: 58px;
+            height: 58px;
+            background: #333233;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 500;
+            border: none;
+            margin: 7px 0;
+            border-radius: 50%;
+            cursor: pointer;
+
+            &:hover{
+                opacity: .6;
+            }
+        }
+    }
 
     .input-container{
         display: flex;
@@ -33,18 +55,30 @@ body{
         width: 100%;
         height: 110px;
         padding: 10px;
+        margin-top: 40px;
 
         h3{
             text-align: right;
             font-weight: 400;
             font-size: 18px;
+            color: #fff;
+            margin-right: 15px;
         }
         input{
             text-align: right;
             border: none;
             outline: none;
-            font-size: 28px;
+            color: #fff;
+            background: none;
+            font-size: 40px;
             font-weight: 500;
+            margin-right: 15px;
+        }
+        span{
+            border: none;
+            border-bottom: 1.9px solid #5c5c5ca3;
+            width: 95%;
+            margin: auto;
         }
     }
 }
