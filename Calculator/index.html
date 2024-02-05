@@ -9,8 +9,8 @@
 <body>
     <div id="main-container">
         <div class="input-container">
-            <h3>30+20+10</h3>
-            <input id="numberInput" type="text" value="3,450">
+            <h3 id="numberDisplay"></h3>
+            <input id="numberInput" type="text" value="">
             <span></span>
         </div>
         <div>
@@ -20,26 +20,26 @@
             <button>÷</button>
         </div>
         <div>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button>×</button>
+            <button onclick="dis('7')">7</button>
+            <button onclick="dis('8')">8</button>
+            <button onclick="dis('9')">9</button>
+            <button onclick="dis('×')">×</button>
+        </div>  
+        <div>
+            <button onclick="dis('4')">4</button>
+            <button onclick="dis('5')">5</button>
+            <button onclick="dis('6')">6</button>
+            <button onclick="dis('-')">-</button>
         </div>
         <div>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>-</button>
+            <button onclick="dis('1')">1</button>
+            <button onclick="dis('2')">2</button>
+            <button onclick="dis('3')">3</button>
+            <button onclick="dis('+')">+</button>
         </div>
         <div>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>+</button>
-        </div>
-        <div>
-            <button>.</button>
-            <button>0</button>
+            <button onclick="dis('')">.</button>
+            <button onclick="dis('')">0</button>
             <button>del</button>
             <button>=</button>
         </div>

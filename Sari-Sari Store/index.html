@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ponio Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="nav-container">
+        <ul>
+            <li><a onclick="myPurchaseModal.showModal()">My Purchase</a></li>
+            <li><a onclick="newProductModal.showModal()">Add Product</a></li>
+        </ul>
+    </div>
+    <div class="main-container">
+        <div class="hero-container">
+            <div class="hero-banner">
+                <div class="description">
+                    <h4>Elevate Your Time, Embrace Elegance</h4>
+                    <p>Introducing the Horizon Elegance Series - Where Style Meets Precision</p>
+                    <button>Shop Now</button>
+                </div>
+                <img src="./img/hero.avif" alt="hero-banner">
+            </div>
+        </div>
+        <div id="shopContainer" class="shop-container">
+            <!-- <div class="item" onclick="buyingProductModal.showModal()">
+                <img src="./img/item-1.avif" alt="">
+                <div class="product-description">
+                    <p class="product-name">Cerruti 1881 Mucciano Watch</p>
+                    <p class="product-price">$900</p>
+                </div>
+            </div> -->
+        </div>
+
+        <dialog id="myPurchaseModal">
+            <div id="myPurchaseItem">
+                <h1>My Purchase Items</h1>
+                <div id="purchaseItemContainer">
+                    <!-- <div class="item">
+                        <img src="./img/item-2.avif" alt="">
+                        <div>
+                            <h4>fsdbfbdsjbjhfjhbTITLE</h4>
+                            <p>Quantity: 20</p>
+                        </div>
+                    </div> -->
+                </div>
+                <button></button>
+            </div>
+        </dialog>
+
+        <dialog id="newProductModal">
+            <form class="newProductBuy" method="dialog" onsubmit="addingProducts()">
+                <div class="new-product">
+                    <input id="urlInput" type="text" placeholder="URL:">
+                    <input id="titleInput" type="text" placeholder="Title:">
+                    <input id="priceInput" type="text" placeholder="Price:">
+                    <input id="stocksInput" type="text" placeholder="Stocks:">
+                    <button type="submit">Submit</button>
+                    <button>Cancel</button>
+                </div>
+            </form>
+        </dialog>
+
+        <dialog id="buyingProductModal">
+            <!-- <div class="container">
+                <div class="image-holder">
+                    <img src="./img/item-1.avif" alt="">
+                </div>
+                <form method="dialog">
+                    <h1>Cerruti 1881 Mucciano Watch</h1>
+                    <h2>Price: $900</h2>
+                    <h2>Stock:    <input type="number" value="90"></h2>
+                    <h2>Quantity:    <input type="number" value="1"></h2>
+                    <div class="button-modal">
+                        <button type="submit">Buy</button>
+                        <button>Cancel</button>
+                    </div>
+                </form>
+            </div> -->
+        </dialog>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
