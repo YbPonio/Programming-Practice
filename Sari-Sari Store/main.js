@@ -36,6 +36,7 @@ function displayProducts() {
         </div>
         `;
     }
+   
 }
 
 function displayProductsModal(value) {
@@ -46,7 +47,7 @@ function displayProductsModal(value) {
                 </div>
                 <form method="dialog" onsubmit="buyingProducts(${value})">
                     <h1>${products[value].title}</h1>
-                    <h2>${products[value].price}</h2>
+                    <h2>$${products[value].price}</h2>
                     <h2>Stock: ${products[value].stock}</h2>
                     <h2>Quantity:    <input id="productQuantity" type="number" value="1" min="1"></h2>
                     <div class="button-modal">
@@ -83,7 +84,7 @@ function buyingProducts(value) {
             products.splice(value, 1);
         }
     } else {
-        alert("Not enough stock available");
+        displayError();
     }
 
     console.log(myPurchaseArray);
@@ -123,5 +124,11 @@ function displayMyPurchase() {
         `;
     }
 }
+
+function displayError(){
+    errorModal.showModal();
+}
+
+
 displayMyPurchase();
 displayProducts();

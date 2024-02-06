@@ -32,6 +32,7 @@
                 <h1>My Purchase Items</h1>
                 <div id="purchaseItemContainer">
                 </div>
+                <button type="button" onclick="myPurchaseModal.close()"><img src="./img/delete.png" alt=""></button>
             </div>
         </dialog>
 
@@ -50,7 +51,13 @@
 
         <dialog id="buyingProductModal">
         </dialog>
+
     </div>
+    <dialog id="errorModal">
+        <div class="error-container" onclick="errorModal.close()">
+            <h2>Not enough stock available!</h2>
+        </div>
+    </dialog>
     <script src="main.js"></script>
 </body>
 </html>
