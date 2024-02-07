@@ -115,6 +115,7 @@
             background: #FCF5E5;
             border: 1px solid #7272727c;
             border-radius: 10px;
+            cursor: pointer;
 
             img{
                 object-fit: cover;
