@@ -8,11 +8,11 @@
 </head>
 <body>
     <main>
-        <form id="container" class="container" onsubmit="filteredItems()">
-            <input id="textInput"  type="text" placeholder="Enter..">
-            <button type="submit">Search</button>
+        <form id="container" class="container" method="dialog">
+            <input onkeyup="displayTable()" id="textInput"  type="text" placeholder="Enter..">
+            <button>Search</button>
         </form>
-        <table id="couplesTable"> 
+        <table id="couplesTable">
         </table>
     </main>
 </body>

@@ -1,22 +1,26 @@
 let couples = [
     {
-        name: "KathNiel",
-        year: 2023,
-        status: "Bitter Somehow",
-    },
-    {
+        id: 1,
         name: "KimXian",
         year: 2023,
         status: "Fine",
     },
     {
+        id: 2,
         name: "JaDine",
         year: 2023,
         status: "Bitter Kaayo",
     },
     {
+        id: 3,
         name: "AlDub",
-        year: 2016,
+        year: 2022,
+        status: "Not Yet Ready",
+    },
+    {
+        id: 4,
+        name: "AlDub",
+        year: 2022,
         status: "Not Yet Ready",
     },
 ]
@@ -31,38 +35,44 @@ function displayTable() {
     <td>Action</td>
     </tr>
     `;
-    let filteredCouple = couples.filter(filteredItems);
+
+    let filteredCouple = couples.filter((item)=>{
+        let result = item.name.toLowerCase().indexOf(textInput.value.toLowerCase());
+        let statusResult = item.status.toLowerCase().indexOf(textInput.value.toLowerCase());
+        let yearResult = (item.year == textInput.value);
+        if(
+            result >= 0 || 
+            yearResult == true ||
+            statusResult >= 0
+        ){
+            return true;
+        }else{
+            return false;
+        }
+    });
     for (let i = 0; i < filteredCouple.length; i++) {
         let couple = filteredCouple[i];
         couplesTable.innerHTML += `
         <tr class="">
-            <td>${i + 1}</td>   
+            <td>${couple.id}</td>   
             <td>${couple.name}</td>
             <td>${couple.year}</td> 
             <td>${couple.status}</td>
-            <td><button onclick="deleteRowTable(${i})">Delete</button></td>
+            <td><button onclick="deleteRowTable(${couple.id})">Delete</button></td>
         </tr>
         `;
     }
 }
 
-
-function deleteRowTable(value){
-    couples.splice(value, 1);
+function deleteRowTable(theID){
+    let couple = couples.find(item => item.id == theID);
+    let deleteCouple = couples.indexOf(couple);
+    couples.splice(deleteCouple, 1);
     displayTable();
 }
 
-function filteredItems(item){
-    let result = item.name.toLowerCase().indexOf(textInput.value);
-    console.log(result);
-    if(result >= 0){
-        return true;
-    }else{
-        return false;
-    }
-}
-
-container.addEventListener('submit', (event)=> {
-    event.preventDefault();
-});
+// For the prevention of result
+// container.addEventListener('submit', (event)=> {
+//     event.preventDefault();
+// });
 displayTable();
