@@ -4,39 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Table</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <table>
-        <tr>
-            <td>Index</td>
-            <td>Names</td>
-            <td>Year</td>
-            <td>Status</td>
-        </tr>
-        <tr>
-            <td>0</td>
-            <td>KathNiel</td>
-            <td>2023</td>
-            <td>Bitter Somehow</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>KimXuian</td>
-            <td>2023</td>
-            <td>Fine</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>JaDine</td>
-            <td>2022</td>
-            <td>Bitter Kaayo</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>AlDub</td>
-            <td>2016</td>
-            <td>Not Yet Ready</td>
-        </tr>
-    </table>
+    <main>
+        <form id="container" class="container" onsubmit="filteredItems()">
+            <input id="textInput"  type="text" placeholder="Enter..">
+            <button type="submit">Search</button>
+        </form>
+        <table id="couplesTable"> 
+        </table>
+    </main>
 </body>
+<script src="main.js"></script>
 </html>
