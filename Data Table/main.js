@@ -57,10 +57,10 @@ let couples = [
         id: 10,
         name: "AlDub",
         year: 2022,
-        status: "Not Yet Ready",
+        status: "Not sds",
     },
 ]
-
+let newID = 10;
 function displayTable() {
     couplesTable.innerHTML = `
     <thead>
@@ -84,15 +84,13 @@ function displayTable() {
             statusResult >= 0
         ){
             return true;
-        }else{
-            return false;
         }
     });
     for (let i = 0; i < filteredCouple.length; i++) {
         let couple = filteredCouple[i];
         couplesTable.innerHTML += `
         <tr class="">
-            <td>${couple.id}</td>   
+            <td>${i + 1}</td>   
             <td>${couple.name}</td>
             <td>${couple.year}</td> 
             <td>${couple.status}</td>
