@@ -23,17 +23,55 @@ let couples = [
         year: 2022,
         status: "Not Yet Ready",
     },
+    {
+        id: 5,
+        name: "AlDub",
+        year: 2022,
+        status: "Not Yet Ready",
+    },
+    {
+        id: 6,
+        name: "AlDub",
+        year: 2022,
+        status: "Not Yet Ready",
+    },
+    {
+        id: 7,
+        name: "AlDub",
+        year: 2022,
+        status: "Not Yet Ready",
+    },
+    {
+        id: 8,
+        name: "AlDub",
+        year: 2022,
+        status: "Not Yet Ready",
+    },
+    {
+        id: 9,
+        name: "AlDub",
+        year: 2022,
+        status: "Not Yet Ready",
+    },
+    {
+        id: 10,
+        name: "AlDub",
+        year: 2022,
+        status: "Not Yet Ready",
+    },
 ]
 
 function displayTable() {
     couplesTable.innerHTML = `
+    <thead>
     <tr class="tableFirst">
-    <td>Index</td>
-    <td>Names</td>
-    <td>Year</td>
-    <td>Status</td>
-    <td>Action</td>
+    <th>#</th>
+    <th>Names</th>
+    <th>Year</th>
+    <th>Status</th>
+    <th>Action</th>
     </tr>
+    </thead>
     `;
 
     let filteredCouple = couples.filter((item)=>{

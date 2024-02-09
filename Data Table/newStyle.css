@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.image-background{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+.gradient-background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: radial-gradient(circle,rgba(0,0,0,.7)0%,rgba(0,0,0,0)100%);
+}
+.main-container{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 40rem;
+    height: 100vh;
+    /* background: #ffffff42; */
+    padding: 5rem;
+
+    .container{
+        color: #fff;
+        width: 100%;
+
+        .search-form{
+            display: flex;
+            width: 100%;
+            backdrop-filter: blur(2rem);
+            border-radius: .565rem;
+            background: #00000070;
+
+            input{
+                color: #fff;
+                font-size: 1rem;
+                font-weight: 700;
+                width: 100%;
+                padding: .955rem;
+                background: none;
+                border: none;
+                outline: none;
+            }
+        }
+        .table-container{
+            max-height: 30rem;
+            overflow-y: auto;
+            scrollbar-gutter: stable;
+            scrollbar-width: thin;
+            scrollbar-color: #96939376 #0000006f;
+            width: calc(100% + 10px);
+
+
+            table{
+                border: none;
+                border-radius: .5rem;
+                font-weight: 400;
+                font-size: .965rem;
+                border-collapse:separate;
+                border-spacing: 0 .5rem;
+                width: 100%;
+                max-width: 100%;
+                white-space: nowrap;
+                background: none;
+                margin-top: .5rem;
+                
+                td, th{
+                    text-align: center;
+                    padding: .955rem;
+                    border: none;
+                    background: none;
+                }
+                
+                thead, tr{
+                    backdrop-filter: blur(2rem);
+                    border-radius: .565rem;
+                    border: none;
+                }
+                td button{
+                    padding: .4rem .965rem;
+                    font-size: .965rem;
+                    font-weight: 400;
+                    background: #00000048;
+                    border: none;
+                    border-radius: .265rem;
+                    color: #fff;
+                    cursor: pointer;
+    
+                }
+            }
+        }
+    }
+}
