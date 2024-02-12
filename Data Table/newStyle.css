@@ -57,11 +57,15 @@
                 width: 20%;
                 font-size: .965rem;
                 font-weight: 400;
-                background: #00000048;
+                background: #00000070;
                 border: none;
                 border-radius: .265rem;
                 color: #fff;
                 cursor: pointer;
+
+                &:hover{
+                    background-color: #000;
+                }
             }
         }
         .table-container{
@@ -71,6 +75,7 @@
             scrollbar-width: thin;
             scrollbar-color: #96939376 #0000006f;
             width: calc(100% + 10px);
+            padding-right: 5px;
 
 
             table{
@@ -117,8 +122,45 @@
                     border-radius: .265rem;
                     color: #fff;
                     cursor: pointer;
+                    transition: all .3s ease-in-out;
+
+                    &:hover{
+                        background-color: #000;
+                    }
                 }
             }
+        }
+    }
+}
+dialog{
+    margin: auto;
+    border-radius: 1rem;
+    padding: 2rem;
+    backdrop-filter: blur(2rem);
+    background: #00000027;
+    border: none;
+    box-shadow: 1px 1px 5px #ffffff4b;
+
+    #addItemForm{
+        display: flex;
+        flex-direction: column;
+        width: 30rem;
+        height: 20rem;
+        justify-content: center;
+        input{
+            padding: .5rem;
+            margin: .5rem;
+            border-radius: .3rem;
+            border: none;
+            outline: none;
+        }
+        button{
+            padding: .5rem;
+            margin: .5rem;
+            padding: .5rem;
+            border-radius: .3rem;
+            border: none;
+            outline: none;
         }
     }
 }

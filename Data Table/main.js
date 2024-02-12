@@ -17,50 +17,8 @@ let couples = [
         year: 2022,
         status: "Not Yet Ready",
     },
-    {
-        id: 4,
-        name: "AlDub",
-        year: 2022,
-        status: "Not Yet Ready",
-    },
-    {
-        id: 5,
-        name: "AlDub",
-        year: 2022,
-        status: "Not Yet Ready",
-    },
-    {
-        id: 6,
-        name: "AlDub",
-        year: 2022,
-        status: "Not Yet Ready",
-    },
-    {
-        id: 7,
-        name: "AlDub",
-        year: 2022,
-        status: "Not Yet Ready",
-    },
-    {
-        id: 8,
-        name: "AlDub",
-        year: 2022,
-        status: "Not Yet Ready",
-    },
-    {
-        id: 9,
-        name: "AlDub",
-        year: 2022,
-        status: "Not Yet Ready",
-    },
-    {
-        id: 10,
-        name: "AlDub",
-        year: 2022,
-        status: "Not sds",
-    },
 ]
-let newID = 10;
+
 function displayTable() {
     couplesTable.innerHTML = `
     <thead>
@@ -74,7 +32,8 @@ function displayTable() {
     </thead>
     `;
 
-    let filteredCouple = couples.filter((item)=>{
+
+    let filteredCouple = couples.filter((item) => {
         let result = item.name.toLowerCase().indexOf(textInput.value.toLowerCase());
         let statusResult = item.status.toLowerCase().indexOf(textInput.value.toLowerCase());
         let yearResult = (item.year == textInput.value);
@@ -107,8 +66,14 @@ function deleteRowTable(theID){
     displayTable();
 }
 
-// For the prevention of result
-// container.addEventListener('submit', (event)=> {
-//     event.preventDefault();
-// });
+function addItem() {
+    couples.push({
+        id: couples[couples.length - 1].id++,
+        name: nameInput.value,
+        year: parseInt(yearInput.value),
+        status: statusInput.value,
+    });
+    console.log(couples);
+    displayTable();
+}
 displayTable();

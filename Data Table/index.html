@@ -17,7 +17,7 @@
         <div class="container">
             <form class="search-form" method="dialog">
                 <input onkeyup="displayTable()" id="textInput" type="text" placeholder="Search..">
-                <button>Add</button>
+                <button onclick="addItemDialog.showModal()">Add</button>
             </form>
             <div class="table-container">
                 <table id="couplesTable">
@@ -25,6 +25,15 @@
             </div>
         </div>
     </div>
+    <dialog id="addItemDialog">
+        <form id="addItemForm" onsubmit="addItem()" method="dialog">
+            <input id="nameInput" type="text" placeholder="Enter Name:" required>
+            <input id="yearInput" type="number" placeholder="Enter Year:" required min="0">
+            <input id="statusInput" type="text" placeholder="Enter Status:" required>
+            <button type="submit">Add</button>
+            <button type="button" onclick="addItemDialog.close()">Cancel</button>
+        </form>
+    </dialog>
 </body>
 <script src="main.js"></script>
 

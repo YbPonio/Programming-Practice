@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #141313;
+    }
+    .box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        width: 100px;
+        background: #ff6b6b;
+        color: #fff;
+        transition: all 1s ease;
+        cursor: pointer;
+        margin: 1rem;
+        animation: shape 4s infinite;
+    }
+    /* @keyframes shape {
+        0%{
+            background-color: #973e3e;
+            transform: translateY(5rem);
+        }
+        50%{
+            background-color: #81743b;
+            transform: translateY(0rem);
+        }
+        75%{
+            background-color: #388f8f;
+        }
+        100%{
+            background-color: #973e3e;
+            transform: translateY(5rem);
+        }
+    } */
+</style>
+<body>
+    <!-- <div class="box" onclick="clickHandler(event)">
+    </div> -->
+    <div class="box" onmouseover="largerHandler(event)">
+    </div>
+    <div class="box" onmouseover="largerHandler(event)">
+    </div>
+    <div class="box" onmouseover="largerHandler(event)">
+    </div>
+    <div class="box" onmouseover="largerHandler(event)">
+    </div>
+    <div class="box" onmouseover="largerHandler(event)">
+    </div>
+    <div class="box" onmouseover="largerHandler(event)">
+    </div>
+    <div class="box" onmouseover="largerHandler(event)">
+    </div>
+    <div class="box" onmouseover="largerHandler(event)">
+    </div>
+
+</body>
+<script>
+    function clickHandler(event) {
+        let target = event.target;
+
+        target.style.width = "120px";
+        target.style.height += "120px";
+
+        target.style.borderRadius = "50%";
+    }
+  
+    function largerHandler(event){
+        
+        function dance(){
+            let target = event.target;
+            let size = target.style.width || "120px";
+    
+            let positionY = Math.random() * 400 - 200;
+            let positionX = Math.random() * 400 - 200;
+
+            let result = 100 + (Math.random() * 200) ;
+            let widresult = 50 + (Math.random() * 150) ;
+            result = Math.ceil(result);
+            widresult = Math.ceil(widresult);
+
+            let red = Math.random() * 255;
+            let blue = Math.random() * 255;
+            let green = Math.random() * 255;
+    
+            size = parseInt(size);
+            size += 2;
+    
+            target.innerHTML = result;
+            target.style.height = widresult + "px";
+            target.style.width = widresult + "px";  
+            target.style.borderRadius = result + "px";
+            target.style.background =  `rgba(${red}, ${blue}, ${green})`;
+            target.style.transform = `translate(${positionY}px, ${positionX}px)`;
+        }
+
+        setInterval(dance, 700);
+    }
+    // function largerHandler(event){
+        
+    //     function dance(){
+    //         let target = event.target;
+    //         let size = target.style.width || "120px";
+    
+    //         let result = 100 + (Math.random() * 200) ;
+    //         let widresult = 30 + (Math.random() * 50) ;
+    //         result = Math.ceil(result);
+    //         widresult = Math.ceil(widresult);
+
+    //         let red = Math.random() * 255;
+    //         let blue = Math.random() * 255;
+    //         let green = Math.random() * 255;
+    
+    //         size = parseInt(size);
+    //         size += 2;
+    
+    //         target.style.tra
+    //         target.innerHTML = result;
+    //         target.style.height = result + "px";
+    //         target.style.width = widresult + "px";  
+    //         target.style.borderRadius = widresult + "px";
+    //         target.style.background =  `rgba(${red}, ${blue}, ${green})`;
+
+
+    //         console.log();
+    //     }
+
+    //     setInterval(dance, 500);
+    // }
+
+</script>
+</html>
