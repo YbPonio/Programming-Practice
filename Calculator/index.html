@@ -9,39 +9,39 @@
 <body>
     <div id="main-container">
         <div class="input-container">
-            <h3 id="numberDisplay"></h3>
-            <input id="numberInput" type="text" value="">
+            <h3 data-previous-operand id="resultDisplay"></h3>
+            <h2 data-current-operand id="calDisplay"></h2>
             <span></span>
         </div>
         <div>
-            <button>C</button>
+            <button data-all-clear>C</button>
             <button>+/-</button>
             <button>%</button>
-            <button>÷</button>
+            <button data-operation>÷</button>
         </div>
         <div>
-            <button onclick="dis('7')">7</button>
-            <button onclick="dis('8')">8</button>
-            <button onclick="dis('9')">9</button>
-            <button onclick="dis('×')">×</button>
+            <button data-number>7</button>
+            <button data-number>8</button>
+            <button data-number>9</button>
+            <button data-operation>×</button>
         </div>  
         <div>
-            <button onclick="dis('4')">4</button>
-            <button onclick="dis('5')">5</button>
-            <button onclick="dis('6')">6</button>
-            <button onclick="dis('-')">-</button>
+            <button data-number>4</button>
+            <button data-number>5</button>
+            <button data-number>6</button>
+            <button data-operation>-</button>
         </div>
         <div>
-            <button onclick="dis('1')">1</button>
-            <button onclick="dis('2')">2</button>
-            <button onclick="dis('3')">3</button>
-            <button onclick="dis('+')">+</button>
+            <button data-number>1</button>
+            <button data-number>2</button>
+            <button data-number>3</button>
+            <button data-operation>+</button>
         </div>
         <div>
-            <button onclick="dis('')">.</button>
-            <button onclick="dis('')">0</button>
-            <button>del</button>
-            <button>=</button>
+            <button data-number>.</button>
+            <button data-number>0</button>
+            <button data-delete>del</button>
+            <button data-equals>=</button>
         </div>
     </div>
 </body>

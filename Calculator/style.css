@@ -19,7 +19,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    max-width: 380px;
+    width: 380px;
     min-height: 530px;
     align-items: center;
     background: #1B1212;
@@ -66,10 +66,14 @@ body{
             color: #ffffff85;
             margin-right: 15px;
         }
-        input{
+        h2{
+            height: 100px;
             text-align: right;
             border: none;
             outline: none;
+            white-space: nowrap;
+            width: 100%;
+            white-space: none;
             color: #fff;
             background: none;
             font-size: 40px;
