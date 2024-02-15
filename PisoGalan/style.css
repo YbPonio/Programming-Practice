@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background: #1f1f1f;
+
+    .coin-slot {
+        background: none;
+        border: none;
+        color: #fff;
+        border-bottom: 2px solid #00D5B7;
+        align-items: center;
+        border-radius: 0;
+        justify-content: space-between;
+        padding: 5px 10px;
+        font-size: 20px;
+        font-weight: 600;
+        height: auto;
+        margin-bottom: 5px;
+        
+
+        button {
+            padding: 10px;
+            border: none;
+            background: #00D5B7;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    div {
+        background: #00BED5;
+        height: 500px;
+        width: 700px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        transition: all 1s ease-in-out;
+    }
+    #scene1Container {
+        box-shadow: 1px 1px 10px #7e7e7e;
+
+        div {
+            display: flex;
+            flex-direction: column;
+
+            button {
+                padding: 40px;
+                border-radius: 10px;
+                border: none;
+                font-size: 30px;
+                margin-top: 10px;
+                cursor: pointer;
+                font-weight: 600;
+                box-shadow: 2px 2px 5px #005a66;
+
+                &:hover {
+                    opacity: .8;
+                }
+            }
+        }
+
+    }
+    #scene2Container {
+        box-shadow: 1px 1px 10px #7e7e7e;
+        div {
+            display: flex;
+            flex-direction: column;
+
+
+            div {
+                height: 100px;
+                background: none;
+                flex-direction: row;
+    
+                button {
+                    padding: 15px;
+                    font-size: 18px;
+                    margin: 2px;
+                    flex: 0 2 60px;
+                    border-radius: 5px;
+                    border: none;
+                    cursor: pointer;
+                    box-shadow: 2px 2px 5px #005a66;
+
+                    &:hover {
+                        opacity: .9;
+                    }
+                }
+            }
+        }
+
+    }
+    #scene3Container {
+        box-shadow: 1px 1px 10px #7e7e7e;
+        div {
+            display: flex;
+            flex-direction: column;
+
+            div {
+                height: auto;
+                justify-content:flex-start;
+                background: none;
+                flex-direction: column;
+                gap: 10px;
+
+                button {
+                    padding: 10px;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    box-shadow: 2px 2px 5px #005a66;
+
+                    &:hover {
+                        opacity: .9;
+                    }
+                }
+            }
+        }
+
+    }
+    .scene4-container{
+        display: flex;
+        flex-direction: column;
+
+        div {
+            display: flex;
+            gap: 10px;
+            height: 50px;
+            background: none;
+
+            button {
+                display: flex;
+                flex: 0 1 120px;
+                padding: 10px;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}
+

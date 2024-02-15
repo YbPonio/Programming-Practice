@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PisoGal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="coin-slot" id="coinSlot">
+            Your Coin: $50
+            <button onclick="buyCoins()">Buy Coins</button>
+        </div>
+        <div id="scene1Container" class="">
+            <div>
+                <h2>Insert Coin</h2>
+                <button onclick="coinInserted()">$5</button>
+            </div>
+        </div>
+        <div id="scene2Container" class="hidden">
+            <div>
+                <h2>Pick a Number</h2>
+                <div>
+                    <button onclick="pickNumber(event)">1</button>
+                    <button onclick="pickNumber(event)">2</button>
+                    <button onclick="pickNumber(event)">3</button>
+                    <button onclick="pickNumber(event)">4</button>
+                    <button onclick="pickNumber(event)">5</button>
+                    <button onclick="pickNumber(event)">6</button>
+                    <button onclick="pickNumber(event)">7</button>
+                    <button onclick="pickNumber(event)">8</button>
+                    <button onclick="pickNumber(event)">9</button>
+                </div>
+            </div>
+        </div>
+        <div id="scene3Container" class="hidden">
+            <div>
+                <div id="resultContainer">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="main.js"></script>
+</html>

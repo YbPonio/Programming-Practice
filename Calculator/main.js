@@ -15,13 +15,13 @@ class Calculator {
     }
 
     appendNumber(number) {
-        if(number === '.' && this.currentOperand.includes('.')) return;
+        if(number == '.' && this.currentOperand.includes('.')) return;
         this.currentOperand = this.currentOperand.toString() + number.toString();
     }
 
     chooseOperation(operation) {
-        if(this.currentOperand === '') return;
-        if(this.previousOperand !== '') {
+        if(this.currentOperand == '') return;
+        if(this.previousOperand != '') {
             this.compute();
         }
         this.operation = operation;
@@ -62,7 +62,7 @@ class Calculator {
         if(isNaN(integerDigits)) {
             integerDisplay = '';
         } else {
-            integerDisplay = integerDigits.toLocaleString('en', {maximumFractionDigits: 0});
+            integerDisplay = integerDigits.toLocaleString('enteger', {maximumFractionDigits: 0});
         }
         if (decimalDigits != null) {
             return `${integerDisplay}.${decimalDigits}`;
