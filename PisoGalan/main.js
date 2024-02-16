@@ -28,11 +28,12 @@ function pickNumber(event) {
 function computeResult(value) {
     let numberPick = parseInt(value);
     console.log(numberPick)
-    let resultNumber = Math.floor(Math.random() * 1) + 1;
+    let resultNumber = Math.floor(Math.random() * 9) + 1;
 
     if(numberPick == resultNumber) {
         resultContainer.innerHTML = `
         <h1>You Win!</h1>
+        <h2>Your Number: ${numberPick}</h2>
         <h2>The winning Number is: ${resultNumber}</h2>
         <button onclick="tryAgain()">Try Again</button>
         `;
@@ -45,6 +46,7 @@ function computeResult(value) {
     } else {
         resultContainer.innerHTML = `
         <h1>You Lose!</h1>
+        <h2>Your Number: ${numberPick}</h2>
         <h2>The winning Number is: ${resultNumber}</h2>
         <button onclick="tryAgain()">Try Again</button>
         `;
