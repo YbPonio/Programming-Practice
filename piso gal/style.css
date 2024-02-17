@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body {
+    min-height: 100vh;
+    width: 100%;
+} */
+.hidden {
+    display: none;
+}
+.main-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E9DCC9;
+    transition: all 1s ease-in;
+
+    .betting-container {
+        background-color: #FFFFF0;
+        box-shadow:  5px 5px 10px #bebebe,
+        -5px -5px 10px #ffffff81;
+        height: 30rem;
+        width: 50rem;
+        border-radius: 1rem;
+        position: relative;
+
+        .insert-text {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            padding: 5rem 0 3rem 0;
+            
+            h1 {
+                font-size: 3rem;
+            }
+        }
+
+        .coin-slot {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
+            .coin {
+                background-color: #F0EAD6;
+                height: 10rem;
+                width: 10rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                box-shadow:  5px 5px 10px #bebebe,
+                -5px -5px 10px #ffffff81;
+                cursor: pointer;
+                z-index: 5;
+            }
+        }
+        
+        .coin-value {
+            padding: .5rem;
+            text-align: center;
+            background-color: red;
+            color: #ffffff;
+            width: 50%;
+            margin: .7rem auto;
+            font-size: 1.5rem;
+            border-radius: .5rem;
+            transition: all 1s ease-in-out;
+        }
+        
+        .coin-appear {
+            display: block;
+        }
+
+        .my-coins {
+            padding: 2rem;
+            position: absolute;
+            bottom: 0;
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    .race-container {
+        min-width: 1290px;
+        max-width: 1290px;
+        position: relative;
+
+        .race-track {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: .3rem;
+            width: 100%;
+            padding: 1rem;
+            background-color: #FFFFF0;
+            box-shadow:  5px 5px 10px #bebebe,
+            -5px -5px 10px #ffffff81;
+            border-radius: 1rem;
+
+            .horse {
+                position: relative;
+                width: 100%;
+                height: 3rem;
+                background-color: #E9DCC9;
+                border-radius: .5rem;
+
+                span {
+                    position: absolute;
+                    display: flex;
+                    align-items: center;
+                    padding-left: .5rem;
+                    font-size: 1.5rem;
+                    font-weight: 800;
+                    background-color: #15151565;
+                    top: .5rem;
+                    bottom: .5rem;
+                    left: .5rem;
+                    width: 0;
+                    min-width: 2rem;
+                    max-width: calc(100% - 1rem);
+                    border-radius: .5rem;
+                }
+            }
+        }
+
+        .timer-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #FFFFF0;
+            padding: 5rem;
+            border-radius: 1rem;
+            box-shadow:  5px 5px 10px #bebebe,
+            -5px -5px 10px #ffffff81;
+            z-index: 9999;
+            
+            h1 {
+                font-size: 4rem;
+            }
+
+            h2 {
+                font-size: 6rem;
+                text-align: center;
+            }
+        }  
+    }
+
+    .selection-container {
+        background-color: #FFFFF0;
+        box-shadow:  5px 5px 10px #bebebe,
+        -5px -5px 10px #ffffff81;
+        height: 30rem;
+        border-radius: 1rem;
+
+        .text-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: .5rem;
+            padding-top: 6rem;
+            font-size: 2rem;
+        }   
+
+        .horses-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            padding: 3rem 5rem;
+
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 2rem;
+                font-weight: 600;
+                height: 7rem;
+                width: 7rem;
+                border-radius: 50%;
+                background-color: #F0EAD6;
+                box-shadow:  5px 5px 10px #bebebe,
+                -5px -5px 10px #ffffff81;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .result-container {
+        background-color: #FFFFF0;
+        box-shadow:  5px 5px 10px #bebebe,
+        -5px -5px 10px #ffffff81;
+        padding: 5rem 10rem;
+        border-radius: 1rem;
+        text-align: center;
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 600;
+        }
+        
+        p {
+            font-size: 2rem;
+            padding: .5rem;
+        }
+
+        .youWinText {
+            font-size: 3rem;
+            font-weight: 600;
+        }
+        div {
+            margin: auto;
+            background-color: #FFFFF0;
+            box-shadow:  5px 5px 10px #bebebe,
+            -5px -5px 10px #dedede94;
+            padding: 1rem;
+            width: 10rem;
+            border-radius: .5rem;
+            cursor: pointer;
+            margin-top: 3rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+    }
+}
+

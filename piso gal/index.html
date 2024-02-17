@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PisoGal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="betting-container ">
+            <div class="insert-text"><h1>Insert a Coin</h1></div>
+            <div class="coin-slot">
+                <div class="coin" onclick="selectCoin(1)"><h1>$1</h1></div>
+                <div class="coin" onclick="selectCoin(5)"><h1>$5</h1></div>
+                <div class="coin" onclick="selectCoin(10)"><h1>$10</h1></div>
+            </div>
+            <div class="coin-value hidden">Not enough Coins!</div>
+            <div class="my-coins">
+                <h1>Your Coins: $50</h1>
+            </div>
+        </div>
+
+        <div class="selection-container hidden">
+            <div class="text-container">
+                <h1>Pick your Bet</h1>
+            </div>
+            <div class="horses-container">
+                <div onclick="selectHorse(1)">1</div>
+                <div onclick="selectHorse(2)">2</div>
+                <div onclick="selectHorse(3)">3</div>
+                <div onclick="selectHorse(4)">4</div>
+                <div onclick="selectHorse(5)">5</div>
+                <div onclick="selectHorse(6)">6</div>
+                <div onclick="selectHorse(7)">7</div>
+                <div onclick="selectHorse(8)">8</div>
+                <div onclick="selectHorse(9)">9</div>
+            </div>
+        </div>
+
+        <div class="race-container hidden">
+            <div class="race-track">
+                <div class="horse"><span>1</span></div>
+                <div class="horse"><span>2</span></div>
+                <div class="horse"><span>3</span></div>
+                <div class="horse"><span>4</span></div>
+                <div class="horse"><span>5</span></div>
+                <div class="horse"><span>6</span></div>
+                <div class="horse"><span>7</span></div>
+                <div class="horse"><span>8</span></div>
+                <div class="horse"><span>9</span></div>
+            </div>
+            <div class="timer-container">
+                <h1>Game Starts</h1>
+                <h2>1</h2>
+            </div>
+        </div>
+
+        <div class="result-container hidden">
+            <!-- <h1>Congratulations!</h1>
+            <img src="./img/sad-bunny.gif" alt="">
+            <p class="youWinText">You win!</p> 
+            <p>Winning Horse: </p> 
+            <p>Your Horse: </p>
+            <div>Try Again</div> -->
+        </div>
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+</html>
