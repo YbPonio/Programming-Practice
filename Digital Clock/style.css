@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #F0EAD6;
+}
+
+.main-container {
+    background: #DC7633;
+    width: 50vw;
+    height: 60vh;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    #clockDisplay {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 0 5rem 3rem 5rem;
+        font-size: 5rem;
+        font-weight: 600;
+        color: #F0EAD6;
+    }
+
+    .input-container {
+        display: flex;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: .3rem;
+
+            input {
+                padding: .7rem;
+                border: none;
+                border-radius: .2rem;
+                font-size: 1rem;
+                font-weight: 700;
+                color: #A9A9A9;
+                width: 20rem;
+            }
+            button {
+                padding: .7rem;
+                border: none;
+                border-radius: .2rem;
+                font-size: 1rem;
+                font-weight: 700;
+                color: #00000091;
+                cursor: pointer;
+
+                &:hover {
+                    opacity: .8;
+                }
+            }
+        }
+    }
+}

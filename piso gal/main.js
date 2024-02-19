@@ -6,42 +6,46 @@ let gameTimer = document.querySelector('.timer-container');
 let resultContainer = document.querySelector('.result-container');
 let myCoins = document.querySelector('.my-coins');
 
-let gameStart;
 let pickCoin;
 let pickBet;
 let myCoinsStorage = 50;
 
 function start() {
+    let finished = false;
     let myInterval = setInterval(() => {
         horses.forEach((horse) => {
-            let span = horse.querySelector('span');
-            let size = span.style.width || 0;
+            if (!finished) {
+                let span = horse.querySelector('span');
+                let size = span.style.width || 0;
 
-            size = parseInt(size);
+                size = parseInt(size);
 
-            let width = Math.floor(Math.random() * 20) + 1;
-            let result = width + size;
-            
-            span.style.width = result + "px";
+                let width = Math.floor(Math.random() * 20) + 1;
+                let result = width + size;
 
-            if(size >= 1240) {
-                resultContainer.classList.remove('hidden');
-                scene3.classList.add('hidden');
+                span.style.width = result + "px";
 
-                if(span.innerText == pickBet) {
-                    pickCoin *= 2;
-                    myCoinsStorage += pickCoin;
+                if (size >= 1240) {
+                    finished = true;
+                    resultContainer.classList.remove('hidden');
+                    // scene3.classList.add('hidden'); 
 
-                    resultContainer.innerHTML = `
+                    span.style.backgroundColor = "#C70039";
+                    span.style.color = "#fff";
+
+                    if (span.innerText == pickBet) {
+                        myCoinsStorage += pickCoin * 2;
+
+                        resultContainer.innerHTML = `
                     <h1>Congratulations!</h1>
                     <img src="./img/confetti-cute.gif" alt="">
                     <p class="youWinText">You win!</p> 
-                    <p>Winning Number: ${span.innerText}</p> 
+                    <p>Winning Number: ${span.innerText}</p>
                     <p>Your Number: ${pickBet}</p>
                     <div onclick="startAgain()">Try Again</div>
                     `;
-                } else {
-                    resultContainer.innerHTML = `
+                    } else {
+                        resultContainer.innerHTML = `
                     <h1>Im Sorry!</h1>
                     <img src="./img/sad-bunny.gif" alt="">
                     <p class="youWinText">You Lose!</p> 
@@ -49,19 +53,22 @@ function start() {
                     <p>Your Number: ${pickBet}</p>
                     <div onclick="startAgain()">Try Again</div>
                     `;
-                }
+                    }
 
-                clearInterval(myInterval);
-            } 
+                    clearInterval(myInterval);
+                }
+            }
+
         })
+
     }, 50)
 }
 
 function selectCoin(coin) {
-    if(myCoinsStorage > 0) {
+    if (myCoinsStorage > 0) {
         scene1.classList.add("hidden");
         scene2.classList.remove("hidden");
-    
+
         pickCoin = coin;
         myCoinsStorage -= pickCoin;
     }
@@ -77,17 +84,15 @@ function selectHorse(horseNumber) {
     scene2.classList.add("hidden");
     scene3.classList.remove("hidden");
     gameTimer.classList.remove('hidden');
-    
+
     pickBet = horseNumber;
-    gameStart = 2;
-    let timeInterval = 1;
+    let gameStart = 2;
 
     let timer = setInterval(() => {
         gameTimer.innerHTML = `
         <h1>Game Starts</h1>
-        <h2>${timeInterval >= 3 ? "GO!" : gameStart++}</h2>
+        <h2>${gameStart == 0 ? "GO!" : gameStart--}</h2>
         `;
-        timeInterval++;
     }, 1000);
 
     setTimeout(() => {
@@ -95,9 +100,8 @@ function selectHorse(horseNumber) {
         gameTimer.classList.add('hidden');
         gameTimer.innerHTML = `
         <h1>Game Starts</h1>
-        <h2>1</h2>
+        <h2>3</h2>
         `;
-
         start();
     }, 4000);
 }
@@ -105,9 +109,14 @@ function selectHorse(horseNumber) {
 function startAgain() {
     resultContainer.classList.add('hidden');
     scene1.classList.remove('hidden');
+    scene3.classList.add('hidden');
+
 
     horses.forEach((horse) => {
-        horse.querySelector('span').style.width = 0;
+        let span = horse.querySelector('span');
+        span.style.width = 0;
+        span.style.backgroundColor = "";
+        span.style.color = "";
     })
 
     myCoins.innerHTML = `

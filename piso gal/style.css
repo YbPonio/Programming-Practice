@@ -4,14 +4,11 @@
     box-sizing: border-box;
 }
 
-/* body {
-    min-height: 100vh;
-    width: 100%;
-} */
 .hidden {
     display: none;
 }
 .main-container {
+    position: relative;
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -28,6 +25,7 @@
         width: 50rem;
         border-radius: 1rem;
         position: relative;
+        transition: all 1s ease-in;
 
         .insert-text {
             width: 100%;
@@ -162,6 +160,8 @@
         -5px -5px 10px #ffffff81;
         height: 30rem;
         border-radius: 1rem;
+        transition: all 1s ease-in;
+
 
         .text-container {
             display: flex;
@@ -197,6 +197,7 @@
     }
 
     .result-container {
+        position: absolute;
         background-color: #FFFFF0;
         box-shadow:  5px 5px 10px #bebebe,
         -5px -5px 10px #ffffff81;

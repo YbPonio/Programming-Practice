@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <div id="clockDisplay">00:00:00</div>
+        <div class="input-container">
+            <form method="dialog" onsubmit="setTime()">
+                <input id="hours" type="number" placeholder="Hours" min="0" max="60">
+                <input id="minutes" type="number" placeholder="Minutes" min="0" max="60">
+                <input id="seconds" type="number" placeholder="Seconds" min="0" max="60">
+                <button type="submit">Set Time</button>
+                <button onclick="">Clear</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
