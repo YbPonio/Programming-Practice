@@ -1,7 +1,7 @@
 function setTime() {
-    let hour = hours.value;
-    let minute = minutes.value;
-    let second = seconds.value;
+    let hour = hours.value || 0 ;
+    let minute = minutes.value || 0;
+    let second = seconds.value || 0;
     
     clockDisplay.innerHTML = `
         ${hour || '00'}:${minute || '00'}:${second || '00'}
@@ -36,5 +36,5 @@ function setTime() {
                 }
             }
         }
-    }, 10);
+    }, 1000);
 }
