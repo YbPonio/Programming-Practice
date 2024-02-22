@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    gap: 1rem;
+    width: 100%;
+    background-color: #006b62b6;
+    
+    .container {
+        padding-top: 1rem;
+        display: flex;
+        gap: 1rem;
+        
+        .hero-container {
+            height: 35rem;
+            width: 50rem;
+            background: #fff;
+            border-radius: 1rem;
+            padding: 1rem;
+
+            .hero {
+                background-color: #dadada;
+                padding: 1rem;
+                border-radius: .3rem;
+                margin: .5rem 0;
+                transition: all 1 ease;
+
+                &:hover {
+                    background-color: #00bfe0;
+                }
+            }
+
+            h1 {
+                text-align: center;
+            }
+        }
+        .enemy-container {
+            height: 35rem;
+            width: 50rem;
+            background: #fff;
+            border-radius: 1rem;
+            padding: 1rem;
+
+            .enemy {
+                background-color: #dadada;
+                padding: 1rem;
+                border-radius: .3rem;
+                margin: .5rem 0;
+                transition: all 1 ease;
+
+                &:hover {
+                    background-color: #00bfe0;
+                }
+            }
+
+            h1 {
+                text-align: center;
+            }
+        }
+    }
+
+    .controller {
+        background: #fff;
+        width: 101.1rem;
+        display: flex;
+        height: 20rem;
+        border-radius: 1rem;
+
+        .battleArena {
+            
+        }
+    }
+}
+
+.selected {
+    background-color: #001aff !important;
+    color: #fff;
+}

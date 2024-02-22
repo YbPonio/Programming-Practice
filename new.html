@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new practice</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .main-container {
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.795);
+
+        .container {
+            width: 50rem;
+            height: 50rem;
+            background-color: beige;
+            border-radius: 1rem;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+
+            h1{
+                /* background-color: aquamarine; */
+                display: flex;
+                align-items: center;
+                padding: 5px;
+                justify-content: center;
+            }
+        }
+    }
+</style>
+
+<body>
+    <div class="main-container">
+        <div class="container" id="container">
+            <h1 class="textDisplay"></h1>
+            <h1 class="textDisplay"></h1>
+            <h1 class="textDisplay"></h1>
+            <h1 class="textDisplay"></h1>
+            <h1 class="textDisplay"></h1>
+            <h1 class="textDisplay"></h1>
+            <h1 class="textDisplay"></h1>
+            <h1 class="textDisplay"></h1>
+            <h1 class="textDisplay"></h1>
+            <h1 class="textDisplay"></h1>
+            <h1 class="textDisplay"></h1>
+            <h1 class="textDisplay"></h1>
+            <h1 class="textDisplay"></h1>
+            <h1 class="textDisplay"></h1>
+            <h1 class="textDisplay"></h1>
+            <h1 class="textDisplay"></h1>
+            <h1 class="textDisplay"></h1>
+            <h1 class="textDisplay"></h1>
+            <h1 class="textDisplay"></h1>
+            <h1 class="textDisplay"></h1>
+            <h1 class="textDisplay"></h1>
+            <h1 class="textDisplay"></h1>
+            <h1 class="textDisplay"></h1>
+            <h1 class="textDisplay"></h1>
+        </div>
+    </div>
+</body>
+
+<script>
+    
+    function updateNumber() {
+        let count = 0;
+        let allDisplay = document.querySelectorAll('.textDisplay');
+        allDisplay.forEach((display) => {
+            setInterval(() => {
+                display.innerText = count;
+                // textDisplay.style.width = count + 'px';
+                // textDisplay.style.height = count + 'px';
+                // textDisplay.style.fontSize = count / 2 + 'px';
+                count++;
+            }, 10);
+            
+            setInterval(() => {
+                container.innerHTML += `<h1 class="textDisplay"></h1>`;
+            }, 1000)
+        });
+
+    }
+    // updateNumber();
+</script>
+</html>
