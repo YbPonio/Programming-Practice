@@ -21,7 +21,7 @@ function displayAll() {
 
     for (let hero of heroes) {
         heroContainer.innerHTML += `
-        <div class="hero ${hero.status}" onclick="selectHero(${hero.id})">
+        <div class="hero ${hero.status} ${hero.state}" onclick="selectHero(${hero.id})">
             <div>
                 <h2>${hero.name}</h2>
                 <p>HP: ${hero.specs.hp}</p>
@@ -38,7 +38,7 @@ function displayAll() {
 
     for (let enemy of enemies) {
         enemyContainer.innerHTML += `
-        <div class="enemy ${enemy.status}" onclick="selectEnemy(${enemy.id})">
+        <div class="enemy ${enemy.status} ${enemy.state}" onclick="selectEnemy(${enemy.id})">
             <div>
                 <h2>${enemy.name}</h2>
                 <p>HP: ${enemy.specs.hp}</p>
@@ -65,7 +65,6 @@ function selectHero(id) {
             hero.btnshow = "";
         }
     }
-    console.log(selectedHero);
 
     displayAll();
 }
@@ -81,7 +80,6 @@ function selectEnemy(id) {
             enemy.btnshow = "";
         }
     }
-    console.log(selectedEnemy);
     displayAll();
 }
 
@@ -98,31 +96,58 @@ function attack() {
         if (selectedEnemy.specs.hp <= 0) {
             alert("The Enemy is already Dead!");
         } else if(selectedEnemy.specs.hp > 0) {
-            selectedEnemy.specs.hp -= selectedHero.specs.hp;
+            selectedEnemy.specs.hp -= selectedHero.specs.attack;
             if(selectedEnemy.specs.hp <= 0){
-                selectedEnemy.specs.hp = 0; 
+                selectedEnemy.specs.hp = 0;
+                selectedEnemy.state = "dead";
+                selectedEnemy.status = "";
+                selectedEnemy.btnshow = "";
             }
         }
     } else if(heroAction == "heroAttacking" && enemyAction == "enemyAttacking") {
         if(selectedEnemy.specs.hp <= 0 || selectedHero.specs.hp <= 0) {
             alert("One of them is already Dead")
         } else if (selectedHero.specs.hp > 0 && selectedEnemy.specs.hp > 0) {
-            selectedEnemy.specs.hp -= selectedHero.specs.hp;
-            selectedHero.specs.hp -= selectedEnemy.specs.hp;
-            if(selectedHero.specs.hp < 0) {
+            selectedEnemy.specs.hp -= selectedHero.specs.attack;
+            let defenseDamage = selectedEnemy.specs.attack - selectedHero.specs.defense;
+            if (defenseDamage > 0) {
+                selectedHero.specs.hp -= defenseDamage;
+            }
+            if(selectedHero.specs.hp <= 0) {
                 selectedHero.specs.hp = 0;
-            } else if(selectedEnemy.specs.hp < 0) {
+                selectedHero.state = "dead";
+                selectedHero.status = "";
+                selectedHero.btnshow = "";
+            }
+            if(selectedEnemy.specs.hp <= 0) {
                 selectedEnemy.specs.hp = 0;
+                selectedEnemy.state = "dead";
+                selectedEnemy.status = "";
+                selectedEnemy.btnshow = "";
             }
         }
     } else if(heroAction == "heroDefending" && enemyAction == "enemyAttacking") {
-        selectedHero.specs.attack -= selectedEnemy.specs.hp;
+        if (selectedHero.specs.hp <= 0) {
+            alert("The Hero is already Dead!");
+        } else if(selectedHero.specs.hp > 0) {
+            let defenseDamage = selectedEnemy.specs.attack - selectedHero.specs.defense;
+            if(defenseDamage > 0) {
+                if(selectedHero.specs.hp > 0) {
+                    selectedHero.specs.hp -= defenseDamage;
+                } 
+                if(selectedHero.specs.hp <= 0) {
+                    selectedHero.specs.hp = 0;
+                    selectedHero.state = "dead";
+                    selectedHero.status = "";
+                    selectedHero.btnshow = "";
+                }
+            }
+        }
     } else {
         alert("Hahaha both of them is Defending!")
     }
-
-
-
+    enemtAttackAction(enemyAction);
+    heroAttackAction(heroAction);
     displayAll();
 }
 
@@ -161,7 +186,6 @@ function enemtAttackAction(action) {
         <h2>${selectedEnemy.name}</h2>
         <p>HP: ${selectedEnemy.specs.hp}</p>
         <p>Attack: ${selectedEnemy.specs.attack}</p>
-        <p>Defense: ${selectedEnemy.specs.defense}</p>
         </div>
         `;
         enemyAction = "enemyAttacking";
@@ -173,12 +197,10 @@ function enemtAttackAction(action) {
         <h2>${selectedEnemy.name}</h2>
         <p>HP: ${selectedEnemy.specs.hp}</p>
         <p>Attack: ${selectedEnemy.specs.attack}</p>
-        <p>Defense: ${selectedEnemy.specs.defense}</p>
         </div>
         `;
         enemyAction = "enemyDefending";
     }
-
 }
 
 getData();

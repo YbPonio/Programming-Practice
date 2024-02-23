@@ -5,36 +5,40 @@
             "id": 1,
             "specs": {
                 "attack": 1,
-                "defense": 9,
+                "defense": 4,
                 "hp": 10
-            }
+            },
+            "state": "alive"
         },
         {
             "name": "GayMer",
             "id": 2,
             "specs": {
                 "attack": 10,
-                "defense": 0,
+                "defense": 3,
                 "hp": 10
-            }
+            },
+            "state": "alive"
         },
         {
             "name": "JMores",
             "id": 3,
             "specs": {
                 "attack": 6,
-                "defense": 4,
+                "defense": 1,
                 "hp": 10
-            }
+            },
+            "state": "alive"
         },
         {
             "name": "Raku",
             "id": 4,
             "specs": {
                 "attack": 2,
-                "defense": 8,
+                "defense": 2,
                 "hp": 10
-            }
+            },
+            "state": "alive"
         }
     ], 
     "enemies": [
@@ -42,10 +46,11 @@
             "name": "HumpreyDumpy",
             "id": 1,
             "specs": {
-                "attack": 1,
+                "attack": 7,
                 "defense": 9,
-                "hp": 15
-            }
+                "hp": 25
+            },
+            "state": "alive"
         },
         {
             "name": "Kap",
@@ -54,25 +59,28 @@
                 "attack": 6,
                 "defense": 4,
                 "hp": 18
-            }
+            },
+            "state": "alive"
         },
         {
             "name": "Krippler",
             "id": 3,
             "specs": {
-                "attack": 3,
+                "attack": 4,
                 "defense": 7,
                 "hp": 12
-            }
+            },
+            "state": "alive"
         },
         {
             "name": "Majin",
             "id": 4,
             "specs": {
-                "attack": 1,
+                "attack": 3,
                 "defense": 9,
                 "hp": 20
-            }
+            },
+            "state": "alive"
         }
     ]
 }

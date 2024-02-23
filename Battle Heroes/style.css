@@ -34,7 +34,7 @@
                 padding: 1rem;
                 border-radius: .3rem;
                 margin: .5rem 0;
-
+                
                 button {
                     padding: 1rem;
                 }
@@ -101,6 +101,17 @@
             #enemyDisplayContainer {
                 display: flex;
                 flex-direction: column;
+                position: relative;
+                div {
+                    display: flex;
+                    flex-direction: column;
+
+                    font-size: 1.5rem;
+                }
+                h1 {
+                    position: absolute;
+                    top: 1rem;
+                }
             } 
 
             div {
@@ -142,4 +153,10 @@
 }
 .showBtn {
     display: flex !important;
+}
+.dead {
+    pointer-events: none;
+    user-select: none;
+    background: #818589 !important;
+    opacity: .9 !important;
 }
