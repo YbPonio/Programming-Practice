@@ -1,5 +1,5 @@
 const dictionary = [
-    "apple", "lemon", "grape", "peach", "melon", "apric", "cherr", "fudge", "candy", "baker", "wheat", "beach", "piano", "guitar", "viola", "cello", "trump", "panda", "zebra", "tiger", "llama", "horse", "donut", "crown", "knife", "plate", "spoon", "fork", "glass", "brick", "radio", "music", "dance", "salsa", "jazz", "swing", "shark", "whale", "dolph", "frost", "snowy", "sleet", "storm", "cloud", "rainy", "sunny", "moist", "juicy", "crisp", "crumb", "cream", "sauce", "dough", "crust", "steak", "salad", "sushi", "burger", "fries", "onion", "tomat", "chees", "bacon", "pasta", "pizza", "wafel", "toast", "cocoa", "mocha", "latte", "cider", "juice", "water"
+    "apple", "lemon", "grape", "peach", "melon", "apric", "cherr", "fudge", "candy", "baker", "wheat", "beach", "piano", "guitar", "viola", "cello", "trump", "panda", "zebra", "tiger", "llama", "horse", "donut", "crown", "knife", "plate", "spoon", "fork", "glass", "brick", "radio", "music", "dance", "salsa", "jazze", "swing", "shark", "whale", "dolph", "frost", "snowy", "sleet", "storm", "cloud", "rainy", "sunny", "moist", "juicy", "crisp", "crumb", "cream", "sauce", "dough", "crust", "steak", "salad", "sushi", "burger", "fries", "onion", "tomat", "chees", "bacon", "pasta", "pizza", "wafel", "toast", "cocoa", "mocha", "latte", "cider", "juice", "water"
   ];
   
 let state;
