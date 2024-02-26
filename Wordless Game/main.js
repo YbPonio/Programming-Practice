@@ -118,12 +118,13 @@ function revealWord(guess) {
             startUp()
         } else if (isGameOver) {
             alert(`You Lose! The correct word was ${state.secret}.`);
+            startUp()
         }
     }, 3 * animationDduration);
 }
 
 function isLetter(key) {
-    return key.length == 1 && key.match(/[a-z]/i);
+    return key.length == 1 && key.match(/[a-z]/);
 }
 
 function addLetter(letter) {
