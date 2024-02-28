@@ -4,5 +4,8 @@ async function getData() {
     console.log(data);
 }
 
+function toAnotherPage() {
+    window.location.href = 'recipe-page.html';
+}
 
 getData()

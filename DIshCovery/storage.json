@@ -1,12 +1,14 @@
 [
     {
         "name": "Egg",
+        "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum corporis dolore ab dicta consequatur necessitatibus aperiam, ullam quaerat deserunt veritatis. ",
         "ingredients": [
             "Spaghetti",
             "Eggs",
             "Parmesan cheese",
             "Bacon or pancetta",
             "Black pepper"
-        ]
+        ],
+        "url": "" 
     }
 ]
