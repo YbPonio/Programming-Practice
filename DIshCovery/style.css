@@ -84,13 +84,16 @@ body {
                     outline: none;
                     border-top-right-radius: 1rem;
                     border-bottom-right-radius: 1rem;
+                    cursor: pointer;
                 }
             }
 
             .recipe-items {
-                padding: 2rem;
+                margin-top: 2rem;
                 height: 85vh;
                 width: 80%;
+                overflow: auto;
+                max-width: 80%;
                 display: flex;
                 flex-wrap: wrap;
                 gap: 2rem;
