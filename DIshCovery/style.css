@@ -1,321 +1,397 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    --color-white: #fff;
-    --color-white-opacity: #ffffff90;
-    --color-black-opacity: #00000090;
-    --color-black: #000;
-    --color-gradient: radial-gradient(circle, rgba(0, 0, 0, 0.26934523809523814) 0%, rgba(0, 0, 0, 0.700717787114846) 60%);
+  --color-white: #fff;
+  --color-white-opacity: #ffffff90;
+  --color-black-opacity: #00000090;
+  --color-black: #000;
+  --color-gradient: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.26934523809523814) 0%,
+    rgba(0, 0, 0, 0.700717787114846) 60%
+  );
 }
 
 body {
-    font-family: "Quicksand", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 .recipe-container {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  #foodShowMore {
+    position: absolute;
+    width: 90vw;
+    height: 90vh;
+    background: var(--color-white);
+    z-index: 1000;
+    border-radius: 1rem;
+
+    #closeButton {
+      background: var(--color-black);
+      height: 4rem;
+      width: 4rem;
+      border-radius: 50%;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 100;
+      cursor: pointer;
+    }
+
+    .food-container {
+      padding: 4rem 2rem;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      flex-wrap: wrap;
+      overflow-y: auto;
+      height: 100%;
+      width: 100%;
+
+      .information {
+        display: flex;
+        width: 100%;
+
+        .ingredients,
+        .directions {
+          width: 50%;
+          padding: 1rem 5rem;
+
+          h3 {
+            text-align: center;
+            font-size: 2rem;
+          }
+
+          ol li,
+          ul li {
+            padding: 1rem;
+          }
+        }
+      }
+
+      .img-box {
+        background-image: url(./img/food1.jpg);
+        background-size: cover;
+        background-position: center center;
+        width: 80%;
+        height: 50%;
+        border-radius: 1rem;
+      }
+      .title-text {
+        h1 {
+          font-size: 3rem;
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+
+  .header {
     position: relative;
-    min-height: 100vh;
-    width: 100%;
+    background-image: url(./img/header-banner.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    min-width: 100vw;
 
-    .header {
-        position: relative;
-        background-image: url(/DIshCovery/img/header-banner.jpg);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        min-height: 100vh;
-        min-width: 100vw;
-
-        &::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--color-gradient);
-        }
-
-        .container {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            flex-direction: column;
-            min-height: 100vh;
-            width: 100%;
-            z-index: 100;
-
-            .search-input {
-                display: flex;
-                height: 4rem;
-                width: 40rem;
-                z-index: 100;
-                animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both;
-
-
-                input {
-                    width: 100%;
-                    padding: 0 1rem;
-                    font-size: 1rem;
-                    border: none;
-                    outline: none;
-                    border-top-left-radius: 1rem;
-                    border-bottom-left-radius: 1rem;
-                }
-
-                button {
-                    padding: 0 2rem;
-                    font-size: 1rem;
-                    border: none;
-                    outline: none;
-                    border-top-right-radius: 1rem;
-                    border-bottom-right-radius: 1rem;
-                    cursor: pointer;
-                }
-            }
-
-            .recipe-items {
-                margin-top: 2rem;
-                height: 85vh;
-                width: 80%;
-                overflow: auto;
-                max-width: 80%;
-                display: flex;
-                flex-wrap: wrap;
-                gap: 2rem;
-                justify-content: center;
-                z-index: 100;
-                animation: fade-in .5s cubic-bezier(0.390, 0.575, 0.565, 1.000) .5s both;
-
-
-                .item {
-                    height: 30rem;
-                    width: 20rem;
-                    background: var(--color-white);
-                    border-radius: 1rem;
-                    box-shadow: 0 4px 30px rgba(0, 0, 0, .8);
-                    padding: .15rem;
-
-                    .img-holder {
-                        height: 50%;
-                        border-top-left-radius: 1rem;
-                        border-top-right-radius: 1rem;
-                        overflow: hidden;
-
-                        img {
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover;
-                        }
-                    }
-
-                    h1 {
-                        text-align: center;
-                        text-transform: uppercase;
-                        font-size: 1.5rem;
-                        padding: .5rem 1rem;
-                    }
-
-                    p {
-                        padding: 0.5rem 1rem;
-                        text-align: center;
-                    }
-
-                    /* BUTTON */
-                    .showMoreBtn {
-                        width: 100%;
-                        display: flex;
-                        justify-content: center;
-                        padding: 1rem;
-                        
-                        .cta {
-                            border: none;
-                            background: none;
-                            cursor: pointer;
-                        }
-
-                        .cta span {
-                            padding-bottom: 7px;
-                            letter-spacing: 4px;
-                            font-size: 14px;
-                            text-transform: uppercase;
-                        }
-
-                        .hover-underline-animation {
-                            position: relative;
-                            color: black;
-                            padding-bottom: 20px;
-                        }
-
-                        .hover-underline-animation:after {
-                            content: "";
-                            position: absolute;
-                            width: 100%;
-                            transform: scaleX(0);
-                            height: 2px;
-                            bottom: 0;
-                            left: 0;
-                            background-color: #000000;
-                            transform-origin: bottom right;
-                            transition: transform 0.25s ease-out;
-                        }
-
-                        .cta:hover .hover-underline-animation:after {
-                            transform: scaleX(1);
-                            transform-origin: bottom left;
-                        }
-                    }
-                }
-            }
-        }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--color-gradient);
     }
+
+    .container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      width: 100%;
+      z-index: 100;
+
+      .search-input {
+        display: flex;
+        height: 4rem;
+        width: 40rem;
+        z-index: 100;
+        animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s
+          both;
+
+        input {
+          width: 100%;
+          padding: 0 1rem;
+          font-size: 1rem;
+          border: none;
+          outline: none;
+          border-top-left-radius: 1rem;
+          border-bottom-left-radius: 1rem;
+        }
+
+        button {
+          padding: 0 2rem;
+          font-size: 1rem;
+          background: var(--color-black);
+          color: var(--color-white);
+          border: none;
+          outline: none;
+          border-top-right-radius: 1rem;
+          border-bottom-right-radius: 1rem;
+          cursor: pointer;
+
+          &:hover {
+            opacity: 0.9;
+          }
+        }
+      }
+
+      .recipe-items {
+        padding: 2rem;
+        height: 85vh;
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+        z-index: 100;
+        animation: fade-in 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) 0.5s both;
+
+        .item {
+          height: 30rem;
+          width: 20rem;
+          background: var(--color-white);
+          border-radius: 1rem;
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+          padding: 0.15rem;
+
+          .img-holder {
+            height: 50%;
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+            overflow: hidden;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+
+          h1 {
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            padding: 0.5rem 1rem;
+          }
+
+          p {
+            padding: 0.5rem 1rem;
+            text-align: center;
+          }
+
+          /* BUTTON */
+          .showMoreBtn {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+
+            .cta {
+              border: none;
+              background: none;
+              cursor: pointer;
+            }
+
+            .cta span {
+              padding-bottom: 7px;
+              letter-spacing: 4px;
+              font-size: 14px;
+              text-transform: uppercase;
+            }
+
+            .hover-underline-animation {
+              position: relative;
+              color: black;
+              padding-bottom: 20px;
+            }
+
+            .hover-underline-animation:after {
+              content: "";
+              position: absolute;
+              width: 100%;
+              transform: scaleX(0);
+              height: 2px;
+              bottom: 0;
+              left: 0;
+              background-color: #000000;
+              transform-origin: bottom right;
+              transition: transform 0.25s ease-out;
+            }
+
+            .cta:hover .hover-underline-animation:after {
+              transform: scaleX(1);
+              transform-origin: bottom left;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .main-container {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .header {
     position: relative;
-    min-height: 100vh;
-    width: 100%;
+    background-image: url(/DIshCovery/img/header-banner.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    min-width: 100vw;
 
-    .header {
-        position: relative;
-        background-image: url(/DIshCovery/img/header-banner.jpg);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        min-height: 100vh;
-        min-width: 100vw;
-
-        &::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--color-gradient);
-        }
-
-        .text-header {
-            color: var(--color-white);
-            font-size: 2.5rem;
-            z-index: 10;
-            width: 50rem;
-            text-align: center;
-
-            h1 {
-                font-weight: 500;
-                animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-
-            }
-
-            .button {
-                animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-                --color: #00A97F;
-                padding: 0.5em 1.7rem;
-                background-color: transparent;
-                border-radius: .7rem;
-                position: relative;
-                overflow: hidden;
-                cursor: pointer;
-                transition: .5s;
-                font-weight: 500;
-                font-size: 1.5rem;
-                border: 1px solid;
-                text-transform: uppercase;
-                color: var(--color-white);
-                z-index: 1;
-            }
-
-            .button::before,
-            .button::after {
-                content: '';
-                display: block;
-                width: 50px;
-                height: 50px;
-                transform: translate(-50%, -50%);
-                position: absolute;
-                border-radius: 50%;
-                z-index: -1;
-                background-color: var(--color-black);
-                transition: 1s ease;
-            }
-
-            .button::before {
-                top: -1em;
-                left: -1em;
-            }
-
-            .button::after {
-                left: calc(100% + 1em);
-                top: calc(100% + 1em);
-            }
-
-            .button:hover::before,
-            .button:hover::after {
-                height: 410px;
-                width: 410px;
-            }
-
-            .button:hover {
-                color: var(--color-text);
-            }
-
-            .button:active {
-                filter: brightness(1);
-            }
-        }
-
-
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--color-gradient);
     }
+
+    .text-header {
+      color: var(--color-white);
+      font-size: 2.5rem;
+      z-index: 10;
+      width: 50rem;
+      text-align: center;
+
+      h1 {
+        font-weight: 500;
+        animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+      }
+
+      .button {
+        animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+        --color: #00a97f;
+        padding: 0.5em 1.7rem;
+        background-color: transparent;
+        border-radius: 0.7rem;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        transition: 0.5s;
+        font-weight: 500;
+        font-size: 1.5rem;
+        border: 1px solid;
+        text-transform: uppercase;
+        color: var(--color-white);
+        z-index: 1;
+      }
+
+      .button::before,
+      .button::after {
+        content: "";
+        display: block;
+        width: 50px;
+        height: 50px;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        border-radius: 50%;
+        z-index: -1;
+        background-color: var(--color-black);
+        transition: 1s ease;
+      }
+
+      .button::before {
+        top: -1em;
+        left: -1em;
+      }
+
+      .button::after {
+        left: calc(100% + 1em);
+        top: calc(100% + 1em);
+      }
+
+      .button:hover::before,
+      .button:hover::after {
+        height: 410px;
+        width: 410px;
+      }
+
+      .button:hover {
+        color: var(--color-text);
+      }
+
+      .button:active {
+        filter: brightness(1);
+      }
+    }
+  }
+}
+
+.hidden {
+  display: none;
 }
 
 @keyframes scale-up-center {
-    0% {
-        transform: scale(0.6);
-    }
+  0% {
+    transform: scale(0.6);
+  }
 
-    100% {
-        transform: scale(1);
-    }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @keyframes scale-in-center {
-    0% {
-        transform: scale(0);
-        /* opacity: 1; */
-    }
+  0% {
+    transform: scale(0);
+    /* opacity: 1; */
+  }
 
-    100% {
-        transform: scale(1);
-        /* opacity: 1; */
-    }
+  100% {
+    transform: scale(1);
+    /* opacity: 1; */
+  }
 }
 
 @keyframes fade-in {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+  0% {
+    opacity: 0;
   }
+  100% {
+    opacity: 1;
+  }
+}
