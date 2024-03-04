@@ -1,11 +1,18 @@
 async function getData() {
-    let response = await fetch("https://ybponio.github.io/Programming-Practice/DIshCovery/storage.json");
-    let data = await response.json();
-    console.log(data);
+  let response = await fetch(
+    "https://ybponio.github.io/Programming-Practice/DIshCovery/storage.json"
+  );
+  let data = await response.json();
+  console.log(data);
 }
 
 function toAnotherPage() {
-    window.location.href = 'recipe-page.html';
+  location.href = "recipe-page.html";
 }
 
-getData()
+function closeBtn() {
+  foodShowMore.classList.toggle("hidden");
+  console.log("sdfds");
+}
+
+getData();
