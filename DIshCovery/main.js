@@ -6,6 +6,7 @@ async function getData() {
   let data = await response.json();
   recipes = data;
   console.log(recipes);
+  renderFoods();
 }
 
 function renderFoods() {
@@ -20,7 +21,7 @@ function renderFoods() {
         />
       </div>
       <h1>${recipe.name}</h1>
-      <p>${recipe.description}</p>
+      <p class="paragraphText">${recipe.description}</p>
 
       <div class="showMoreBtn">
         <button class="cta" onclick="closeBtn()">
@@ -30,6 +31,13 @@ function renderFoods() {
     </div>
       `;
   }
+  let paragraphText = document.querySelectorAll(".paragraphText");
+  paragraphText.forEach((paragraph) => {
+    let text = paragraph.textContent.trim();
+    let words = text.split(" ");
+    let truncatedText = words.slice(0, 20).join(" ");
+    paragraph.textContent = truncatedText + "...";
+  });
 }
 
 function toAnotherPage() {
@@ -40,5 +48,4 @@ function closeBtn() {
   foodShowMore.classList.toggle("hidden");
   console.log("sdfds");
 }
-renderFoods();
 getData();
