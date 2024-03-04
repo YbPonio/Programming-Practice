@@ -1,5 +1,4 @@
 [
-<<<<<<< HEAD
   {
     "name": "Egg",
     "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum corporis dolore ab dicta consequatur necessitatibus aperiam, ullam quaerat deserunt veritatis. ",
@@ -10,21 +9,6 @@
       "Bacon or pancetta",
       "Black pepper"
     ],
-    "url": "",
-    "score": 0
+    "url": ""
   }
-=======
-    {
-        "name": "Egg",
-        "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum corporis dolore ab dicta consequatur necessitatibus aperiam, ullam quaerat deserunt veritatis. ",
-        "ingredients": [
-            "Spaghetti",
-            "Eggs",
-            "Parmesan cheese",
-            "Bacon or pancetta",
-            "Black pepper"
-        ],
-        "url": ""
-    }
->>>>>>> 0df503bb175803603cc56514eb04bb8be8e10a69
 ]
