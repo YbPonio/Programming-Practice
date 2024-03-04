@@ -8,11 +8,11 @@
   </head>
   <body>
     <div class="recipe-container">
-      <div id="foodShowMore">
+      <div id="foodShowMore" class="hidden">
         <div id="closeButton" onclick="closeBtn()"></div>
         <div class="food-container">
           <div class="img-box"></div>
-          <div>
+          <div class="title-text">
             <h1>beef ground pork</h1>
           </div>
           <div class="information">
@@ -43,7 +43,7 @@
             <button>Search</button>
           </div>
 
-          <div class="recipe-items">
+          <div class="recipe-items" id="recipeItems">
             <div class="item">
               <div class="img-holder">
                 <img
@@ -59,8 +59,8 @@
               </p>
 
               <div class="showMoreBtn">
-                <button class="cta">
-                  <span class="hover-underline-animation">Show More</span>
+                <button class="cta" onclick="closeBtn()">
+                  <span class="hover-underline-animation">Get Recipe</span>
                 </button>
               </div>
             </div>

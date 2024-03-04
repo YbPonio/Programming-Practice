@@ -69,11 +69,16 @@ body {
         .ingredients,
         .directions {
           width: 50%;
-          padding: 1rem 3rem;
+          padding: 1rem 5rem;
 
           h3 {
             text-align: center;
             font-size: 2rem;
+          }
+
+          ol li,
+          ul li {
+            padding: 1rem;
           }
         }
       }
@@ -82,11 +87,11 @@ body {
         background-image: url(./img/food1.jpg);
         background-size: cover;
         background-position: center center;
-        width: 60%;
+        width: 80%;
         height: 50%;
         border-radius: 1rem;
       }
-      div {
+      .title-text {
         h1 {
           font-size: 3rem;
           text-transform: capitalize;
