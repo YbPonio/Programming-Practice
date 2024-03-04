@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="nav-bar"></div>
+
+      <div class="main-container">
+        <div class="cart-container">Cart: {{cart.length}}</div>
+
+        <product-display
+          :premium="premium"
+          @add-to-cart="updateCart"
+        ></product-display>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="components/ProductDisplay.js"></script>
+    <script src="components/ReviewForm.js"></script>
+    <script src="components/ReviewList.js"></script>
+
+    <script>
+      const mountedApp = app.mount("#app");
+    </script>
+  </body>
+</html>

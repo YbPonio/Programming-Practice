@@ -4,6 +4,7 @@ async function getData() {
     "https://ybponio.github.io/Programming-Practice/DIshCovery/storage.json"
   );
   let data = await response.json();
+<<<<<<< HEAD
   recipes = data;
   console.log(recipes);
 }
@@ -45,4 +46,12 @@ function closeBtn() {
   console.log("sdfds");
 }
 
+=======
+}
+
+function toAnotherPage() {
+  window.location.href = "recipe-page.html";
+}
+
+>>>>>>> 0df503bb175803603cc56514eb04bb8be8e10a69
 getData();
