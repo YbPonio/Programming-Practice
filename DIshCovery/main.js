@@ -5,7 +5,7 @@ async function getData() {
   );
   let data = await response.json();
   recipes = data;
-  console.log(recipes);
+  // console.log(recipes);
   renderFoods();
 }
 
