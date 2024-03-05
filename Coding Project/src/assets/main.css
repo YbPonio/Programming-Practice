@@ -1,0 +1,15 @@
+@import './base.css';
+
+#app {
+  min-height: 100vh;
+  width: 100%;
+}
+
+#header {
+  background: #fff;
+  box-shadow: 0 0 10px 1px hsla(0, 0%, 84%, 0.5);
+  min-width: 100%;
+  min-height: 5rem;
+  position: sticky;
+  top: 0;
+}
