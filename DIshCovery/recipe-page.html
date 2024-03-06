@@ -10,11 +10,12 @@
     <div class="recipe-container">
       <div id="foodShowMore" class="hidden">
         <div id="closeButton" onclick="closeBtn()"></div>
-        <div class="food-container">
+        <div class="food-container" id="foodContainer">
           <div class="img-box"></div>
           <div class="title-text">
             <h1>beef ground pork</h1>
           </div>
+          <div class="recipe-description"></div>
           <div class="information">
             <div class="ingredients">
               <h3>Ingredients</h3>
@@ -39,12 +40,12 @@
       <div class="header">
         <div class="container">
           <div class="search-input">
-            <input type="text" placeholder="Enter here..." />
-            <button>Search</button>
+            <input id="searchInput" type="text" placeholder="Enter here..." />
+            <button onclick="renderFoods()">Search</button>
           </div>
 
           <div class="recipe-items" id="recipeItems">
-            <div class="item">
+            <!-- <div class="item">
               <div class="img-holder">
                 <img
                   src="./img/emerson-vieira-cpkPJ-U9eUM-unsplash.jpg"
@@ -63,7 +64,7 @@
                   <span class="hover-underline-animation">Get Recipe</span>
                 </button>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
