@@ -30,30 +30,11 @@ async function renderFoods(filter) {
       lowIngredients.includes(true) ||
       lowCategories.includes(true)
     );
-
-    // return (
-    //   lowName.includes(filter) ||
-    //   lowDescription.includes(filter) ||
-    //   recipe.description.includes(filter) ||
-    //   lowIngredients.includes(filter) ||
-    //   recipe.ingredients.includes(filter) ||
-    //   lowCategories.includes(filter) ||
-    //   recipe.categories.includes(filter)
-    // );
-
-    // let searchItem = recipe.name
-    //   .toLowerCase()
-    //   .indexOf(searchInput.value.toLowerCase());
-    // if (searchItem >= 0) {
-    //   return true;
-    // }
   });
 
-  console.log(filteredFood);
   if (filteredFood <= 0) {
     recipeItems.innerHTML = `<h1 class="no-result">No recipe matches your criteria...you can search for "beef", "fish" etc....</h1>`;
     return;
-    console.log("no item");
   }
 
   recipeItems.innerHTML = "";
