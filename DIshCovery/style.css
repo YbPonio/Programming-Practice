@@ -41,15 +41,19 @@ body {
     border-radius: 1rem;
 
     #closeButton {
-      background: var(--color-black);
+      background: #404040c3;
       height: 4rem;
       width: 4rem;
       border-radius: 50%;
       position: absolute;
       top: 1rem;
-      right: 1rem;
+      right: 2rem;
       z-index: 100;
       cursor: pointer;
+
+      &:hover {
+        background-color: #5f5f5f;
+      }
     }
 
     .food-container {
@@ -66,6 +70,16 @@ body {
         font-size: 1.3rem;
         width: 80%;
         font-weight: 500;
+      }
+      .recipe-category {
+        font-size: 1.3rem;
+        width: 80%;
+        font-weight: 500;
+        padding: 1rem 0;
+
+        span {
+          font-weight: 700;
+        }
       }
 
       .information {
@@ -185,6 +199,10 @@ body {
         justify-content: center;
         z-index: 100;
         animation: fade-in 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) 0.5s both;
+
+        .no-result {
+          color: var(--color-white);
+        }
 
         .item {
           height: 30rem;

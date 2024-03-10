@@ -1,28 +1,63 @@
 let recipes = [];
+let filter = "";
+
 async function getData() {
-  let response = await fetch(
-    "https://ybponio.github.io/Programming-Practice/DIshCovery/storage.json"
-  );
-  let data = await response.json();
-  recipes = data;
-  // console.log(recipes);
-  renderFoods();
+  try {
+    const response = await fetch(
+      "https://ybponio.github.io/Programming-Practice/DIshCovery/storage.json"
+    );
+    recipes = await response.json();
+  } catch (error) {
+    console.log(error);
+  }
+  renderFoods(filter);
 }
 
-function renderFoods() {
-  let searchFood = recipes.filter((recipe) => {
-    let searchItem = recipe.name
-      .toLowerCase()
-      .indexOf(searchInput.value.toLowerCase());
+async function renderFoods(filter) {
+  let filteredFood = recipes.filter((recipe) => {
+    let lowName = recipe.name.toLowerCase();
+    let lowDescription = recipe.description.toLowerCase();
+    let lowIngredients = recipe.ingredients.map((item) =>
+      item.toLowerCase().includes(filter)
+    );
+    let lowCategories = recipe.categories.map((item) =>
+      item.toLowerCase().includes(filter)
+    );
 
-    if (searchItem >= 0) {
-      return true;
-    }
+    return (
+      lowName.includes(filter) ||
+      lowDescription.includes(filter) ||
+      lowIngredients.includes(true) ||
+      lowCategories.includes(true)
+    );
+
+    // return (
+    //   lowName.includes(filter) ||
+    //   lowDescription.includes(filter) ||
+    //   recipe.description.includes(filter) ||
+    //   lowIngredients.includes(filter) ||
+    //   recipe.ingredients.includes(filter) ||
+    //   lowCategories.includes(filter) ||
+    //   recipe.categories.includes(filter)
+    // );
+
+    // let searchItem = recipe.name
+    //   .toLowerCase()
+    //   .indexOf(searchInput.value.toLowerCase());
+    // if (searchItem >= 0) {
+    //   return true;
+    // }
   });
 
-  /*html */
+  console.log(filteredFood);
+  if (filteredFood <= 0) {
+    recipeItems.innerHTML = `<h1 class="no-result">No recipe matches your criteria...you can search for "beef", "fish" etc....</h1>`;
+    return;
+    console.log("no item");
+  }
+
   recipeItems.innerHTML = "";
-  for (recipe of searchFood) {
+  for (recipe of filteredFood) {
     recipeItems.innerHTML += `
       <div class="item">
       <div class="img-holder">
@@ -52,6 +87,16 @@ function renderFoods() {
   });
 }
 
+let searchFood = searchInput.addEventListener("keyup", (e) => {
+  if (e.target.value.length > 2) {
+    filter = e.target.value.toLowerCase();
+    renderFoods(filter);
+  } else {
+    filter = "";
+    renderFoods(filter);
+  }
+});
+
 function getRecipe(id) {
   for (recipe of recipes) {
     if (id === recipe.id) {
@@ -63,6 +108,9 @@ function getRecipe(id) {
           </div>
           <div class="recipe-description">
             ${recipe.description}
+          </div>
+          <div class="recipe-category">
+          <p><span>Categories:</span> ${recipe.categories.join(", ")}</p>
           </div>
           <div class="information">
             <div class="ingredients">
@@ -89,8 +137,6 @@ function getRecipe(id) {
     }
   }
 }
-
-function findDish() {}
 
 function toAnotherPage() {
   location.href = "recipe-page.html";
