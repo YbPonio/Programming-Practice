@@ -13,13 +13,14 @@ async function getData() {
   renderFoods(filter);
 }
 
-async function renderFoods(filter) {
+function renderFoods(filter) {
   let filteredFood = recipes.filter((recipe) => {
     let lowName = recipe.name.toLowerCase();
     let lowDescription = recipe.description.toLowerCase();
     let lowIngredients = recipe.ingredients.map((item) =>
       item.toLowerCase().includes(filter)
     );
+
     let lowCategories = recipe.categories.map((item) =>
       item.toLowerCase().includes(filter)
     );
@@ -34,12 +35,10 @@ async function renderFoods(filter) {
 
   if (filteredFood <= 0) {
     recipeItems.innerHTML = `<h1 class="no-result">No recipe matches your criteria...you can search for "beef", "fish" etc....</h1>`;
-    return;
-  }
-
-  recipeItems.innerHTML = "";
-  for (recipe of filteredFood) {
-    recipeItems.innerHTML += `
+  } else {
+    recipeItems.innerHTML = "";
+    for (recipe of filteredFood) {
+      recipeItems.innerHTML += `
       <div class="item">
       <div class="img-holder">
         <img
@@ -57,6 +56,7 @@ async function renderFoods(filter) {
       </div>
     </div>
       `;
+    }
   }
 
   let paragraphText = document.querySelectorAll(".paragraphText");

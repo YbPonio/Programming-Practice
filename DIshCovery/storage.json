@@ -165,5 +165,229 @@
       "Main Dish",
       "Gluten Free"
     ]
+  },
+  {
+    "id": 5,
+    "name": "Healthy Air Fryer Parmesan Chicken with Broccoli",
+    "description": "This chicken gets incredibly crunchy, thanks to a light coating of panko and Parmesan and a quick cook in the air fryer! Serve it with charred broccoli and a tangy yogurt sauce for a healthy and complete meal you can throw together any day of the week.",
+    "url": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2020/11/16/0/FNK_Air-Fryer-Parmesan-Chicken-Broccoli_H1_s4x3.jpg.rend.hgtvcom.826.620.suffix/1605561210481.jpeg",
+    "ingredients": [
+      "1/3 cup panko",
+      "1/4 cup finely grated Parmesan",
+      "4 teaspoons olive oil",
+      "1/2 teaspoon dried oregano",
+      "Kosher salt and freshly ground black pepper",
+      "2 small boneless, skinless chicken breasts (about 6 ounces each)",
+      "1 1/2 tablespoons plus 1/4 teaspoon Dijon mustard",
+      "2 cups small broccoli florets (about 5 ounces)",
+      "1/4 cup low-fat plain yogurt",
+      "Finely grated zest and juice of 1/2 lemon"
+    ],
+    "directions": [
+      "Stir together the panko, Parmesan, 2 teaspoons of the olive oil, the oregano, pinch of salt and a couple grinds of pepper in a shallow bowl or small baking dish until thoroughly combined. Pat the chicken dry between a couple paper towels, then sprinkle lightly with salt and pepper. Brush both sides of the chicken with 1 1/2 tablespoons of the Dijon, then press into the panko-Parmesan mixture, making sure both sides are evenly coated.",
+
+      "Toss the broccoli, remaining 2 teaspoons of the olive oil, a good pinch of salt and several grinds of pepper in a medium bowl until evenly coated. ",
+
+      "Preheat a 3.5-quart air fryer to 375 degrees F. Add the chicken to the air-fryer basket and cook until it’s starting to brown and crisp on the top, about 6 minutes. Flip the chicken over with tongs and position in the center of the basket, then scatter the broccoli around the perimeter. Continue air-frying until the chicken is crisp all over and an instant-read thermometer inserted in the middle registers 160 degrees F, and the broccoli is tender and charred, about 8 minutes more. ",
+
+      "Meanwhile, stir together the yogurt, lemon zest and juice, remaining 1/4 teaspoon Dijon, a pinch of salt and several grinds of pepper in a small bowl. Serve alongside the chicken and broccoli for dipping."
+    ],
+    "categories": [
+      "Healthy",
+      "Broccoli",
+      "Vegetable",
+      "Chicken Breast",
+      "Cheese",
+      "Parmesan Cheese Recipes",
+      "Main Dish",
+      "Recipes for Two"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Air Fryer Eggplant Parm",
+    "description": "Eggplant Parmesan is a dish I grew up eating—both at my Nonna’s house in the Bronx and any red checkered tablecloth Italian joint. This version is lightened up thanks to the air fryer, but still delivers on the promise of crispy eggplant smothered in red sauce and ooey gooey cheese. The best part: it comes together in a snap and there is no oil to clean up after dinner. So, pour yourself a glass of chianti and enjoy!",
+    "url": "https://food.fnr.sndimg.com/content/dam/images/food/plus/fullset/2021/03/05/0/FNKLIve_Dana-Beninati_Air-Fryer-Eggplant-Parm-2-2_s4x3.jpg.rend.hgtvcom.826.620.suffix/1614983630157.jpeg",
+    "ingredients": [
+      "3/4 cup all-purpose flour",
+      "Kosher salt and freshly ground black pepper",
+      "2 large eggs",
+      "1 1/4 cups panko or plain dried breadcrumbs",
+      "3/4 cup grated Parmesan, plus more for serving",
+      "2 tablespoons dried Italian herb seasoning",
+      "3 teaspoons garlic powder",
+      "One 1-pound eggplant, peeled and very thinly sliced crosswise",
+      "2 cups jarred tomato sauce",
+      "3 tablespoons chopped fresh basil leaves, plus more leaves for serving if desired",
+      "16 ounces fresh pre-sliced mozzarella",
+      "Extra-virgin olive oil, for serving, optional"
+    ],
+    "directions": [
+      "Preheat a 6-quart air fryer to 375 degrees F. Line a baking sheet with parchment paper.",
+      "Whisk together the flour, 1/4 teaspoon kosher salt, and a couple grinds of pepper in a shallow bowl. Whisk together the eggs and a splash of water in a second shallow bowl. Whisk together the panko, Parmesan, dried Italian herb seasoning, 2 teaspoons garlic powder, 1/4 teaspoon salt, and a couple grinds of pepper in a third shallow bowl.",
+      "Dip the eggplant slices into the flour mixture and shake off any excess. Place into the egg wash and flip to evenly coat. Allow any excess egg to drip off, then press in the panko mixture, making sure both sides are evenly coated. Place on the prepared baking sheet.",
+      "Gently place half of the breaded eggplant into the air fryer basket, shingling to create a single layer. Cook, shaking the tray halfway through to separate any rounds that may have stuck together, until golden brown and crispy, 13 to 15 minutes. Place the cooked eggplant on the prepared baking sheet, then repeat with the remaining uncooked breaded eggplant.",
+      "Meanwhile, stir together the tomato sauce, the remaining 1 teaspoon of garlic powder, and the chopped basil in a small saucepan and cook over medium-low heat until simmering and warmed through, about 5 minutes.",
+      "Line the air fryer basket with parchment, then add half of the cooked eggplant in a single layer. Cover the eggplant to the edges with 1 cup of the seasoned tomato sauce. Top with 8 ounces of the mozzarella. Repeat with the remaining cooked eggplant, 1 cup seasoned tomato sauce, and 8 ounces mozzarella to create a second layer. Cook until the edges are deeply golden brown and the cheese melts, 5 to 7 minutes.",
+      "Remove to a serving platter. Drizzle with olive oil and garnish with fresh basil leaves if desired. Serve immediately, although it will be even better the next day!"
+    ],
+    "categories": [
+      "Cheese",
+      "Mozzarella Recipes",
+      "Eggplant Recipes",
+      "Vegetable",
+      "Parmesan Cheese Recipes",
+      "Main Dish",
+      "High Fiber",
+      "Vegetarian"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Skillet Chicken Thighs with White Wine–Butter Sauce",
+    "description": "The stovetop-to-oven cast-iron skillet technique in this recipe is our go-to for achieving crispy, juicy chicken thighs. If you’re tight on time, the chicken is delicious without the butter sauce (simply plate the thighs straight out of the oven). But to truly impart restaurant-worthy flavor, try your hand at the classic white wine and butter sauce known as beurre blanc in French. The recipe makes a plentiful amount of sauce; nestle the chicken into some of it, then spoon more over every other component of your dinner.",
+    "url": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2021/09/23/0/FNK_Skillet-Chicken-Thighs_H1_s4x3.jpg.rend.hgtvcom.826.620.suffix/1632420651769.jpeg",
+    "ingredients": [
+      "4 skin-on, bone-in chicken thighs (about 2 pounds)",
+      "Kosher salt and coarsely ground black pepper",
+      "1/3 cup champagne vinegar",
+      "1/3 cup dry white wine",
+      "2 shallots, finely chopped",
+      "1/2 lemon, juiced",
+      "2 bay leaves",
+      "1/2 cup heavy cream",
+      "1/2 pound (2 sticks) unsalted butter, cubed",
+      "1/4 cup chopped chives"
+    ],
+    "directions": [
+      "Preheat the oven to 450 degrees F.",
+      "Pat the chicken dry with paper towels. Sprinkle them on both sides with 1 1/2 teaspoons each salt and pepper.",
+      "Heat a large oven-proof skillet (preferably cast iron) over medium-high heat. Add the chicken thighs to the skillet skin-side down and cook, moving them around once or twice to ensure even browning, until the skin is very golden brown, 11 to 12 minutes.",
+      "Turn off the heat. Grasp a wad of paper towels with tongs and mop up excess fat in the bottom of the skillet—this will prevent the grease from spattering all over your oven; carefully discard the paper towel. Repeat several times until there’s only a thin film of oil over the bottom of the skillet.",
+      "Transfer the skillet to the oven and roast until the chicken is almost cooked through, 6 to 8 minutes. Flip the thighs so they are skin side up, then continue roasting until no longer pink near the bone, another 6 minutes. Remove the skillet from the oven and transfer the chicken thighs to a plate, skin side up. Wipe out the skillet and set aside.",
+      "Meanwhile, start your sauce. Combine the vinegar, wine, shallots, lemon juice and bay leaves in a heavy 2-quart saucepan. Simmer over medium heat until the mixture is reduced to a wet paste, 8 to 10 minutes. Add the cream and continue to simmer until the mixture is reduced to about 2 tablespoons.",
+      "Reduce the heat to low and remove the bay leaves. Add a few chunks of the butter and whisk constantly until melted, then add a few more chunks and whisk again until melted. Continue adding and whisking the butter, which should melt into a creamy emulsion, until all the butter is incorporated, about 4 minutes. Do not let the sauce go over 130 degrees F or it will separate. If the sauce starts to break, remove from the heat, add 2 ice cubes and whisk until it cools down and comes back together.",
+      "Season the sauce with 1/2 teaspoon salt and a pinch of pepper. Transfer it to the cast iron skillet, nestle the chicken on top and sprinkle the whole dish with chives. Serve immediately."
+    ],
+    "categories": [
+      "Skillet Recipes",
+      "Chicken Thigh",
+      "Main Dish",
+      "Gluten Free"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Slow-Cooker Chicken Thighs",
+    "description": "Soy sauce, honey, garlic and ginger (along with the natural juices of the chicken) become irresistible sauce to serve over chicken thighs and rice. If you like a thicker sauce, simply add cornstarch at the end and cook a little longer.",
+    "url": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2016/11/3/1/FNK_Slow-Cooker-Chicken-Thighs_s4x3.jpg.rend.hgtvcom.826.620.suffix/1478232033629.jpeg",
+    "ingredients": [
+      "Nonstick cooking spray",
+      "8 boneless skinless chicken thighs (2 to 2 1/2 pounds total)",
+      "1/3 cup honey",
+      "1/3 cup ketchup",
+      "1/3 cup low-sodium soy sauce",
+      "1/2 teaspoon dried oregano",
+      "1/4 teaspoon crushed red pepper flakes",
+      "6 cloves garlic, peeled and smashed",
+      "One 1-inch piece ginger, peeled and minced",
+      "2 tablespoons cornstarch, optional",
+      "1 teaspoon toasted sesame seeds",
+      "Chopped scallions and cooked white rice, for serving"
+    ],
+    "directions": [
+      "Coat the insert of a 6-quart slow cooker with cooking spray and add the chicken thighs.",
+      "In a glass measuring cup, whisk together the honey, ketchup, soy sauce, oregano, pepper flakes, garlic, and ginger and pour over the chicken.",
+      "Cover and cook on low until the chicken is cooked through and tender, 5 to 6 hours.",
+      "Turn off the heat, uncover, and let rest for about 10 minutes before serving. The chicken and sauce can be served as-is or, for a thicker sauce, remove the chicken and set aside, covered, to keep warm, then turn the slow cooker to high.",
+      "Stir the cornstarch and 2 tablespoons cold water together until it resembles heavy cream. Pour the mixture into the sauce, cover, and cook until the sauce is thick and bubbling, about 30 minutes. (The mixture must come to a boil to activate the starch and thicken the sauce.)",
+      "Return the chicken back to the sauce and heat the chicken through, about 5 minutes.",
+      "Transfer the chicken and sauce to a platter, sprinkle with the sesame seeds and scallions, and serve hot with rice."
+    ],
+    "categories": [
+      "Chicken Recipes",
+      "Poultry",
+      "Chicken Thigh",
+      "Main Dish",
+      "Recipes for Parties",
+      "Super Bowl",
+      "Slow-Cooker"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Slow-Cooker Pinto Beans",
+    "description": "If you have yet to cook beans from scratch and own a slow cooker, this is the recipe for you! It comes together with pantry ingredients, requires minimal prep and thanks to the slow cooker, you’ll be rewarded with plump, perfectly tender beans with almost zero hands-on time. (Navy beans would also work well here.) Seasoned with warm spices and pickled jalapenos, they are a great side dish. Or serve them over rice or with warm tortillas as a meal.",
+    "url": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2021/05/07/0/FNK_SLOW_COOKER_PINTO_BEANS_H_f_s4x3.jpg.rend.hgtvcom.826.620.suffix/1620410836872.jpeg",
+    "ingredients": [
+      "1 pound dried pinto beans, rinsed and picked over (see Cook’s Note)",
+      "48 ounces low-sodium chicken broth (or one 32-ounce carton plus 2 cups water)",
+      "One 8-ounce jar mild or hot diced pickled jalapeños",
+      "2 tablespoons dried oregano",
+      "1 tablespoon ground cumin",
+      "3 cloves garlic",
+      "2 dried bay leaves",
+      "1/4 cup cilantro leaves plus 1/4 cup chopped cilantro stems, optional",
+      "Kosher salt",
+      "3/4 cup shredded sharp Cheddar or crumbled Cotija or queso fresco",
+      "1 lime, cut into wedges"
+    ],
+    "directions": [
+      "Put the beans, chicken broth, pickled jalapeños and brine from the jar in a 4-to-7-quart slow cooker.",
+      "Stir in the oregano, cumin, garlic, bay leaves, cilantro stems if using, and 1 teaspoon salt.",
+      "Cover and cook on high until the beans are tender but still hold their shape, 8 to 10 hours.",
+      "Remove and discard the bay leaves. Use the back of a spoon to smash the garlic cloves, then stir them into the beans.",
+      "Serve topped with the cheese, cilantro leaves, and lime wedges."
+    ],
+    "categories": [
+      "Beans and Legumes",
+      "Side Dish",
+      "Slow-Cooker",
+      "Gluten Free",
+      "High Fiber",
+      "Low-Fat"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Slow-Cooker Italian Meatballs",
+    "description": "These meatballs taste just like your nonna’s without any pre-cooking or tending to—just throw them in the slow cooker with the rest of the ingredients. The recipe makes enough meatballs and sauce to serve with two pounds of pasta. They are also delicious over polenta, stuffed into sub rolls or as a pizza topping.",
+    "url": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2021/02/25/0/FNK_Slow-Cooker-Italian-Meatballs_H1_s4x3.jpg.rend.hgtvcom.826.620.suffix/1614271884539.jpeg",
+    "ingredients": [
+      "Two 28-ounce cans whole plum tomatoes",
+      "One 6-ounce can tomato paste",
+      "3 tablespoons extra-virgin olive oil",
+      "1 teaspoon dried oregano",
+      "1/4 teaspoon crushed red pepper flakes",
+      "3 cloves garlic, crushed and peeled",
+      "2 bay leaves",
+      "Kosher salt",
+      "1 small onion, cut into chunks",
+      "1 small carrot, cut into chunks",
+      "1 celery stalk, cut into chunks",
+      "1/2 cup fresh Italian parsley leaves",
+      "2 cloves garlic, crushed and peeled",
+      "1 pound 90 percent lean ground beef",
+      "1 pound ground pork",
+      "2 large eggs",
+      "3/4 cup Italian seasoned breadcrumbs",
+      "1/2 cup grated Parmesan",
+      "Kosher salt"
+    ],
+    "directions": [
+      "Pour the tomatoes into a 4- to 6-quart slow cooker and crush by hand.",
+      "Stir in the tomato paste, olive oil, oregano, pepper flakes, garlic, bay leaves, and 2 teaspoons salt.",
+      "Place the onions, carrots, celery, parsley, and garlic in a food processor and pulse to make a paste.",
+      "Transfer to a large bowl and add the beef, pork, eggs, breadcrumbs, Parmesan, and 1 teaspoon salt.",
+      "Form into 1 1/2-inch meatballs (you should get about 20 to 24) and nestle into the sauce in the slow cooker.",
+      "Cover and cook on high for 4 to 5 hours or low for 7 to 8 hours.",
+      "Discard the bay leaves before serving."
+    ],
+    "categories": [
+      "Meatballs",
+      "Main Dish",
+      "Slow-Cooker",
+      "Recipes for a Crowd"
+    ]
   }
 ]
