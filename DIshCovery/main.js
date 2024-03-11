@@ -1,6 +1,12 @@
 let recipes = [];
 let filter = "";
+// const response = await fetch(
+//   "https://ybponio.github.io/Programming-Practice/DIshCovery/storage.json"
+// );
 
+// const response = await fetch(
+//   "http://localhost/Programming-Practice/DIshCovery/storage.json"
+// );
 async function getData() {
   try {
     const response = await fetch(

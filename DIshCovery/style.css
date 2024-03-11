@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+.example::-webkit-scrollbar {
+  display: none;
+}
+
 :root {
   --color-white: #fff;
   --color-white-opacity: #ffffff90;
@@ -41,18 +45,19 @@ body {
     border-radius: 1rem;
 
     #closeButton {
-      background: #404040c3;
+      /* background: #404040c3; */
+      font-size: 3rem;
       height: 4rem;
       width: 4rem;
       border-radius: 50%;
       position: absolute;
-      top: 1rem;
+      top: 2rem;
       right: 2rem;
       z-index: 100;
       cursor: pointer;
 
       &:hover {
-        background-color: #5f5f5f;
+        /* background-color: #5f5f5f; */
       }
     }
 
@@ -124,7 +129,7 @@ body {
   }
 
   .header {
-    position: relative;
+    position: fixed;
     background-image: url(./img/header-banner.jpg);
     display: flex;
     justify-content: center;
@@ -134,10 +139,11 @@ body {
     background-size: cover;
     min-height: 100vh;
     min-width: 100vw;
+    overflow: auto;
 
     &::after {
       content: "";
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
@@ -297,7 +303,8 @@ body {
 
   .header {
     position: relative;
-    background-image: url(/DIshCovery/img/header-banner.jpg);
+    /* background-image: url(/DIshCovery/img/header-banner.jpg); */
+    background-image: url("https://images.unsplash.com/photo-1520250868867-4428066809c3?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     display: flex;
     justify-content: center;
     align-items: center;

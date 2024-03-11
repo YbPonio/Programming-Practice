@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- <base href="http://192.168.254.104/Programming-Practice/" /> -->
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipe</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body>
     <div class="recipe-container">
       <div id="foodShowMore" class="hidden">
-        <div id="closeButton" onclick="closeBtn()"></div>
+        <div
+          id="closeButton"
+          onclick="closeBtn()"
+          class="close fa fa-close"
+        ></div>
         <div class="food-container" id="foodContainer">
           <div class="img-box"></div>
           <div class="title-text">
