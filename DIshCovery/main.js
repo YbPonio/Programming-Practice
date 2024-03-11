@@ -10,6 +10,7 @@ async function getData() {
   } catch (error) {
     console.log(error);
   }
+  console.log(recipes.length);
   renderFoods(filter);
 }
 
