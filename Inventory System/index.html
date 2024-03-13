@@ -29,22 +29,89 @@
         <p>Type</p>
         <input type="text" placeholder="Search..." />
       </div>
-      <h2 class="no-click" onclick="addItem()">
+      <h2 class="no-click" onclick="addProductModal.showModal()">
         <span class="fa fa-plus"></span>add product
       </h2>
     </section>
 
-    <dialog open id="addProductModal">
+    <dialog id="addProductModal">
       <button
         class="btn-close fa fa-close"
         onclick="addProductModal.close()"
       ></button>
-      <form method="dialog">
+      <form id="additemForm" method="dialog" onsubmit="submitItemDetails()">
         <h1>Item Details</h1>
         <div>
-          <input id="name" name="name" type="text" placeholder="Name" />
-          <label for="name">Name</label>
+          <input id="nameInput" name="name" type="text" placeholder="Name" />
         </div>
+
+        <div>
+          <input
+            id="Description"
+            name="Description"
+            type="text"
+            placeholder="Description"
+          />
+        </div>
+
+        <div>
+          <!-- <input
+            id="category"
+            name="category"
+            type="text"
+            placeholder="Category"
+          /> -->
+          <!-- <input id="type" name="type" type="text" placeholder="Type" /> -->
+
+          <select name="category" id="categoryInput">
+            <option value="" disabled selected hidden>Category</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+
+          <select name="type" id="typeInput">
+            <option value="" disabled selected hidden>Type</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+
+        <div>
+          <label id="priceLabel" for="price"
+            ><i class="fa-solid fa-dollar-sign"></i
+          ></label>
+          <input
+            id="priceInput"
+            name="price"
+            type="number"
+            placeholder="Price"
+            min="0"
+            oninput="this.value = Math.abs(this.value)"
+          />
+          <input id="date" name="date" type="date" />
+        </div>
+
+        <div>
+          <input
+            id="itemsInput"
+            name="items"
+            type="number"
+            placeholder="Items"
+            min="0"
+            oninput="this.value = Math.abs(this.value)"
+          />
+          <input
+            id="stocksInput"
+            name="stocks"
+            type="number"
+            placeholder="Stocks"
+            min="0"
+            oninput="this.value = Math.abs(this.value)"
+          />
+        </div>
+        <button class="send-btn" type="submit">Send</button>
       </form>
     </dialog>
 
@@ -61,7 +128,7 @@
         </tr>
         <!-- Table Items -->
         <tbody id="itemContainer">
-          <tr class="item">
+          <!-- <tr class="item">
             <td><p>001</p></td>
             <td><p>32435</p></td>
             <td><p>Table and Chair</p></td>
@@ -87,7 +154,7 @@
             <td><p>Product</p></td>
             <td><p>$19.00</p></td>
             <td><p>12/20</p></td>
-          </tr>
+          </tr> -->
         </tbody>
         <!-- Table Items End-->
       </table>
@@ -102,4 +169,8 @@
     <div class="items"><h1>Items</h1></div> -->
   </body>
   <script src="main.js"></script>
+  <script
+    src="https://kit.fontawesome.com/5ed1a7fdac.js"
+    crossorigin="anonymous"
+  ></script>
 </html>

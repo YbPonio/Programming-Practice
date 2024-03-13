@@ -137,7 +137,6 @@ body {
 
 #addProductModal {
   margin: auto;
-  height: 60rem;
   width: 50rem;
   border: none;
   box-shadow: 0.23rem 0.23rem 1rem 0.3rem #c0c0c0;
@@ -157,13 +156,12 @@ body {
       display: flex;
       padding: 0.5rem 0;
       position: relative;
+      gap: 1rem;
 
-      label {
-        background: #fff;
-      }
       input {
-        flex: 1 1 10rem;
+        flex: 1 1 auto;
         border: none;
+        width: 100%;
         font-size: 1.2rem;
         padding: 1rem;
         outline: none;
@@ -173,21 +171,57 @@ body {
         &:focus {
           border: 0.1rem solid #414141;
         }
+        &::placeholder {
+          color: #191919;
+        }
       }
-      label {
+      input[name="Description"] {
+        height: 10rem;
+
+        &::placeholder {
+          text-align: start;
+        }
+      }
+      input[name="price"] {
+        padding-left: 2rem;
+      }
+      #priceLabel {
         position: absolute;
-        top: 35%;
-        font-size: 1rem;
-        left: 1.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0.7rem;
+
+        i {
+          font-size: 1.5rem;
+        }
       }
-      input:focus label {
-        transform: translateY(-20%);
-        top: 0;
+
+      select {
+        flex: 1 1 auto;
+        border: none;
+        width: 100%;
+        font-size: 1.2rem;
+        padding: 1rem;
+        outline: none;
+        border: 0.1rem solid #c0c0c0;
+        border-radius: 0.5rem;
       }
     }
   }
 
-  button {
+  .send-btn {
+    border: none;
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 1rem;
+    outline: none;
+    background: #191919;
+    border: 0.1rem solid #c0c0c0;
+    color: #f1f1f1;
+    border-radius: 0.5rem;
+  }
+
+  .btn-close {
     position: absolute;
     right: 1rem;
     top: 1rem;

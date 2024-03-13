@@ -1,15 +1,6 @@
-let data = {
-  index: 4,
-  prodId: 1232,
-  name: "Mouse",
-  category: "School",
-  type: "Computer",
-  price: 8,
-  items: 134,
-  stock: 136,
-};
+let indexNum = 0;
 
-function addItem() {
+function addItem(data) {
   let newRow = document.createElement("tr");
   let prodItem = null;
 
@@ -33,6 +24,11 @@ function addItem() {
       newRow.append(cell);
     } else if (item == "items") {
       prodItem = element;
+    } else if (element == null) {
+      cell.innerHTML = `
+      <p>${element}</p>`;
+
+      newRow.append(cell);
     } else {
       cell.innerHTML = `
       <p>${item == "price" ? "$" : ""}${indexZero}${
@@ -43,4 +39,29 @@ function addItem() {
   }
   newRow.classList.add("item");
   itemContainer.append(newRow);
+}
+
+function submitItemDetails() {
+  let details = {
+    index: indexNum++,
+    prodId: generateRandomId(),
+    name: nameInput.value || null,
+    category: categoryInput.value || null,
+    type: typeInput.value || null,
+    price: parseFloat(priceInput.value) || null,
+    items: parseFloat(itemsInput.value) || null,
+    stock: parseFloat(stocksInput.value) || null,
+  };
+
+  additemForm.reset();
+  addItem(details);
+
+  console.log(details);
+}
+
+function generateRandomId() {
+  let min = 10000;
+  let max = 99999;
+  let randomId = Math.floor(Math.random() * (max - min + 1)) + min;
+  return randomId;
 }
