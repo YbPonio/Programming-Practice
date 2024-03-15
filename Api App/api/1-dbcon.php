@@ -1,24 +1,22 @@
 <?php
 
-try {
-    $conn = new PDO('mysql:
-    host=localhost;
-    dbname=fabs;
-    user=fabs;
-    password=PmGzcScNHI7_/lA@;
-    ');
+$hostname = "localhost";
+$namedb = "fabs";
+$user = "fabs";
+$pass = "PmGzcScNHI7_/lA@";
 
-    // echo "Connected Successfully", '<br>';
+try {
+    $conn = new PDO("mysql:
+    host=$hostname;
+    dbname=$namedb;
+    user=$user;
+    password=$pass;
+    ");
+
+    echo "Connected Successfully";
+    $data = $conn->query('SELECT * FROM inventory');
 } catch (PDOException $e) {
     echo $e;
-}
-
-$data = $conn->query('SELECT * FROM inventory');
-
-while ($result = $data->fetch()) {
-    // echo "$result[id] $result[name] $result[price] $result[qty] $result[category] $result[expiry_date]", '<br>';
-
-
 }
 
 ?>
@@ -31,6 +29,32 @@ while ($result = $data->fetch()) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    table {
+        border: 2px solid #191919;
+        border-collapse: collapse;
+
+        tr {
+            border: 2px solid #191919;
+        }
+
+        tr th,
+        tr td {
+            border: 2px solid #191919;
+            padding: 10px;
+            text-align: center;
+        }
+
+    }
+</style>
 
 <body>
     <table>
@@ -41,9 +65,23 @@ while ($result = $data->fetch()) {
             <th>Quantity</th>
             <th>Category</th>
             <th>Expiry Date</th>
+            <th>Status</th>
         </tr>
         <tbody id="tableData">
-
+            <?php
+            foreach ($data as $result) {
+                echo "    
+                <tr>
+                    <td>$result[id]</td>
+                    <td>$result[name]</td>
+                    <td>$result[price]</td>
+                    <td>$result[qty]</td>
+                    <td>$result[category]</td>
+                    <td>$result[expiry_date]</td>
+                    <td><button>delete</button></td>
+                </tr>";
+            }
+            ?>
         </tbody>
     </table>
 </body>
