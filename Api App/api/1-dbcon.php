@@ -65,7 +65,7 @@ try {
             <th>Quantity</th>
             <th>Category</th>
             <th>Expiry Date</th>
-            <th>Status</th>
+            <th></th>
         </tr>
         <tbody id="tableData">
             <?php
@@ -78,7 +78,7 @@ try {
                     <td>$result[qty]</td>
                     <td>$result[category]</td>
                     <td>$result[expiry_date]</td>
-                    <td><button>delete</button></td>
+                    <td><button></button></td>
                 </tr>";
             }
             ?>

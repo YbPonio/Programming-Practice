@@ -5,5 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .search-container {
+      padding-top: 5rem;
+      padding-bottom: 1rem;
+    }
+
+    input,
+    button {
+      padding: 1rem;
+    }
+
+    table {
+      border: 2px solid #191919;
+      border-collapse: collapse;
+
+      tr {
+        border: 2px solid #191919;
+      }
+      tr th {
+        width: 5rem;
+      }
+      tr th,
+      tr td {
+        border: 2px solid #191919;
+        padding: 1rem 1rem;
+        text-align: center;
+      }
+      td button {
+        padding: 0.5rem;
+        border: none;
+        border-radius: 0.5rem;
+        background: #dc143c;
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+  </style>
+
+  <body>
+    <form method="dialog" class="search-container">
+      <input id="searchInput" type="text" placeholder="Enter here..." />
+      <button onclick="search()">Search</button>
+    </form>
+    <div id="container">
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Category</th>
+          <th>Expiry Date</th>
+          <!-- <th>Action</th> -->
+        </tr>
+        <tbody id="tableData"></tbody>
+      </table>
+    </div>
+  </body>
+
+  <!-- <script src="main.js"></script> -->
+  <script>
+    let data = null;
+    async function search() {
+      let searchStr = searchInput.value;
+
+      let response = await fetch(
+        `http://localhost/Programming-Practice/Api%20App/api/2.2-where.php?search=${searchStr}`
+      );
+      data = await response.json();
+
+      render();
+    }
+
+    function render() {
+      tableData.innerHTML = "";
+      if (data.length > 0) {
+        for (item of data) {
+          tableData.innerHTML += `
+        <tr>
+          <td>${item.id}</td>
+          <td>${item.name}</td>
+          <td>${item.price}</td>
+          <td>${item.qty}</td>
+          <td>${item.category}</td>
+          <td>${item.expiry_date}</td>
+          </tr>
+          `;
+          // <td><button>Delete</button></td>
+        }
+      } else {
+        tableData.innerHTML = ``;
+      }
+    }
+    search();
+
+    function softDelete() {
+      "UPDATE `inventory` SET `status` = '0' WHERE `inventory`.`id` = 1;";
+    }
+  </script>
 </html>
