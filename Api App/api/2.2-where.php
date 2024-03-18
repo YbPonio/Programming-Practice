@@ -30,7 +30,7 @@ $query = $conn->query(
             `price` = '$search' OR 
             `qty` = '$search' OR 
             `expiry_date` LIKE '%$search%') AND 
-            `status` = 0  
+            `status` = 0
     ORDER BY `id` ASC"
 );
 $result = $query->fetchAll(PDO::FETCH_ASSOC);

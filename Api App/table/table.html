@@ -41,14 +41,16 @@
 
     <section class="inventory-container">
       <table id="inventoryContainer">
-        <tr class="table-header">
-          <th><h1>#</h1></th>
-          <th><h1>Name</h1></th>
-          <th><h1>Price</h1></th>
-          <th><h1>Quantity</h1></th>
-          <th><h1>Category</h1></th>
-          <th><h1>Expiry Date</h1></th>
-        </tr>
+        <thead>
+          <tr class="table-header">
+            <th><h1>#</h1></th>
+            <th><h1>Name</h1></th>
+            <th><h1>Price</h1></th>
+            <th><h1>Quantity</h1></th>
+            <th><h1>Category</h1></th>
+            <th><h1>Expiry Date</h1></th>
+          </tr>
+        </thead>
         <!-- Table Items -->
         <tbody id="itemContainer"></tbody>
         <!-- Table Items End-->
@@ -88,10 +90,10 @@
           <td>${item.expiry_date}</td>
           </tr>
           `;
-          // <td><button>Delete</button></td>
         }
       } else {
-        itemContainer.innerHTML = ``;
+        itemContainer.innerHTML = `
+        `;
       }
     }
     search();

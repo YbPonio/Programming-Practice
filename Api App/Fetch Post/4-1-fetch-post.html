@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FETCH</title>
+  </head>
+  <body>
+    <form onsubmit="login()" method="dialog">
+      <input
+        id="inputName"
+        type="text"
+        placeholder="Enter your username:"
+        required
+        value="user"
+      />
+      <input
+        id="inputPassword"
+        type="password"
+        placeholder="Enter your password:"
+        required
+        value="user"
+      />
+      <input type="submit" />
+    </form>
+  </body>
+
+  <script>
+    async function login() {
+      let payload = {
+        username: inputName.value,
+        password: inputPassword.value,
+      };
+
+      console.log(payload);
+
+      let options = {
+        method: "post",
+        body: JSON.stringify(payload),
+      };
+
+      let url =
+        "http://localhost/Programming-Practice/Api%20App/api/4-1-fetch-post.php";
+
+      let response = await fetch(url, options);
+      response = await response.json();
+
+      console.log(response);
+
+      if (response == 1) {
+        alert("Welcome!");
+      } else {
+        alert("Invalid Login");
+      }
+    }
+  </script>
+</html>
