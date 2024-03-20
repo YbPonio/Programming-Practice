@@ -1,22 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Practice</title>
-</head>
-<body>
-    
-</body>
-<script>
+  </head>
+  <body></body>
+  <script>
     let numbers = [12, 23, 45, 25, 44, 34, 64, 123, 6];
     let filteredNumbers = numbers.filter((number) => {
-        if(number <= 50){
-            return true;
-        }
-    })
+      if (number <= 50) {
+        return true;
+      }
+    });
+
+    function customFilter(array, condition) {
+      let filteredArray = array.filter((element) => {
+        return condition(element);
+      });
+      return filteredArray;
+    }
+
+    let customFilteredNumbers = customFilter(numbers, (number) => {
+      return number % 2 === 0;
+    });
+
+    numbers.sort((a, b) => a - b);
+    filteredNumbers.sort((a, b) => a - b);
+    customFilteredNumbers.sort((a, b) => a - b);
+
     console.log("Numbers: ", numbers);
-    console.log("Filtered: ", filteredNumbers);
- 
-</script>
+    console.log("Less than 50: ", filteredNumbers);
+    console.log("Custom Filtered: ", customFilteredNumbers);
+  </script>
 </html>
