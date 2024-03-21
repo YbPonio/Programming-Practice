@@ -9,6 +9,7 @@
 body {
   background: #f1f1f1;
   color: #191919;
+  position: relative;
 }
 
 .nav-container {
@@ -135,7 +136,22 @@ body {
       position: relative;
     }
     .item:hover {
-      transform: scale(1.05);
+      transform: scale(1.01);
+    }
+
+    td .deleteBtn {
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      border: 0.1rem solid #dc143c;
+      background: #dc143c;
+      color: #f1f1f1;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.9;
+      }
     }
   }
 }
@@ -159,6 +175,14 @@ body {
 
     h1 {
       width: 100%;
+    }
+    .expiryDate {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-size: 1.2rem;
+      }
     }
 
     div {
@@ -255,3 +279,13 @@ body {
     position: absolute;
   }
 }
+
+/* dialog {
+  margin: auto;
+  position: absolute;
+  top: 50%;
+
+  form {
+    width: ;
+  }
+} */

@@ -34,9 +34,9 @@
           onkeyup="search()"
         />
       </div>
-      <!-- <h2 class="no-click" onclick="addProductModal.showModal()">
+      <h2 class="no-click" onclick="addProductModal.showModal()">
         <span class="fa fa-plus"></span>add product
-      </h2> -->
+      </h2>
     </section>
 
     <section class="inventory-container">
@@ -49,6 +49,7 @@
             <th><h1>Quantity</h1></th>
             <th><h1>Category</h1></th>
             <th><h1>Expiry Date</h1></th>
+            <th><h1>Action</h1></th>
           </tr>
         </thead>
         <!-- Table Items -->
@@ -56,6 +57,55 @@
         <!-- Table Items End-->
       </table>
     </section>
+
+    <dialog id="addProductModal">
+      <button
+        class="btn-close fa fa-close"
+        onclick="addProductModal.close()"
+      ></button>
+      <form id="additemForm" onsubmit="createNew()" method="dialog">
+        <h1>Item Details</h1>
+        <div>
+          <input
+            type="text"
+            id="nameItem"
+            name="nameItem"
+            placeholder="Name"
+            required
+          />
+          <input
+            type="number"
+            id="priceItem"
+            name="priceItem"
+            placeholder="Price"
+            required
+          />
+        </div>
+
+        <div>
+          <input
+            type="number"
+            id="quantityItem"
+            name="quantityItem"
+            placeholder="Quantity"
+            required
+          />
+          <input
+            type="text"
+            id="categoryItem"
+            name="categoryItem"
+            placeholder="Category"
+            required
+          />
+        </div>
+
+        <div class="expiryDate">
+          <label for="expiryDateItem">Expiry Date</label>
+          <input type="date" id="expiryDateItem" name="expiryDate" required />
+        </div>
+        <button class="send-btn" type="submit">Send</button>
+      </form>
+    </dialog>
   </body>
   <!-- <script src="main.js"></script> -->
   <script
@@ -88,13 +138,65 @@
           <td>${item.qty}</td>
           <td>${item.category}</td>
           <td>${item.expiry_date}</td>
+          <td><button class="deleteBtn" onclick="deleteRow(${item.id})">Delete</button></td>
           </tr>
           `;
         }
       } else {
         itemContainer.innerHTML = `
+        <tr class="item">
+          <td colspan="7">No Data Found</td>
+        </tr>
         `;
       }
+    }
+
+    async function deleteRow(ItemIDSelected) {
+      let payload = {
+        id: ItemIDSelected,
+      };
+
+      let options = {
+        method: "post",
+        body: JSON.stringify(payload),
+      };
+
+      let url = `http://localhost/Programming-Practice/Api%20App/api/5-1-delete.php`;
+
+      let response = await fetch(url, options);
+      response = await response.text();
+
+      console.log(response);
+      if (response.ok) {
+        search();
+      } else {
+        console.log("Failed to delete row");
+      }
+      search();
+    }
+
+    async function createNew() {
+      let payload = {
+        name: nameItem.value,
+        price: priceItem.value,
+        quantity: quantityItem.value,
+        category: categoryItem.value,
+        expiryDate: expiryDateItem.value,
+      };
+
+      let options = {
+        method: "post",
+        body: JSON.stringify(payload),
+      };
+
+      let url =
+        "http://localhost/Programming-Practice/Api%20App/api/5-2-create-new.php";
+
+      let response = await fetch(url, options);
+      response = await response.json();
+
+      console.log(response);
+      search();
     }
     search();
   </script>

@@ -35,8 +35,5 @@ if ($operator == "+") {
         <input name="operator" type="submit" value="*">
     </form>
 </body>
-<script>
-    function calculator() {}
-</script>
 
 </html>
