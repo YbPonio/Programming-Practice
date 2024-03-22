@@ -131,15 +131,61 @@
       if (data.length > 0) {
         for (item of data) {
           itemContainer.innerHTML += `
-        <tr class="item">
+        <tr class="item" onclick="displayDescription(${item.id})">
           <td>${item.id}</td>
           <td>${item.name}</td>
           <td>${item.price}</td>
           <td>${item.qty}</td>
           <td>${item.category}</td>
           <td>${item.expiry_date}</td>
-          <td><button class="deleteBtn" onclick="deleteRow(${item.id})">Delete</button></td>
-          </tr>
+          <td><button class="deleteBtn" onclick="deleteRow(${item.id}, event)">Delete</button></td>
+
+        </tr>
+        <tr class="item-description${item.id} hide">
+          <td colspan="7">
+            <form id="updateItem" onsubmit="updateData(${item.id})" method="dialog">
+              <h1>Item Details</h1>
+              <div>
+                <input
+                  type="text"
+                  id="nameItem${item.id}"
+                  name="nameItem"
+                  placeholder="Name"
+                  value="${item.name}"
+                />
+                <input
+                  type="number"
+                  id="priceItem${item.id}"
+                  name="priceItem"
+                  placeholder="Price"
+                  value="${item.price}"
+                />
+
+                <input
+                  type="number"
+                  id="quantityItem${item.id}"
+                  name="quantityItem"
+                  placeholder="Quantity"
+                  value="${item.qty}"
+                />
+              </div>
+
+              <div>
+                <input
+                  type="text"
+                  id="categoryItem${item.id}"
+                  name="categoryItem"
+                  placeholder="Category"
+                  value="${item.category}"
+                />
+
+                <input type="date" id="expiryDateItem${item.id}" name="expiryDate" value="${item.expiry_date}" />
+              </div>
+
+              <button class="send-btn" type="submit">Send</button>
+            </form>
+          </td>
+        </tr>
           `;
         }
       } else {
@@ -151,7 +197,16 @@
       }
     }
 
-    async function deleteRow(ItemIDSelected) {
+    function displayDescription(itemID) {
+      let itemDescription = document.querySelector(
+        ".item-description" + itemID
+      );
+
+      itemDescription.classList.toggle("hide");
+    }
+
+    async function deleteRow(ItemIDSelected, event) {
+      event.stopPropagation();
       let payload = {
         id: ItemIDSelected,
       };
@@ -166,12 +221,6 @@
       let response = await fetch(url, options);
       response = await response.text();
 
-      console.log(response);
-      if (response.ok) {
-        search();
-      } else {
-        console.log("Failed to delete row");
-      }
       search();
     }
 
@@ -198,6 +247,30 @@
       console.log(response);
       search();
     }
+
+    async function updateData(itemID) {
+      let payload = {
+        name: document.getElementById("nameItem" + itemID).value,
+        price: document.getElementById("priceItem" + itemID).value,
+        quantity: document.getElementById("quantityItem" + itemID).value,
+        category: document.getElementById("categoryItem" + itemID).value,
+        expiryDate: document.getElementById("expiryDateItem" + itemID).value,
+        id: itemID,
+      };
+
+      let options = {
+        method: "post",
+        body: JSON.stringify(payload),
+      };
+
+      let response = await fetch(
+        "http://localhost/Programming-Practice/Api%20App/api/5-3-update.php",
+        options
+      );
+
+      search();
+    }
+
     search();
   </script>
 </html>

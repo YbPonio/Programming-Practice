@@ -148,6 +148,7 @@ body {
       font-size: 0.8rem;
       font-weight: 600;
       cursor: pointer;
+      z-index: 100;
 
       &:hover {
         opacity: 0.9;
@@ -280,12 +281,44 @@ body {
   }
 }
 
-/* dialog {
-  margin: auto;
-  position: absolute;
-  top: 50%;
+.hide {
+  display: none;
+  transition: display 0.5s ease-in;
+}
 
-  form {
-    width: ;
+#updateItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  width: 100%;
+
+  div {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
   }
-} */
+
+  input {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  button {
+    max-width: 10rem;
+    padding: 1rem 3rem;
+    word-wrap: break-word;
+
+    border: none;
+    width: 100%;
+    font-size: 1.2rem;
+    outline: none;
+    background: #191919;
+    border: 0.1rem solid #c0c0c0;
+    color: #f1f1f1;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+}

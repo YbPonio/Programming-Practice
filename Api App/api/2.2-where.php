@@ -29,14 +29,12 @@ $query = $conn->query(
             `category` LIKE '%$search%' OR 
             `price` = '$search' OR 
             `qty` = '$search' OR 
-            `expiry_date` LIKE '%$search%') AND 
-            `status` = 0
+            `expiry_date` LIKE '%$search%')
     ORDER BY `id` ASC"
 );
 $result = $query->fetchAll(PDO::FETCH_ASSOC);
 
+echo json_encode($result);
 // print_r($result = $query->fetchAll(PDO::FETCH_));
 // echo "<pre>";
 // print_r($result);
-
-echo json_encode($result);

@@ -29,8 +29,8 @@ $quantity = $post->quantity ?? null;
 $category = $post->category ?? null;
 $expiryDate = $post->expiryDate ?? null;
 
-echo $name, $price, $quantity, $category, $expiryDate;
+// echo $name, $price, $quantity, $category, $expiryDate;
 
-if ($name && $price && $quantity && $category && $expiryDate) {
-    $query = $conn->query("INSERT INTO `inventory`(`id`, `name`, `price`, `qty`, `category`, `expiry_date`, `status`) VALUES ('null','$name','$price','$quantity','$category','$expiryDate','0')");
-}
+$query = $conn->query("INSERT INTO `inventory`(`id`, `name`, `price`, `qty`, `category`, `expiry_date`) VALUES ('null','$name','$price','$quantity','$category','$expiryDate')");
+
+echo json_encode($query);
