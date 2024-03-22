@@ -16,8 +16,7 @@
       <div class="nav-menu">
         <ul>
           <li><a href="#">Home</a></li>
-          <!-- <li><a href="#">another</a></li>
-          <li><a href="#">another</a></li> -->
+          <li><a href="./archive.html">Archive</a></li>
         </ul>
       </div>
     </section>
@@ -138,7 +137,7 @@
           <td>${item.qty}</td>
           <td>${item.category}</td>
           <td>${item.expiry_date}</td>
-          <td><button class="deleteBtn" onclick="deleteRow(${item.id}, event)">Delete</button></td>
+          <td><button class="deleteBtn" onclick="softDelte(${item.id}, event)">Delete</button></td>
 
         </tr>
         <tr class="item-description${item.id} item-display hide">
@@ -212,25 +211,6 @@
       itemDescription.classList.toggle("hide");
     }
 
-    async function deleteRow(ItemIDSelected, event) {
-      event.stopPropagation();
-      let payload = {
-        id: ItemIDSelected,
-      };
-
-      let options = {
-        method: "post",
-        body: JSON.stringify(payload),
-      };
-
-      let url = `http://localhost/Programming-Practice/Api%20App/api/5-1-delete.php`;
-
-      let response = await fetch(url, options);
-      response = await response.text();
-
-      search();
-    }
-
     async function createNew() {
       let payload = {
         name: nameItem.value,
@@ -251,7 +231,6 @@
       let response = await fetch(url, options);
       response = await response.json();
 
-      console.log(response);
       search();
     }
 
@@ -275,6 +254,25 @@
         options
       );
 
+      search();
+    }
+
+    async function softDelte(itemID, event) {
+      event.stopPropagation();
+
+      let payload = {
+        id: itemID,
+      };
+
+      let options = {
+        method: "post",
+        body: JSON.stringify(payload),
+      };
+
+      let response = await fetch(
+        "http://localhost/programming-Practice/Api%20App/api/5-4-soft-delete.php",
+        options
+      );
       search();
     }
 

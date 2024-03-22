@@ -6,6 +6,7 @@ $dbname = "fabs";
 $user = "fabs";
 $pass = "PmGzcScNHI7_/lA@";
 $search = $_GET['search'] ?? null;
+$status = $_GET['status'] ?? 0;
 
 try {
     $dsn =
@@ -29,7 +30,8 @@ $query = $conn->query(
             `category` LIKE '%$search%' OR 
             `price` = '$search' OR 
             `qty` = '$search' OR 
-            `expiry_date` LIKE '%$search%')
+            `expiry_date` LIKE '%$search%') AND
+            `status` = $status
     ORDER BY `id` ASC"
 );
 $result = $query->fetchAll(PDO::FETCH_ASSOC);

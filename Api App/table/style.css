@@ -119,6 +119,12 @@ body {
       th {
         padding: 0.2rem 0;
       }
+
+      .action-button {
+        button {
+          margin: 0 0.5rem;
+        }
+      }
     }
 
     tr th,
