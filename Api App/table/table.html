@@ -141,7 +141,7 @@
           <td><button class="deleteBtn" onclick="deleteRow(${item.id}, event)">Delete</button></td>
 
         </tr>
-        <tr class="item-description${item.id} hide">
+        <tr class="item-description${item.id} item-display hide">
           <td colspan="7">
             <form id="updateItem" onsubmit="updateData(${item.id})" method="dialog">
               <h1>Item Details</h1>
@@ -201,6 +201,13 @@
       let itemDescription = document.querySelector(
         ".item-description" + itemID
       );
+
+      let itemDisplay = document.querySelectorAll(".item-display");
+      itemDisplay.forEach(function (element) {
+        if (element != itemDescription) {
+          element.classList.add("hide");
+        }
+      });
 
       itemDescription.classList.toggle("hide");
     }
