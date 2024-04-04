@@ -328,3 +328,15 @@ body {
     cursor: pointer;
   }
 }
+
+.restoreBtn {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background: #40826d;
+  border: none;
+  color: #f1f1f1;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 0.1rem solid #40826d;
+}

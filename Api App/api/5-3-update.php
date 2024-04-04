@@ -23,12 +23,12 @@ try {
 $post = file_get_contents("php://input");
 $post = json_decode($post);
 
-$name = $post->name ?? null;
-$price = $post->price ?? null;
-$quantity = $post->quantity ?? null;
-$category = $post->category ?? null;
-$expiryDate = $post->expiryDate ?? null;
+$name = $post->name;
+$price = $post->price;
+$qty = $post->quantity;
+$category = $post->category;
+$expiry_date = $post->expiryDate;
+$item_id = $post->id;
 
-$query = $conn->query("INSERT INTO `inventory`(`id`, `name`, `price`, `qty`, `category`, `expiry_date`) VALUES ('null','$name','$price','$quantity','$category','$expiryDate')");
 
-echo json_encode($query);
+$query = $conn->query("UPDATE `inventory` SET `name` = '$name', `price` = '$price', `qty` = '$qty', `category` = '$category', `expiry_date` = '$expiry_date' WHERE `inventory`.`id` = $item_id;");

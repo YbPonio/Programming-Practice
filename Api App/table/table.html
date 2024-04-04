@@ -118,7 +118,7 @@
       let searchStr = searchInput.value;
 
       let response = await fetch(
-        `http://localhost/Programming-Practice/Api%20App/api/2.2-where.php?search=${searchStr}`
+        `http://localhost/Programming-Practice/Api%20App/api/6-CRUD.php?search=${searchStr}`
       );
       data = await response.json();
 
@@ -226,12 +226,13 @@
       };
 
       let url =
-        "http://localhost/Programming-Practice/Api%20App/api/5-2-create-new.php";
+        "http://localhost/Programming-Practice/Api%20App/api/6-CRUD.php?action=createNew";
 
       let response = await fetch(url, options);
       response = await response.json();
 
       search();
+      additemForm.reset();
     }
 
     async function updateData(itemID) {
@@ -250,7 +251,7 @@
       };
 
       let response = await fetch(
-        "http://localhost/Programming-Practice/Api%20App/api/5-3-update.php",
+        "http://localhost/Programming-Practice/Api%20App/api/6-CRUD.php?action=updateData",
         options
       );
 
@@ -270,7 +271,7 @@
       };
 
       let response = await fetch(
-        "http://localhost/programming-Practice/Api%20App/api/5-4-soft-delete.php",
+        "http://localhost/Programming-Practice/Api%20App/api/6-CRUD.php?action=softDelete",
         options
       );
       search();

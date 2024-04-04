@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Archive</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="nav-container">
+      <img src="./img/white.png" alt="logo" />
+      <div class="nav-menu">
+        <ul>
+          <li><a href="./table.html">Home</a></li>
+          <li><a href="./archive.html">Archive</a></li>
+        </ul>
+      </div>
+    </section>
+    <div class="header-archive">ARCHIVE</div>
+
+    <section class="inventory-container">
+      <table id="inventoryContainer">
+        <thead>
+          <tr class="table-header">
+            <th><h1>#</h1></th>
+            <th><h1>Name</h1></th>
+            <th><h1>Price</h1></th>
+            <th><h1>Quantity</h1></th>
+            <th><h1>Category</h1></th>
+            <th><h1>Expiry Date</h1></th>
+            <th><h1>Action</h1></th>
+          </tr>
+        </thead>
+        <!-- Table Items -->
+        <tbody id="itemContainer"></tbody>
+        <!-- Table Items End-->
+      </table>
+    </section>
+  </body>
+
+  <script>
+    let data = null;
+    async function search() {
+      let status = 1;
+
+      let response = await fetch(
+        `http://localhost/Programming-Practice/Api%20App/api/2.2-where.php?status=${status}`
+      );
+      data = await response.json();
+
+      render();
+    }
+
+    function render() {
+      itemContainer.innerHTML = "";
+      if (data.length > 0) {
+        for (item of data) {
+          itemContainer.innerHTML += `
+        <tr class="item" onclick="displayDescription(${item.id})">
+          <td>${item.id}</td>
+          <td>${item.name}</td>
+          <td>${item.price}</td>
+          <td>${item.qty}</td>
+          <td>${item.category}</td>
+          <td>${item.expiry_date}</td>
+          <td class="action-button"><button class="restoreBtn" onclick="restoreRow(${item.id}, event)">Restore</button><button class="deleteBtn" onclick="deleteRow(${item.id}, event)">Delete</button></td>
+        </tr>
+          `;
+        }
+      } else {
+        itemContainer.innerHTML = `
+        <tr class="item">
+          <td colspan="7">No Data Found</td>
+        </tr>
+        `;
+      }
+    }
+
+    async function deleteRow(ItemIDSelected, event) {
+      event.stopPropagation();
+
+      let payload = {
+        id: ItemIDSelected,
+      };
+
+      let options = {
+        method: "post",
+        body: JSON.stringify(payload),
+      };
+
+      let url = `http://localhost/Programming-Practice/Api%20App/api/6-CRUD.php?action=deleteRow`;
+
+      let response = await fetch(url, options);
+      response = await response.text();
+
+      search();
+    }
+
+    async function restoreRow(ItemIDSelected, event) {
+      event.stopPropagation();
+
+      let payload = {
+        id: ItemIDSelected,
+      };
+      let options = {
+        method: "post",
+        body: JSON.stringify(payload),
+      };
+
+      let url = `http://localhost/Programming-Practice/Api%20App/api/6-CRUD.php?action=restoreRow`;
+
+      let response = await fetch(url, options);
+      response = await response.json();
+
+      search();
+    }
+
+    search();
+  </script>
+</html>
