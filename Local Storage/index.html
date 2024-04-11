@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="main.js"></script>
+  </head>
+
+  <style>
+    body {
+      display: grid;
+      place-items: center;
+      height: 100vh;
+    }
+    main {
+      input {
+        padding: 10px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+      h2 {
+        color: #000;
+        font-size: 20px;
+        width: 100%;
+        text-wrap: wrap;
+      }
+    }
+  </style>
+
+  <body>
+    <main>
+      <input id="input" type="text" onkeyup="setItemData()" />
+      <h2 id="h2"></h2>
+    </main>
+  </body>
+</html>
