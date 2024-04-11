@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD APP</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main-nav">
+      <h1 class="logo">CRUD APP</h1>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Archive</a></li>
+      </ul>
+    </div>
+
+    <div class="search">
+      <h2>PERSONAL INFO</h2>
+      <input type="text" placeholder="Search..." />
+      <button onclick="addNewData()">Add New</button>
+    </div>
+
+    <div class="table-content">
+      <table>
+        <tr class="table-header">
+          <th>ID</th>
+          <th>NAME</th>
+          <th>OCCUPATION</th>
+          <th>DATE OF BIRTH</th>
+          <th>ADDRESS</th>
+          <th>GENDER</th>
+          <th>EMAIL</th>
+          <th>PHONE</th>
+          <th>ACTION</th>
+        </tr>
+
+        <tbody id="personalDataTable">
+          <tr>
+            <td>1</td>
+            <td>John Doe</td>
+            <td>Software Engineer</td>
+            <td>01/01/1990</td>
+            <td>123 Main St, New York, NY 10001</td>
+            <td>Male</td>
+            <td>askdbsad</td>
+            <td>29323</td>
+            <td>
+              <button class="Btn">edit</button
+              ><button class="Btn">delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+
+  <dialog id="formDialog">
+    <form id="personalForm" method="dialog" onsubmit="submitForm()">
+      <h2>Personal Data Form</h2>
+
+      <input id="idInput" type="hidden" />
+
+      <label>Name</label>
+      <div>
+        <input id="firstNameInput" type="text" placeholder="First" />
+        <input id="lastNameInput" type="text" placeholder="Last" />
+      </div>
+
+      <label>Occupation</label>
+      <div>
+        <input id="occupationInput" type="text" placeholder="Occupation" />
+      </div>
+
+      <label>Date of Birth</label>
+      <div>
+        <input id="dateInput" type="date" />
+      </div>
+
+      <label>Address</label>
+      <input id="streetInput" type="text" placeholder="Street Address" />
+      <div>
+        <input id="cityInput" type="text" placeholder="City" />
+        <input id="regionInput" type="text" placeholder="Region" />
+      </div>
+      <div>
+        <input id="zipCodeInput" type="text" placeholder="Zip Code" />
+        <input id="countryInput" type="text" placeholder="Country" />
+      </div>
+
+      <label>Gender</label>
+      <div class="flex-label">
+        <input id="maleGender" type="radio" name="myGender" value="Male" />
+        <label for="maleGender">Male</label>
+      </div>
+      <div class="flex-label">
+        <input id="femaleGender" type="radio" name="myGender" value="Female" />
+        <label for="femaleGender">Female</label>
+      </div>
+
+      <label>Email</label>
+      <input id="emailInput" type="email" />
+
+      <label>Phone</label>
+      <input id="phoneInput" type="number" />
+
+      <input class="sendBtn" type="submit" value="Send" />
+    </form>
+    <button class="closeBtn" onclick="formDialog.close()">
+      <img src="./img/close icon.png" alt="close" />
+    </button>
+  </dialog>
+
+  <script src="main.js"></script>
+</html>
