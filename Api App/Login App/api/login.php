@@ -1,4 +1,6 @@
 <?php
+header("Content-Type: application/json");
+
 require("./db.php");
 
 $action = $_GET['action'] ?? null;
@@ -28,10 +30,10 @@ function login()
 
     if ($result) {
         http_response_code(200);
-        echo $result['token'];
+        echo json_encode($result['token']);
     } else {
         http_response_code(400);
-        echo "Invalid username or password";
+        echo json_encode("Invalid username or password");
     }
 }
 
@@ -49,6 +51,7 @@ function check()
 
     if ($result) {
         http_response_code(200);
+        echo "Welcome " . $result['name'];
     } else {
         http_response_code(400);
     }

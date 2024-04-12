@@ -11,12 +11,19 @@
     />
   </head>
   <body>
+    <div id="preloader">
+      <div>
+        <img src="./img/preloader.svg" alt="" />
+      </div>
+    </div>
+
     <section class="nav-container">
       <img src="./img/white.png" alt="logo" />
       <div class="nav-menu">
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="./archive.html">Archive</a></li>
+          <li><a href="#" onclick="logOut()">Log Out</a></li>
         </ul>
       </div>
     </section>
@@ -277,6 +284,41 @@
       search();
     }
 
+    async function login() {
+      let token = localStorage.getItem("signUpToken");
+
+      let options = {
+        method: "post",
+        body: JSON.stringify({ token }),
+      };
+
+      let loginUrl =
+        "http://localhost/Programming-Practice/Api%20App/Login%20App/api/login.php?action=";
+      let response = await fetch(loginUrl + "check", options);
+      let userName = await response.text();
+
+      if (response.ok) {
+        console.log("Login Successful");
+        console.log(userName);
+      } else {
+        console.log("Log Out");
+        location.href = "../Login%20App/index.html";
+      }
+    }
+
+    function logOut() {
+      localStorage.removeItem("signUpToken");
+      window.history.back();
+      login();
+    }
+
+    window.onload = () => {
+      setTimeout(() => {
+        preloader.style.display = "none";
+      }, 1500);
+    };
+
     search();
+    login();
   </script>
 </html>
