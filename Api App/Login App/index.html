@@ -14,7 +14,7 @@
     <script src="main.js"></script>
   </head>
   <body>
-    <main>
+    <main id="mainContainer">
       <div class="form-control">
         <h2>LOGIN</h2>
         <form onsubmit="doSubmit()" method="dialog">
@@ -41,5 +41,10 @@
         </form>
       </div>
     </main>
+
+    <div id="displayUser" class="hidden">
+      <h1 id="displayName"></h1>
+      <button class="btn-submit" onclick="logOut()">Log Out</button>
+    </div>
   </body>
 </html>

@@ -13,19 +13,19 @@ async function doSubmit() {
   };
 
   let response = await fetch(url + "login", options);
-  let data = await response.json();
 
   if (response.ok) {
-    localStorage.setItem("signUpToken", data);
-    signUp();
+    let data = await response.json();
+    localStorage.setItem("Token", data);
+    checkToken();
   } else {
     console.error("Error: " + data);
   }
 }
 
-async function signUp() {
+async function checkToken() {
   // localStorage.removeItem("signUpToken");
-  let token = localStorage.getItem("signUpToken");
+  let token = localStorage.getItem("Token");
 
   let options = {
     method: "post",
@@ -35,12 +35,24 @@ async function signUp() {
   let response = await fetch(url + "check", options);
 
   if (response.ok) {
-    location.href = "../table/table.html";
+    let data = await response.text();
+    // location.href = "../table/table.html";
     console.log("Sign Up Successful");
+    displayName.textContent = "Welcome " + data;
+    displayUser.classList.remove("hidden");
+    mainContainer.classList.add("hidden");
   } else {
     console.log("Sign Up Failed");
+    displayUser.classList.add("hidden");
+    mainContainer.classList.remove("hidden");
   }
 }
+
+function logOut() {
+  localStorage.removeItem("Token");
+  checkToken();
+}
+checkToken();
 
 function eyeClick() {
   if (inputPass.type == "password") {

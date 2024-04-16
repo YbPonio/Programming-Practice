@@ -1,0 +1,23 @@
+function generateRandomHash() {
+  return (
+    Math.random().toString(36).substring(2, 15) +
+    Math.random().toString(36).substring(2, 15) +
+    Math.random().toString(36).substring(2, 15)
+  );
+}
+
+function eyeBtn() {
+  if (password.type == "password") {
+    password.type = "text";
+    eyeBtnClk.className = "fa fa-eye-slash";
+  } else {
+    password.type = "password";
+    eyeBtnClk.className = "fa fa-eye";
+  }
+}
+
+function clickedBtn(event) {
+  // let haha = (event.target.attributes.true.name = false);
+  console.log((event.target.attributes.true = false));
+  console.log(event.target.attributes);
+}

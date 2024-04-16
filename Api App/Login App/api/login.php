@@ -51,7 +51,7 @@ function check()
 
     if ($result) {
         http_response_code(200);
-        echo "Welcome " . $result['name'];
+        echo $result['name'];
     } else {
         http_response_code(400);
     }

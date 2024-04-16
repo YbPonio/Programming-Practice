@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="form-register">
+        <button class="backBtn" onclick="clickedBtn(event)">
+          <span class="fa fa-arrow-left"></span> Back
+        </button>
+        <form method="dialog">
+          <h1>Register</h1>
+
+          <label for="inputName">Name</label>
+          <div>
+            <input
+              id="inputName"
+              type="text"
+              placeholder="Enter your Username"
+            />
+          </div>
+
+          <label for="inputUsername">Username</label>
+          <div>
+            <input
+              id="inputUsername"
+              type="text"
+              placeholder="Enter your Username"
+            />
+          </div>
+
+          <label for="inputPass">Password</label>
+          <div>
+            <input
+              id="inputPass"
+              type="password"
+              placeholder="Enter your Password"
+            />
+            <i onclick="eyeBtn()" id="eyeBtnClk" class="fa fa-eye"></i>
+          </div>
+
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+
+      <div class="image">
+        <img src="../img/background1.avif" alt="image1" />
+      </div>
+
+      <div class="hidden">
+        <form method="dialog">
+          <h1>Login</h1>
+
+          <label for="username">Username</label>
+          <div>
+            <input
+              id="username"
+              type="text"
+              placeholder="Enter your Username"
+            />
+          </div>
+
+          <label for="password">Password</label>
+          <div>
+            <input
+              id="password"
+              type="password"
+              placeholder="Enter your Password"
+            />
+            <i onclick="eyeBtn()" id="eyeBtnClk" class="fa fa-eye"></i>
+          </div>
+
+          <button type="submit">Login</button>
+          <p>Don't have an account? <a href="">Register</a></p>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
