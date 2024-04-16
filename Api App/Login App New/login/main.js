@@ -16,8 +16,15 @@ function eyeBtn() {
   }
 }
 
-function clickedBtn(event) {
-  // let haha = (event.target.attributes.true.name = false);
-  console.log((event.target.attributes.true = false));
-  console.log(event.target.attributes);
+function clickedBtn(action) {
+  let formRegister = document.querySelector(".form-register");
+  let formLogin = document.querySelector(".form-control");
+
+  if (action == "back") {
+    formRegister.classList.add("hidden");
+    formLogin.classList.remove("hidden");
+  } else {
+    formRegister.classList.remove("hidden");
+    formLogin.classList.add("hidden");
+  }
 }

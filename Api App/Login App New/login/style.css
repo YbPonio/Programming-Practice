@@ -99,6 +99,8 @@ body {
           text-decoration: none;
           color: #28282b;
           font-weight: 600;
+
+          cursor: pointer;
         }
       }
 
@@ -143,5 +145,5 @@ img {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }

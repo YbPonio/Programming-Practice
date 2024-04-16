@@ -6,7 +6,6 @@
     <title>Login</title>
 
     <link rel="stylesheet" href="style.css" />
-    <script src="main.js"></script>
 
     <link
       rel="stylesheet"
@@ -16,8 +15,8 @@
 
   <body>
     <div class="container">
-      <div class="form-register">
-        <button class="backBtn" onclick="clickedBtn(event)">
+      <div class="form-register hidden">
+        <button class="backBtn" onclick="clickedBtn('back')">
           <span class="fa fa-arrow-left"></span> Back
         </button>
         <form method="dialog">
@@ -59,7 +58,7 @@
         <img src="../img/background1.avif" alt="image1" />
       </div>
 
-      <div class="hidden">
+      <div class="form-control">
         <form method="dialog">
           <h1>Login</h1>
 
@@ -83,9 +82,13 @@
           </div>
 
           <button type="submit">Login</button>
-          <p>Don't have an account? <a href="">Register</a></p>
+          <p>
+            Don't have an account?
+            <a onclick="clickedBtn()">Register</a>
+          </p>
         </form>
       </div>
     </div>
   </body>
+  <script src="main.js"></script>
 </html>
