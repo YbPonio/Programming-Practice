@@ -104,6 +104,14 @@ body {
         }
       }
 
+      #errorMsg {
+        display: none;
+        color: red;
+        font-size: 0.9rem;
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+      }
+
       & > div {
         display: flex;
         flex-direction: column;

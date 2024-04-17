@@ -19,7 +19,7 @@
         <button class="backBtn" onclick="clickedBtn('back')">
           <span class="fa fa-arrow-left"></span> Back
         </button>
-        <form method="dialog">
+        <form method="dialog" onsubmit="register()">
           <h1>Register</h1>
 
           <label for="inputName">Name</label>
@@ -47,7 +47,7 @@
               type="password"
               placeholder="Enter your Password"
             />
-            <i onclick="eyeBtn()" id="eyeBtnClk" class="fa fa-eye"></i>
+            <i id="eyeBtnClk2" class="fa fa-eye"></i>
           </div>
 
           <button type="submit">Sign Up</button>
@@ -59,7 +59,7 @@
       </div>
 
       <div class="form-control">
-        <form method="dialog">
+        <form method="dialog" onsubmit="login()">
           <h1>Login</h1>
 
           <label for="username">Username</label>
@@ -78,8 +78,10 @@
               type="password"
               placeholder="Enter your Password"
             />
-            <i onclick="eyeBtn()" id="eyeBtnClk" class="fa fa-eye"></i>
+            <i id="eyeBtnClk1" class="fa fa-eye"></i>
           </div>
+
+          <p id="errorMsg">Invalid Username or Password!</p>
 
           <button type="submit">Login</button>
           <p>
