@@ -4,6 +4,158 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
+
+    <link rel="stylesheet" href="home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/0659926164.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
-  <body></body>
+  <body>
+    <div class="main-container">
+      <div class="nav-container">
+        <div class="logo">
+          <a href="./home.html">
+            <img src="../img/clothing-logo.png" alt="street style haven logo" />
+          </a>
+        </div>
+
+        <div class="search-container">
+          <select name="category" id="category">
+            <option value="">Vintage</option>
+            <option value="">Minimalist</option>
+            <option value="">Gothic</option>
+          </select>
+          <input type="text" placeholder="Search" />
+          <button><i class="fa fa-search"></i></button>
+        </div>
+
+        <div class="icon-container">
+          <div>
+            <a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a>
+            <a class="shopping-cart" href="#"
+              ><i class="fa fa-shopping-bag" aria-hidden="true"></i>
+              <p class="cart-number">99</p></a
+            >
+          </div>
+
+          <div class="personal-profile">
+            <button>
+              <img src="../img/profikle.jpg" alt="" />
+              <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="nav">
+          <div class="explore">
+            <h2>Explore</h2>
+            <div>
+              <i class="fa fa-sliders" aria-hidden="true"></i>
+              <p>Categories</p>
+            </div>
+            <div>
+              <i class="fa-solid fa-store"></i>
+              <p>Collections</p>
+            </div>
+          </div>
+
+          <div class="explore-footer">
+            <div>
+              <i class="fa fa-user" aria-hidden="true"></i>
+              <p>Account</p>
+            </div>
+
+            <div>
+              <i class="fa fa-cog" aria-hidden="true"></i>
+              <p>Setting</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="item-container">
+          <div class="item-header">item here</div>
+
+          <div class="item-slider">
+            <h2>Top Products</h2>
+            <div class="product-section">
+              <div class="item">
+                <div class="img">
+                  <img
+                    src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt=""
+                  />
+                </div>
+                <div class="details">
+                  <h3>Zen Threads</h3>
+                  <p>High-quality, breathable cotton</p>
+                  <div>
+                    <div class="color">
+                      <div style="background: black"></div>
+                      <div style="background: red"></div>
+                      <div style="background: blue"></div>
+                    </div>
+                    <p class="price">$25</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="img">
+                  <img
+                    src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt=""
+                  />
+                </div>
+
+                <div class="details">
+                  <h3>Zen Threads</h3>
+                  <p>High-quality, breathable cotton</p>
+                  <div>
+                    <div class="color">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                    <p class="price">$25</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="img">
+                  <img
+                    src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt=""
+                  />
+                </div>
+
+                <div class="details">
+                  <h3>Zen Threads</h3>
+                  <p>High-quality, breathable cotton</p>
+                  <div>
+                    <div class="color">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                    <p class="price">$25</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="home.js"></script>
 </html>
