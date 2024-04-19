@@ -26,11 +26,6 @@
         </div>
 
         <div class="search-container">
-          <select name="category" id="category">
-            <option value="">Vintage</option>
-            <option value="">Minimalist</option>
-            <option value="">Gothic</option>
-          </select>
           <input type="text" placeholder="Search" />
           <button><i class="fa fa-search"></i></button>
         </div>
@@ -45,10 +40,20 @@
           </div>
 
           <div class="personal-profile">
-            <button>
+            <button id="userBtn">
               <img src="../img/profikle.jpg" alt="" />
               <i class="fa fa-chevron-down" aria-hidden="true"></i>
             </button>
+            <div class="profile-dropdown hide">
+              <a href="#"><i class="fa-solid fa-user"></i>Profile</a>
+              <a href="#"><i class="fa-solid fa-gears"></i>Settings</a>
+              <a href="#"
+                ><i class="fa-solid fa-user-gear"></i>Change Account</a
+              >
+              <a href="#" onclick="logout()"
+                ><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a
+              >
+            </div>
           </div>
         </div>
       </div>

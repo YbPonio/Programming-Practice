@@ -31,6 +31,7 @@ function login()
     }
 }
 
+
 function check()
 {
     $conn = getDb();
@@ -42,7 +43,7 @@ function check()
 
     if ($result) {
         http_response_code(200);
-        echo json_encode(1);
+        echo json_encode($result["name"]);
     } else {
         http_response_code(400);
     }
