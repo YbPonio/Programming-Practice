@@ -41,3 +41,8 @@ async function check() {
   }
 }
 check();
+
+function profileDisplay() {
+  console.log("clicked");
+  userDisplay.showModal();
+}

@@ -156,7 +156,7 @@ body {
           left: 50%;
           transform: translate(-50%, 100%);
 
-          a {
+          p {
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -360,4 +360,20 @@ a {
 
 .hide {
   display: none !important;
+}
+
+dialog {
+  margin: auto;
+  max-height: 40rem;
+  max-width: 40rem;
+  height: 100%;
+  width: 100%;
+
+  .display {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

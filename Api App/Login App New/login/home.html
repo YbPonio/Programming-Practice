@@ -45,14 +45,14 @@
               <i class="fa fa-chevron-down" aria-hidden="true"></i>
             </button>
             <div class="profile-dropdown hide">
-              <a href="#"><i class="fa-solid fa-user"></i>Profile</a>
-              <a href="#"><i class="fa-solid fa-gears"></i>Settings</a>
-              <a href="#"
-                ><i class="fa-solid fa-user-gear"></i>Change Account</a
-              >
-              <a href="#" onclick="logout()"
-                ><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a
-              >
+              <p onclick="profileDisplay()">
+                <i class="fa-solid fa-user"></i>Profile
+              </p>
+              <p><i class="fa-solid fa-gears"></i>Settings</p>
+              <p><i class="fa-solid fa-user-gear"></i>Change Account</p>
+              <p onclick="logout()">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>Logout
+              </p>
             </div>
           </div>
         </div>
@@ -160,6 +160,12 @@
         </div>
       </div>
     </div>
+
+    <dialog id="userDisplay">
+      <div class="display">
+        <h2>Hello</h2>
+      </div>
+    </dialog>
   </body>
 
   <script src="home.js"></script>
