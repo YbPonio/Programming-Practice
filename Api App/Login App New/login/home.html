@@ -45,9 +45,7 @@
               <i class="fa fa-chevron-down" aria-hidden="true"></i>
             </button>
             <div class="profile-dropdown hide">
-              <p onclick="profileDisplay()">
-                <i class="fa-solid fa-user"></i>Profile
-              </p>
+              <p><i class="fa-solid fa-user"></i>Profile</p>
               <p><i class="fa-solid fa-gears"></i>Settings</p>
               <p><i class="fa-solid fa-user-gear"></i>Change Account</p>
               <p onclick="logout()">
@@ -58,7 +56,7 @@
         </div>
       </div>
 
-      <div class="container">
+      <div class="container hide">
         <div class="nav">
           <div class="explore">
             <h2>Explore</h2>
@@ -159,13 +157,21 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <dialog id="userDisplay">
-      <div class="display">
-        <h2>Hello</h2>
+      <div class="profile-container">
+        <div class="image-container">
+          <div class="image">
+            <img src="../img/profikle.jpg" alt="" />
+          </div>
+        </div>
+
+        <div>
+          <h1>profile name <i class="fa-solid fa-circle-check"></i></h1>
+          <h3></h3>
+          <h3></h3>
+        </div>
       </div>
-    </dialog>
+    </div>
   </body>
 
   <script src="home.js"></script>

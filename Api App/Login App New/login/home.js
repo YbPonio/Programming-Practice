@@ -12,7 +12,7 @@ function logout() {
   let token = localStorage.removeItem("token");
 
   location.href = "../login";
-  console.log(token);
+  check();
 }
 
 async function check() {
@@ -41,8 +41,3 @@ async function check() {
   }
 }
 check();
-
-function profileDisplay() {
-  console.log("clicked");
-  userDisplay.showModal();
-}
