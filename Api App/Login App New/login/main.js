@@ -40,8 +40,7 @@ async function checkToken() {
   );
 
   if (response.ok) {
-    location.href =
-      "http://localhost/Programming-Practice/Api%20App/Login%20App%20New/login/home.html";
+    location.href = "./home.html";
   } else {
     console.log("Invalid Token");
   }

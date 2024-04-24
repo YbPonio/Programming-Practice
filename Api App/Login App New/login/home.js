@@ -1,3 +1,15 @@
+let products = [];
+
+async function getData() {
+  let url =
+    "http://localhost/Programming-Practice/Api%20App/Login%20App%20New/api/product.php?action=read";
+
+  let response = await fetch(url);
+  products = await response.json();
+
+  console.log(products);
+}
+
 document.addEventListener("click", function (e) {
   let dropdown = document.querySelector(".profile-dropdown");
 
@@ -9,10 +21,17 @@ document.addEventListener("click", function (e) {
 });
 
 function logout() {
-  let token = localStorage.removeItem("token");
+  localStorage.removeItem("token");
+  location.href = "./home.html";
 
-  location.href = "../login";
   check();
+}
+function login() {
+  location.href = "../login";
+}
+function profilePageOpen() {
+  homePage.classList.add("hide");
+  profilePage.classList.remove("hide");
 }
 
 async function check() {
@@ -32,13 +51,42 @@ async function check() {
     );
     if (response.ok) {
       let data = await response.json();
+
+      loginStatus.classList.add("hide");
+      userBtn.classList.remove("hide");
+
       console.log("Welcome", data);
     } else {
       console.log("Invalid Token");
     }
   } else {
+    loginStatus.classList.remove("hide");
+    userBtn.classList.add("hide");
+
     console.log("Welcome Guest");
   }
 }
 
+// let url = "http://localhost/PRACTICE/upload%20img/upload.php";
+// let form = document.querySelector("form");
+
+// form.onsubmit = async (e) => {
+//   e.preventDefault();
+
+//   let file = document.querySelector("[type=file]").files;
+//   let formData = new FormData();
+
+//   for (let i = 0; i < file.length; i++) {
+//     formData.append("files[]", file[i]);
+//   }
+
+//   let response = await fetch(url, {
+//     method: "POST",
+//     body: formData,
+//   });
+//   let data = await response.text();
+//   console.log(data);
+// };
+
 check();
+getData();

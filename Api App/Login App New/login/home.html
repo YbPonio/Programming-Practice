@@ -40,15 +40,19 @@
           </div>
 
           <div class="personal-profile">
+            <button id="loginStatus" onclick="login()">
+              <i class="fa-solid fa-right-to-bracket"></i>Login
+            </button>
             <button id="userBtn">
               <img src="../img/profikle.jpg" alt="" />
               <i class="fa fa-chevron-down" aria-hidden="true"></i>
             </button>
             <div class="profile-dropdown hide">
-              <p><i class="fa-solid fa-user"></i>Profile</p>
+              <p onclick="profilePageOpen()">
+                <i class="fa-solid fa-user"></i>Profile
+              </p>
               <p><i class="fa-solid fa-gears"></i>Settings</p>
-              <p><i class="fa-solid fa-user-gear"></i>Change Account</p>
-              <p onclick="logout()">
+              <p id="logoutStatus" onclick="logout()">
                 <i class="fa-solid fa-arrow-right-from-bracket"></i>Logout
               </p>
             </div>
@@ -56,7 +60,7 @@
         </div>
       </div>
 
-      <div class="container hide">
+      <div id="homePage" class="container">
         <div class="nav">
           <div class="explore">
             <h2>Explore</h2>
@@ -84,10 +88,8 @@
         </div>
 
         <div class="item-container">
-          <div class="item-header">item here</div>
-
           <div class="item-slider">
-            <h2>Top Products</h2>
+            <h2>All Products</h2>
             <div class="product-section">
               <div class="item">
                 <div class="img">
@@ -109,56 +111,12 @@
                   </div>
                 </div>
               </div>
-
-              <div class="item">
-                <div class="img">
-                  <img
-                    src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt=""
-                  />
-                </div>
-
-                <div class="details">
-                  <h3>Zen Threads</h3>
-                  <p>High-quality, breathable cotton</p>
-                  <div>
-                    <div class="color">
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                    </div>
-                    <p class="price">$25</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="img">
-                  <img
-                    src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt=""
-                  />
-                </div>
-
-                <div class="details">
-                  <h3>Zen Threads</h3>
-                  <p>High-quality, breathable cotton</p>
-                  <div>
-                    <div class="color">
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                    </div>
-                    <p class="price">$25</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="profile-container">
+      <div id="profilePage" class="profile-container hide">
         <div class="image-container">
           <div class="image">
             <img src="../img/personal-removebg-preview.png" alt="" />
@@ -168,18 +126,51 @@
         <div class="details">
           <h1>profile name <i class="fa-solid fa-circle-check"></i></h1>
           <h3>profile@gmail.com</h3>
-          <h3>unsername</h3>
+          <h3>@unsername</h3>
         </div>
 
         <div class="profile-details">
           <div>
             <div>
               <h3>Phone Number</h3>
-              <input type="number" value="9039403" />
+              <input type="number" value="092378274234" />
             </div>
             <div>
               <h3>Date of Birth</h3>
               <input type="date" value="2022-01-01" />
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <h3>Gender</h3>
+              <select name="" id="">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div>
+              <h3>Date of Birth</h3>
+              <input type="date" value="2022-01-01" />
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <h3>Address</h3>
+              <input
+                type="text"
+                placeholder="1234 street, city, country"
+                value=""
+              />
+            </div>
+          </div>
+
+          <div class="btn-option">
+            <div>
+              <button style="background: #dc143c">Delete Account</button>
+              <button>Edit</button>
             </div>
           </div>
         </div>
