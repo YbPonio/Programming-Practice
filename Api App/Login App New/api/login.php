@@ -11,6 +11,8 @@ if ($action == "login") {
     check();
 } elseif ($action == "register") {
     register();
+} else if ($action == "read") {
+    userCheck();
 }
 
 function login()
@@ -43,7 +45,7 @@ function check()
 
     if ($result) {
         http_response_code(200);
-        echo json_encode($result["name"]);
+        echo json_encode($result);
     } else {
         http_response_code(400);
     }
@@ -73,4 +75,14 @@ function register()
     } else {
         http_response_code(400);
     }
+}
+
+function userCheck()
+{
+    $conn = getDb();
+    $query = $conn->query("SELECT * FROM `user`
+    ");
+
+    $result = $query->fetchAll();
+    echo json_encode($result);
 }

@@ -5,5 +5,554 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
   </head>
-  <body></body>
+
+  <script
+    src="https://kit.fontawesome.com/0659926164.js"
+    crossorigin="anonymous"
+  ></script>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+      outline: none;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+    }
+
+    .main-container {
+      display: flex;
+      padding: 0 5rem;
+      width: 100%;
+      flex-direction: column;
+      max-width: 1280px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0.5rem;
+    }
+    .nav .logo {
+      height: 3rem;
+    }
+    .nav .icon button {
+      background-color: #191919;
+      border: none;
+      color: #f2f2f2;
+      padding: 0.8rem 1rem;
+      border-radius: 5px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      padding-top: 5rem;
+      gap: 1rem;
+
+      .options {
+        flex: 1 1 20%;
+        background: #dddddd;
+        padding: 1rem;
+        border-radius: 1rem;
+
+        div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          ul {
+            padding: 1rem 0.3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+          }
+
+          li {
+            display: flex;
+            background: #191919;
+            border-radius: 1rem;
+            align-items: center;
+            justify-content: center;
+
+            a {
+              padding: 0.8rem 1rem;
+              display: flex;
+              color: #f2f2f2;
+              height: inherit;
+            }
+          }
+        }
+      }
+
+      .display {
+        display: flex;
+        background: #dddddd;
+        flex: 1 1 80%;
+        padding: 2rem;
+        border-radius: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+
+        div {
+          display: flex;
+          gap: 1rem;
+          width: 100%;
+
+          div {
+            display: flex;
+            flex: 1 1 auto;
+            align-items: center;
+            background: #191919;
+            flex-direction: column;
+            border-radius: 1rem;
+            padding: 4rem;
+
+            h1,
+            h2 {
+              color: #f2f2f2;
+            }
+          }
+        }
+      }
+
+      .itemList,
+      .userList {
+        display: flex;
+        background: #dddddd;
+        flex: 1 1 80%;
+        padding: 2rem;
+        border-radius: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .itemList,
+      .userList {
+        .header {
+          display: flex;
+          justify-content: space-between;
+
+          button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.2rem;
+            background: #191919;
+            color: #f2f2f2;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+        }
+
+        div {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+
+          table {
+            width: 100%;
+            border-collapse: collapse;
+
+            tr {
+              border-bottom: 1px solid #191919;
+            }
+
+            th {
+              background: #191919;
+              color: #f2f2f2;
+              padding: 1rem;
+            }
+
+            td {
+              flex-wrap: wrap;
+              word-wrap: break-word;
+              padding: 1rem;
+              text-align: center;
+
+              button {
+                background: #191919;
+                color: #f2f2f2;
+                padding: 0.5rem 1rem;
+                border: none;
+                border-radius: 5px;
+              }
+
+              .image {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 3.5rem;
+                height: 3.5rem;
+                border-radius: 50%;
+                overflow: hidden;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      background-size: cover;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: #191919;
+    }
+
+    .hide {
+      display: none !important;
+    }
+
+    dialog {
+      margin: auto;
+      border: 1px solid #191919;
+      border-radius: 1rem;
+
+      form {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        gap: 0.3rem;
+
+        label {
+        }
+        input {
+          padding: 0.5rem;
+          border: 1px solid #191919;
+          border-radius: 5px;
+        }
+        input[type="submit"],
+        button {
+          background: #191919;
+          color: #f2f2f2;
+          padding: 0.5rem 1rem;
+          border: none;
+          border-radius: 5px;
+        }
+      }
+    }
+
+    button {
+      cursor: pointer;
+    }
+  </style>
+
+  <body>
+    <div class="main-container">
+      <div class="nav">
+        <div class="logo">
+          <img src="../img/clothing-logo.png" alt="" />
+        </div>
+
+        <div class="icon">
+          <button>Logout</button>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="options">
+          <div>
+            <h2>Options</h2>
+            <ul>
+              <li><a href="?active=dashboard">Dashboard</a></li>
+              <li><a href="?active=item">Item list</a></li>
+              <li><a href="?active=user">User List</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="display hide">
+          <div>
+            <div>
+              <h1>50</h1>
+              <h2>Items</h2>
+            </div>
+            <div>
+              <h1>23</h1>
+              <h2>Users</h2>
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <h1>234</h1>
+              <h2>Total Item Stocks</h2>
+            </div>
+            <div>
+              <h1>13</h1>
+              <h2>Total Items Bought</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="itemList">
+          <div class="header">
+            <h2>Items</h2>
+            <button onclick="addItem.showModal()">
+              <i class="fa-solid fa-plus"></i>Add Item
+            </button>
+          </div>
+          <div>
+            <table>
+              <tr>
+                <th>IMAGE</th>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>DETAILS</th>
+                <th>PRICE</th>
+                <th>QUANTITY</th>
+                <th>ACTION</th>
+              </tr>
+
+              <tbody id="itemTable"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="userList hide">
+          <div class="header">
+            <h2>Users</h2>
+            <button onclick=""><i class="fa-solid fa-plus"></i>Add Item</button>
+          </div>
+          <div>
+            <table>
+              <tr>
+                <th>IMAGE</th>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>USERNAME</th>
+                <th>EMAIL</th>
+                <th>GENDER</th>
+                <th>ACTION</th>
+              </tr>
+
+              <tbody id="userTable"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <dialog id="addItem">
+      <form
+        id="productForm"
+        method="dialog"
+        enctype="multipart/form-data"
+        onsubmit="doSubmit()"
+      >
+        <h2>Add item</h2>
+
+        <input id="inputID" type="number" hidden />
+
+        <label for="nameInput">Name</label>
+        <input id="nameInput" type="text" placeholder="Enter Name" />
+
+        <label for="detailInput">Datails</label>
+        <input id="detailInput" type="text" placeholder="Enter Details" />
+
+        <label for="priceInput">Price</label>
+        <input id="priceInput" type="number" placeholder="Enter Price" />
+
+        <label for="quantityInput">Quantity</label>
+        <input id="quantityInput" type="number" placeholder="Enter Quantity" />
+
+        <label for="quantityInput">Image</label>
+        <input id="imageInput" type="file" name="files[]" multiple />
+
+        <input type="submit" />
+        <button type="button" onclick="addItem.close()">Cancel</button>
+      </form>
+    </dialog>
+  </body>
+
+  <script>
+    let products = [];
+    let users = [];
+
+    function updateItem(id) {
+      let product = products.find((product) => product.id == id);
+
+      inputID.value = product.id;
+      nameInput.value = product.name;
+      detailInput.value = product.details;
+      priceInput.value = product.price;
+      quantityInput.value = product.qty;
+
+      addItem.showModal();
+    }
+
+    async function doSubmit() {
+      let payload = {
+        id: inputID.value,
+        name: nameInput.value,
+        details: detailInput.value,
+        price: priceInput.value,
+        quantity: quantityInput.value,
+        image: imageInput.files[0].name,
+      };
+
+      let options = {
+        method: "POST",
+        body: JSON.stringify(payload),
+      };
+
+      if (!inputID.value) {
+        let response = await fetch(
+          "http://localhost/Programming-Practice/Api%20App/Login%20App%20New/api/product.php?action=create",
+          options
+        );
+        let result = await response.text();
+        console.log(result);
+      } else {
+        let response = await fetch(
+          "http://localhost/Programming-Practice/Api%20App/Login%20App%20New/api/product.php?action=update",
+          options
+        );
+        let result = await response.json();
+        console.log(result);
+      }
+
+      let file = document.querySelector("[type=file]").files;
+      let formData = new FormData();
+
+      for (let i = 0; i < file.length; i++) {
+        formData.append("files[]", file[i]);
+      }
+
+      let imageRes = await fetch(
+        "http://localhost/Programming-Practice/Api%20App/Login%20App%20New/api/upload.php",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+      let data = await imageRes.text();
+
+      getItem();
+      productForm.reset();
+    }
+
+    async function getItem() {
+      let response = await fetch(
+        "http://localhost/Programming-Practice/Api%20App/Login%20App%20New/api/product.php?action=read"
+      );
+      products = await response.json();
+      rederItems();
+
+      let userResponse = await fetch(
+        "http://localhost/Programming-Practice/Api%20App/Login%20App%20New/api/login.php?action=read"
+      );
+      users = await userResponse.json();
+      console.log(users);
+      renderUser();
+    }
+
+    function rederItems() {
+      itemTable.innerHTML = "";
+
+      for (product of products) {
+        itemTable.innerHTML += `
+        <tr>
+          <td>
+            <div class="image">
+              <img src="../uploads/${product.image}" alt="" />
+            </div>
+          </td>
+          <td>${product.id}</td>
+          <td>${product.name}</td>
+          <td>${product.details}</td>
+          <td>$${product.price.toFixed(2)}</td>
+          <td>${product.qty}</td>
+          <td>
+            <button onclick="updateItem(${product.id})">Edit</button>
+            <button onclick="deleteItem(${product.id})">Delete</button>
+          </td>
+        </tr>
+        `;
+      }
+    }
+
+    function renderUser() {
+      userTable.innerHTML = "";
+
+      for (user of users) {
+        userTable.innerHTML += `
+        <tr>
+          <td>
+            <div class="image">
+              <img src="../uploads/${user.image}" alt="" />
+            </div>
+          </td>
+          <td>${user.id}</td>
+          <td>${user.name}</td>
+          <td>${user.username}</td>
+          <td>${user.email}</td>
+          <td>${user.gender}</td>
+          <td>
+            <button>Edit</button>  
+            <button>Delete</button>  
+          </td>
+        </tr>
+        `;
+      }
+    }
+
+    async function deleteItem(id) {
+      let payload = {
+        id,
+      };
+
+      let options = {
+        method: "POST",
+        body: JSON.stringify(payload),
+      };
+
+      let response = await fetch(
+        "http://localhost/Programming-Practice/Api%20App/Login%20App%20New/api/product.php?action=delete",
+        options
+      );
+      let data = await response.text();
+      getItem();
+      console.log(data);
+    }
+
+    let urlParams = new URLSearchParams(window.location.search);
+    let active = urlParams.get("active");
+
+    if (active == "item") {
+      document.querySelector(".itemList").classList.remove("hide");
+      document.querySelector(".userList").classList.add("hide");
+      document.querySelector(".display").classList.add("hide");
+    } else if (active == "user") {
+      document.querySelector(".itemList").classList.add("hide");
+      document.querySelector(".userList").classList.remove("hide");
+      document.querySelector(".display").classList.add("hide");
+    } else {
+      document.querySelector(".itemList").classList.add("hide");
+      document.querySelector(".userList").classList.add("hide");
+      document.querySelector(".display").classList.remove("hide");
+    }
+
+    getItem();
+  </script>
 </html>
