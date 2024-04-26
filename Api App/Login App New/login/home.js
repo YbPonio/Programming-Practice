@@ -1,4 +1,5 @@
 let products = [];
+let user = [];
 
 async function getData() {
   let url =
@@ -14,6 +15,8 @@ function renderProducts() {
   let productContainer = document.querySelector(".product-section");
   productContainer.innerHTML = "";
   for (product of products) {
+    let price = parseFloat(product.price).toFixed(2);
+
     productContainer.innerHTML += `
       <div class="item">
           <div class="img">
@@ -26,7 +29,7 @@ function renderProducts() {
             <h3>${product.name}</h3>
             <p>${product.details}</p>
             <div>
-              <p class="price">$${product.price.toFixed(2)}</p>
+              <p class="price">$${price}</p>
             </div>
           </div>
         </div>
@@ -35,11 +38,17 @@ function renderProducts() {
 }
 
 function userProfile(user) {
+  userImageProfile.src =
+    user.image == null ? "../uploads/" + user.image : "../img/personal.png";
   profilePage.innerHTML = "";
   profilePage.innerHTML += `
   <div class="image-container">
       <div class="image">
-        <img src="../img/personal-removebg-preview.png" alt="" />
+        <img src="${
+          user.image == null
+            ? "../uploads/" + user.image
+            : "../img/personal.png"
+        }" alt="${user.name}" />
       </div>
   </div>
   `;
@@ -55,20 +64,21 @@ function userProfile(user) {
   profilePage.innerHTML += `
   <div class="profile-details">
   <div>
+  <input id="userId" type="number" value="${user.id}" hidden/>
     <div>
       <h3>Phone Number</h3>
-      <input type="number" value="${user.number}" />
+      <input type="number" value="${user.number}" disabled/>
     </div>
     <div>
       <h3>Date of Birth</h3>
-      <input type="date" value="${user.date}" />
+      <input type="date" value="${user.date}" disabled/>
     </div>
   </div>
 
   <div>
     <div>
       <h3>Gender</h3>
-      <select id="userGender">
+      <select id="userGender" disabled>
         <option value="Male" ${
           user.gender == "Male" ? "selected" : ""
         }>Male</option>
@@ -83,14 +93,17 @@ function userProfile(user) {
         type="text"
         placeholder="1234 street, city, country"
         value="${user.address}"
+        disabled
       />
     </div>
   </div>
 
   <div class="btn-option">
     <div>
-      <button style="background: #dc143c">Delete Account</button>
-      <button>Edit</button>
+      <button onclick="deleteUser(${
+        user.id
+      })" style="background: #dc143c">Delete Account</button>
+      <button onclick="updateuser(${user.id})">Edit</button>
       <button>Reset Password</button>
     </div>
   </div>
@@ -133,13 +146,13 @@ async function check() {
       option
     );
     if (response.ok) {
-      let data = await response.json();
-      userProfile(data);
+      user = await response.json();
+      userProfile(user);
 
       loginStatus.classList.add("hide");
       userBtn.classList.remove("hide");
 
-      console.log("Welcome", data.name);
+      console.log("Welcome", user.name);
     } else {
       console.log("Invalid Token");
     }
@@ -160,6 +173,95 @@ document.addEventListener("click", function (e) {
     dropdown.classList.add("hide");
   }
 });
+
+function updateuser(id) {
+  console.log(id);
+
+  userId = id;
+  nameId.value = user.name;
+  usernameId.value = user.username;
+  emailId.value = user.email;
+  phoneId.value = user.number;
+  dateId.value = user.date;
+  genderId.value = user.gender;
+  addressId.value = user.address;
+
+  userEditModal.showModal();
+}
+
+async function editUser() {
+  let payload = {
+    id: user.id,
+    name: nameId.value,
+    username: usernameId.value,
+    email: emailId.value,
+    number: phoneId.value,
+    date: dateId.value,
+    gender: genderId.value,
+    address: addressId.value,
+    image: imageInput.files[0].name,
+  };
+  console.log(payload);
+
+  let option = {
+    method: "POST",
+    body: JSON.stringify(payload),
+  };
+
+  let response = await fetch(
+    "http://localhost/Programming-Practice/Api%20App/Login%20App%20New/api/login.php?action=update",
+    option
+  );
+
+  if (response.ok) {
+    let data = await response.json();
+    console.log(data);
+  } else {
+    console.log("Error");
+  }
+
+  let file = document.querySelector("[type=file]").files;
+  let formData = new FormData();
+
+  for (let i = 0; i < file.length; i++) {
+    formData.append("files[]", file[i]);
+  }
+
+  let imageRes = await fetch(
+    "http://localhost/Programming-Practice/Api%20App/Login%20App%20New/api/upload.php",
+    {
+      method: "POST",
+      body: formData,
+    }
+  );
+  let result = await imageRes.text();
+  check();
+}
+
+async function deleteUser(id) {
+  let confirmation = confirm("Are you sure you want to delete this user?");
+
+  if (confirmation) {
+    let payload = {
+      id,
+    };
+
+    let options = {
+      method: "POST",
+      body: JSON.stringify(payload),
+    };
+
+    let response = await fetch(
+      "http://localhost/Programming-Practice/Api%20App/Login%20App%20New/api/login.php?action=delete",
+      options
+    );
+    let data = await response.text();
+    console.log(data);
+    logout();
+  } else {
+    console.log("User not deleted");
+  }
+}
 
 check();
 getData();

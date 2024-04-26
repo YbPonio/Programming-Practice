@@ -11,8 +11,12 @@ if ($action == "login") {
     check();
 } elseif ($action == "register") {
     register();
-} else if ($action == "read") {
+} elseif ($action == "read") {
     userCheck();
+} elseif ($action == "delete") {
+    delete();
+} elseif ($action == "update") {
+    update();
 }
 
 function login()
@@ -80,9 +84,39 @@ function register()
 function userCheck()
 {
     $conn = getDb();
-    $query = $conn->query("SELECT * FROM `user`
-    ");
+    $query = $conn->query("SELECT * FROM `user`  WHERE `access` LIKE 'user' ORDER BY `access` ASC");
 
     $result = $query->fetchAll();
     echo json_encode($result);
+}
+
+function delete()
+{
+    $conn = getDb();
+    $payload = json_decode(file_get_contents("php://input"));
+
+    $query = $conn->query("DELETE FROM user WHERE `user`.`id` = $payload->id");
+    $result = $query->fetch();
+
+    echo "User Deleted";
+}
+
+
+function update()
+{
+    $conn = getDb();
+    $payload = json_decode(file_get_contents("php://input"));
+
+    $query = $conn->query("
+    UPDATE `user` SET `name` = '$payload->name', `username` = '$payload->username', `email` = '$payload->email', `image` = '$payload->image', `gender` = '$payload->gender', `number` = '$payload->number', `date` = '$payload->date', `address` = '$payload->address' WHERE `user`.`id` = $payload->id;
+    ");
+
+    $result = $query->fetch();
+
+    if ($result) {
+        http_response_code(200);
+        echo json_encode($result);
+    } else {
+        http_response_code(400);
+    }
 }

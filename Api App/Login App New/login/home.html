@@ -44,7 +44,7 @@
               <i class="fa-solid fa-right-to-bracket"></i>Login
             </button>
             <button id="userBtn">
-              <img src="../img/profikle.jpg" alt="" />
+              <img id="userImageProfile" src="../img/profikle.jpg" alt="" />
               <i class="fa fa-chevron-down" aria-hidden="true"></i>
             </button>
             <div class="profile-dropdown hide">
@@ -165,6 +165,47 @@
         </div>
       </div>
     </div>
+
+    <dialog id="userEditModal">
+      <form method="dialog" onsubmit="editUser()">
+        <h2>Edit Account</h2>
+
+        <div>
+          <div>
+            <label for="nameId">Name</label>
+            <input id="nameId" type="text" />
+          </div>
+          <div>
+            <label for="usernameId">Username</label>
+            <input id="usernameId" type="text" />
+          </div>
+        </div>
+
+        <label for="emailId">Email</label>
+        <input id="emailId" type="email" />
+
+        <label for="phoneId">Phone Number</label>
+        <input id="phoneId" type="number" />
+
+        <label for="dateId">Birth Date</label>
+        <input id="dateId" type="date" />
+
+        <label for="genderId">Gender</label>
+        <select id="genderId">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+
+        <label for="addressId">Address</label>
+        <input id="addressId" type="text" />
+
+        <label for="quantityInput">Image</label>
+        <input id="imageInput" type="file" name="files[]" multiple />
+
+        <input type="submit" />
+        <button type="button" onclick="userEditModal.close()">Cancel</button>
+      </form>
+    </dialog>
   </body>
 
   <script src="home.js"></script>

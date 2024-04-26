@@ -67,6 +67,24 @@ function checkContainer() {
 
       console.log("You got it right!");
       console.log(`Category: ${category[index].name}`);
+
+      let correctItems = itemContainer.map((item) => {
+        let boxDiv = document.createElement("div");
+        boxDiv.className = "box";
+        boxDiv.innerText = item;
+        return boxDiv;
+      });
+
+      let boxes = Array.from(container.querySelectorAll(".box"));
+      boxes = boxes.filter((box) => !itemContainer.includes(box.innerText));
+      boxes = correctItems.concat(boxes);
+
+      container.innerHTML = "";
+      boxes.forEach((box) => container.append(box));
+
+      
+
+      itemContainer = [];
     } else {
       console.log("You got it wrong!");
     }
