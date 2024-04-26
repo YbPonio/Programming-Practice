@@ -17,6 +17,8 @@ if ($action == "login") {
     delete();
 } elseif ($action == "update") {
     update();
+} elseif ($action == "reset") {
+    resetPass();
 }
 
 function login()
@@ -112,11 +114,26 @@ function update()
     ");
 
     $result = $query->fetch();
+    echo "User Updated";
+}
 
-    if ($result) {
-        http_response_code(200);
-        echo json_encode($result);
+
+function resetPass()
+{
+    $conn = getDb();
+    $payload = json_decode(file_get_contents("php://input"));
+
+    $email = $conn->query("SELECT * FROM `user` WHERE `id` = $payload->id AND `email` LIKE '$payload->email'")->fetch();
+
+    if ($email) {
+        if ($payload->password == $payload->secondPass) {
+            $query = $conn->query("UPDATE `user` SET `password` = '$payload->password' WHERE `user`.`id` = $payload->id;")->fetch();
+
+            echo "Password Updated";
+        } else {
+            echo "Password does not match";
+        }
     } else {
-        http_response_code(400);
+        echo "Email does not match";
     }
 }

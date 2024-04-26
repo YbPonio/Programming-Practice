@@ -31,7 +31,7 @@
         </div>
 
         <div class="icon-container">
-          <div>
+          <div class="hide">
             <a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a>
             <a class="shopping-cart" href="#"
               ><i class="fa fa-shopping-bag" aria-hidden="true"></i>
@@ -44,7 +44,7 @@
               <i class="fa-solid fa-right-to-bracket"></i>Login
             </button>
             <button id="userBtn">
-              <img id="userImageProfile" src="../img/profikle.jpg" alt="" />
+              <img id="userImageProfile" src="" alt="" />
               <i class="fa fa-chevron-down" aria-hidden="true"></i>
             </button>
             <div class="profile-dropdown hide">
@@ -199,11 +199,33 @@
         <label for="addressId">Address</label>
         <input id="addressId" type="text" />
 
-        <label for="quantityInput">Image</label>
+        <label for="imageInput">Image</label>
         <input id="imageInput" type="file" name="files[]" multiple />
 
         <input type="submit" />
         <button type="button" onclick="userEditModal.close()">Cancel</button>
+      </form>
+    </dialog>
+
+    <dialog id="passwordReset">
+      <form method="dialog" onsubmit="resetSubmit()">
+        <h2>Reset Password</h2>
+
+        <input id="emailInput" type="text" placeholder="Enter Email" />
+        <input
+          id="passwordId"
+          type="password"
+          placeholder="Enter New Password"
+        />
+        <input
+          id="passwordInput"
+          type="password"
+          placeholder="Enter Password Again"
+        />
+
+        <input type="submit" />
+
+        <button type="button" onclick="passwordReset.close()">Cancel</button>
       </form>
     </dialog>
   </body>

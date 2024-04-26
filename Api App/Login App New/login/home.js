@@ -12,6 +12,7 @@ async function getData() {
 }
 
 function renderProducts() {
+  console.log(products);
   let productContainer = document.querySelector(".product-section");
   productContainer.innerHTML = "";
   for (product of products) {
@@ -21,7 +22,7 @@ function renderProducts() {
       <div class="item">
           <div class="img">
             <img
-              src="${product.image}"
+              src="../uploads/${product.image}"
               alt="${product.name}"
             />
           </div>
@@ -104,7 +105,7 @@ function userProfile(user) {
         user.id
       })" style="background: #dc143c">Delete Account</button>
       <button onclick="updateuser(${user.id})">Edit</button>
-      <button>Reset Password</button>
+      <button onclick="passwordReset.showModal()">Reset Password</button>
     </div>
   </div>
 </div>
@@ -261,6 +262,28 @@ async function deleteUser(id) {
   } else {
     console.log("User not deleted");
   }
+}
+
+async function resetSubmit() {
+  let payload = {
+    id: user.id,
+    email: emailInput.value,
+    password: passwordId.value,
+    secondPass: passwordInput.value,
+  };
+
+  let options = {
+    method: "POST",
+    body: JSON.stringify(payload),
+  };
+
+  let response = await fetch(
+    "http://localhost/Programming-Practice/Api%20App/Login%20App%20New/api/login.php?action=reset",
+    options
+  );
+
+  let data = await response.text();
+  console.log(data);
 }
 
 check();
