@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#loginForm div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+
+  & input {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #191919;
+
+    &::placeholder {
+      color: #191919;
+    }
+
+    &:focus {
+      border: 0.1rem solid red;
+    }
+  }
+}
