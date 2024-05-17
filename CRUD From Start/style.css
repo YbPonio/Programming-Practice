@@ -25,9 +25,5 @@ body {
     &::placeholder {
       color: #191919;
     }
-
-    &:focus {
-      border: 0.1rem solid red;
-    }
   }
 }
