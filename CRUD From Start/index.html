@@ -4,16 +4,93 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WEB</title>
-
-    <link rel="stylesheet" href="style.css" />
   </head>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      background-color: #f2f2f2;
+      border-radius: 1rem;
+      box-shadow: 0.1rem 0.1rem 0.2rem #191919;
+      padding: 1.5rem;
+
+      input {
+        padding: 0.5rem 1rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+
+      input[type="submit"] {
+        background: #191919;
+        color: #f2f2f2;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  </style>
+
   <body>
-    <form id="loginForm" method="dialog">
-      <div>
-        <input name="username" type="text" placeholder="Username" />
-        <input name="password" type="password" placeholder="Password" />
-        <input type="submit" />
-      </div>
+    <form id="loginForm" method="dialog" onsubmit="login()">
+      <input name="username" type="text" placeholder="Username" value="user" />
+      <input
+        name="password"
+        type="password"
+        placeholder="Password"
+        value="user"
+      />
+      <input type="submit" />
     </form>
   </body>
+
+  <script>
+    async function login() {
+      let url =
+        "http://localhost/Programming-Practice/CRUD%20From%20Start/api/main.php?action=login";
+
+      let data = {
+        username: loginForm.username.value,
+        password: loginForm.password.value,
+      };
+
+      let response = await fetch(url, {
+        method: "POST",
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        let result = await response.json();
+        localStorage.setItem("token", result.token);
+        check();
+      }
+    }
+
+    async function check() {
+      let url =
+        "http://localhost/Programming-Practice/CRUD%20From%20Start/api/main.php?action=check";
+
+      let response = await fetch(url, {
+        method: "POST",
+        body: JSON.stringify({ token: localStorage.getItem("token") }),
+      });
+      if (response.ok) {
+        console.log("Logged in");
+        location.href = "home.html";
+      } else {
+        console.log("Not logged in");
+      }
+    }
+    check();
+  </script>
 </html>

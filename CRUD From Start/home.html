@@ -5,5 +5,266 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
   </head>
-  <body></body>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .addUser {
+      padding: 0.5rem 1rem;
+      background-color: #191919;
+      color: white;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    th,
+    td {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    td button {
+      padding: 0.5rem 1rem;
+      background-color: green;
+      color: white;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+    }
+    td .delete {
+      background-color: red;
+    }
+
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+
+    dialog {
+      border: none;
+      box-shadow: 1px 1px 5px #191919;
+      border-radius: 5px;
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        input:not([type="submit"]) {
+          padding: 0.5rem 1rem;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+        }
+
+        button,
+        input[type="submit"] {
+          padding: 0.5rem 1rem;
+          background-color: #191919;
+          color: white;
+          font-weight: 600;
+          border: none;
+          cursor: pointer;
+        }
+      }
+    }
+  </style>
+
+  <body>
+    <button class="addUser" onclick="createUSer()">Add User</button>
+    <table border="1">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>Action</th>
+      </tr>
+
+      <tbody id="userDataTable"></tbody>
+    </table>
+
+    <dialog id="userInput">
+      <form id="userForm" method="dialog" onsubmit="sendUser()">
+        <input name="id" type="number" hidden />
+        <input name="firstname" type="text" placeholder="Enter First name:" />
+        <input name="lastname" type="text" placeholder="Enter Last name:" />
+        <input name="age" type="number" placeholder="Enter Age:" />
+        <input type="submit" name="" id="" />
+        <button type="button" onclick="userInput.close()">close</button>
+      </form>
+    </dialog>
+  </body>
+
+  <script>
+    class User {
+      static id;
+      static firstname;
+      static lastname;
+      static age;
+      static data = [];
+
+      async getItem() {
+        let url =
+          "http://localhost/Programming-Practice/CRUD%20From%20Start/api/main.php?action=read";
+
+        let response = await fetch(url, {
+          method: "POST",
+        });
+        User.data = await response.json();
+        this.renderUser();
+        return User.data;
+      }
+
+      renderUser() {
+        userDataTable.innerHTML = "";
+        for (user of User.data) {
+          userDataTable.innerHTML += `
+            <tr>
+              <td>${user.firstname}</td>
+              <td>${user.lastname}</td>
+              <td>${user.age}</td>
+              <td>
+                <button onclick="openModal(${user.id})">Edit</button>
+                <button class="delete" onclick="deleteUser(${user.id})">Delete</button>
+              </td>
+            </tr>
+        `;
+        }
+      }
+
+      async delete() {
+        let url =
+          "http://localhost/Programming-Practice/CRUD%20From%20Start/api/main.php?action=delete&id=";
+        let response = await fetch(url + User.id, {
+          method: "POST",
+        });
+
+        if (response.ok) {
+          let data = await response.text();
+          alert(data);
+        } else {
+          alert("Failed to delete user");
+        }
+      }
+
+      async create() {
+        let url =
+          "http://localhost/Programming-Practice/CRUD%20From%20Start/api/main.php?action=create";
+
+        let response = await fetch(url, {
+          method: "POST",
+          body: JSON.stringify({
+            firstname: User.firstname,
+            lastname: User.firstname,
+            age: User.age,
+          }),
+        });
+
+        if (response.ok) {
+          let data = await response.text();
+          alert(data);
+        } else {
+          alert("Failed to create user");
+        }
+      }
+
+      async edit() {
+        let url =
+          "http://localhost/Programming-Practice/CRUD%20From%20Start/api/main.php?action=edit";
+
+        let response = await fetch(url, {
+          method: "POST",
+          body: JSON.stringify({
+            id: User.id,
+            firstname: User.firstname,
+            lastname: User.lastname,
+            age: User.age,
+          }),
+        });
+
+        if (response.ok) {
+          let data = await response.text();
+          alert(data);
+        } else {
+          alert("Failed to edit user");
+        }
+      }
+    }
+
+    let user = new User();
+    user.getItem();
+
+    function deleteUser(id) {
+      user = new User();
+      User.id = id;
+      user.delete().then(() => {
+        user.getItem();
+      });
+    }
+
+    function openModal(id) {
+      let data = User.data;
+      let user = data.find((data) => data.id == id);
+
+      userForm.id.value = user.id;
+      userForm.firstname.value = user.firstname;
+      userForm.lastname.value = user.lastname;
+      userForm.age.value = user.age;
+
+      userInput.showModal();
+    }
+    function createUSer() {
+      userForm.reset();
+      userInput.showModal();
+    }
+    function sendUser() {
+      User.id = userForm.id.value;
+      User.firstname = userForm.firstname.value;
+      User.lastname = userForm.lastname.value;
+      User.age = userForm.age.value;
+
+      user = new User();
+
+      if (User.id) {
+        user.edit().then(() => {
+          user.getItem();
+        });
+      } else {
+        user.create().then(() => {
+          user.getItem();
+        });
+      }
+    }
+
+    async function check() {
+      let url =
+        "http://localhost/Programming-Practice/CRUD%20From%20Start/api/main.php?action=check";
+
+      let response = await fetch(url, {
+        method: "POST",
+        body: JSON.stringify({ token: localStorage.getItem("token") }),
+      });
+      if (response.ok) {
+        console.log("Logged in");
+      } else {
+        location.href = "index.html";
+      }
+    }
+    check();
+  </script>
 </html>

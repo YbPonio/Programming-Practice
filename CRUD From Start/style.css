@@ -5,13 +5,6 @@
   outline: none;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
 #loginForm div {
   display: flex;
   flex-direction: column;
@@ -20,7 +13,6 @@ body {
   & input {
     padding: 0.5rem 1rem;
     font-size: 1rem;
-    color: #191919;
 
     &::placeholder {
       color: #191919;
