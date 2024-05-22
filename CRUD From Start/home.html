@@ -86,11 +86,14 @@
   </style>
 
   <body>
-    <button class="addUser" onclick="createUSer()">Add User</button>
+    <div>
+      <button class="addUser" onclick="createUSer()">Add User</button>
+      <button class="addUser" onclick="logOut()">Log Out</button>
+    </div>
     <table border="1">
       <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
+        <th>Username</th>
+        <th>Password</th>
         <th>Age</th>
         <th>Action</th>
       </tr>
@@ -262,8 +265,13 @@
       if (response.ok) {
         console.log("Logged in");
       } else {
-        location.href = "index.html";
+        location.href = "./index.html";
       }
+    }
+
+    function logOut() {
+      localStorage.removeItem("token");
+      check();
     }
     check();
   </script>

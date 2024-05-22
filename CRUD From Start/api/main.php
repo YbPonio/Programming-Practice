@@ -98,6 +98,7 @@ class User
             return json_encode($result);
         } else {
             http_response_code(400);
+            return "No token found";
         }
     }
 }
@@ -151,8 +152,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_GET['action']) && $_GET['act
     $user->token = $data->token;
 
     echo $user->check();
-} else {
-    $user = new User($db);
-    echo $user->token();
-    echo "Invalid request";
 }

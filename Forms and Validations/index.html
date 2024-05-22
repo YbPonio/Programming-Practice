@@ -1,94 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Forms and Validations</title>
-</head>
-<style>
+  </head>
+  <style>
     body {
-        height: 100vh;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-        font-size: 2rem;
+      font-size: 2rem;
     }
     form {
-        margin: auto;
-        
-        input{
-            padding: .5rem;
-            outline: none;
-    
-            &:invalid {
-                border: .2rem solid #ff0000;
-            }
-            &:valid {
-                border: .2rem solid #000;
-            }
+      margin: auto;
+
+      input {
+        padding: 0.5rem;
+        outline: none;
+
+        &:invalid {
+          border: 0.2rem solid #ff0000;
         }
+        &:valid {
+          border: 0.2rem solid #000;
+        }
+      }
     }
     button {
-        font-size: 1.5rem;
+      font-size: 1.5rem;
     }
-</style>
-<body>
+  </style>
+  <body>
     <div>
-        <form onsubmit="alertext(event)">
-            <div>
-                <label for="textInput">What's on your mind?</label>
-                <input type="text" id="textInput" value="Hahah" required>
+      <form onsubmit="alertext(event)">
+        <div>
+          <label for="textInput">What's on your mind?</label>
+          <input type="text" id="textInput" value="Hahah" required />
 
-                <fieldset id="yourDay">
-                    <legend>
-                        Do you like your day?
-                    </legend>
-                        <input type="radio" required name="myDay" id="day1" value="yes" checked>
-                        <label for="day1">Yes</label>
-                        <input type="radio" required name="myDay" id="day2" value="no">
-                        <label for="day2">No</label>
-                </fieldset>
-                <p>
-                    <label for="q1">What number you think of?</label>
-                    <input type="number" id="q1" min="5" max="100" step="1" name="myNumber" value="12">
-                </p>
-                <p>
-                    <label for="w1">Pick one:</label>
-                    <input type="text" id="w1" name="choose" list="d1" required>
-                    <datalist id="d1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                    </datalist>
-                </p>
+          <fieldset id="yourDay">
+            <legend>Do you like your day?</legend>
+            <input
+              type="radio"
+              required
+              name="myDay"
+              id="day1"
+              value="yes"
+              checked
+            />
+            <label for="day1">Yes</label>
+            <input type="radio" required name="myDay" id="day2" value="no" />
+            <label for="day2">No</label>
+          </fieldset>
+          <p>
+            <label for="q1">What number you think of?</label>
+            <input
+              type="number"
+              id="q1"
+              min="5"
+              max="100"
+              step="1"
+              name="myNumber"
+              value="12"
+            />
+          </p>
+          <p>
+            <label for="w1">Pick one:</label>
+            <input type="text" id="w1" name="choose" list="d1" required />
+            <datalist name="d1">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </datalist>
+          </p>
 
-                <button>Sumbit</button>
-            </div>
-        </form>
-    
-        <div id="container"></div>
+          <button>Sumbit</button>
+        </div>
+      </form>
+
+      <div id="container"></div>
     </div>
 
     <script>
-        function alertext(event) {
-            let myDay = document.querySelector('input[name="myDay"]:checked').value;
-            let myNumber = document.querySelector('input[name="myNumber"]').value;
-            let picked = document.querySelector('input[name="choose"]').value;
+      function alertext(event) {
+        let myDay = document.querySelector('input[name="myDay"]:checked').value;
+        let myNumber = document.querySelector('input[name="myNumber"]').value;
+        let picked = document.querySelector('input[name="choose"]').value;
 
-            event.preventDefault();
-            let textla = textInput.value;
-            container.innerHTML = `
+        event.preventDefault();
+        let textla = textInput.value;
+        container.innerHTML = `
             What's on your mind: ${textla}<br>
             Do you like your day: ${myDay}<br>
             What number you think of: ${myNumber}<br>
             Picked: ${picked}<br>
             `;
 
-            console.log(textla);
-        }
+        console.log(textla);
+      }
     </script>
-</body>
+  </body>
 </html>
