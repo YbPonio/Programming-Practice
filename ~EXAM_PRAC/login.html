@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WEB</title>
+  </head>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      background-color: #f2f2f2;
+      border-radius: 1rem;
+      box-shadow: 0.1rem 0.1rem 0.2rem #191919;
+      padding: 1.5rem;
+
+      input {
+        padding: 0.5rem 1rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+
+      input[type="submit"] {
+        background: #191919;
+        color: #f2f2f2;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  </style>
+
+  <body>
+    <form id="loginForm" method="dialog" onsubmit="login()">
+      <input name="username" type="text" placeholder="Username" value="user" />
+      <input
+        name="password"
+        type="password"
+        placeholder="Password"
+        value="user"
+      />
+      <input type="submit" />
+    </form>
+  </body>
+
+  <script src="main.js"></script>
+</html>

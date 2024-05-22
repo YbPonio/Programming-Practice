@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+  </head>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 0.5rem 1rem;
+      background-color: #191919;
+      color: white;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    th,
+    td {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+    }
+
+    td button {
+      padding: 0.5rem 1rem;
+      background-color: green;
+      color: white;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+    }
+    td .delete {
+      background-color: red;
+    }
+
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+
+    dialog {
+      border: none;
+      box-shadow: 1px 1px 5px #191919;
+      border-radius: 5px;
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        input:not([type="submit"]),
+        select {
+          padding: 0.5rem 1rem;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+        }
+
+        button,
+        input[type="submit"] {
+          padding: 0.5rem 1rem;
+          background-color: #191919;
+          color: white;
+          font-weight: 600;
+          border: none;
+          cursor: pointer;
+        }
+      }
+    }
+  </style>
+
+  <body>
+    <div>
+      <button class="btn" onclick="openModal()">Add User</button>
+      <button class="btn" onclick="">Log Out</button>
+    </div>
+    <table border="1">
+      <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Action</th>
+      </tr>
+
+      <tbody id="userDataTable"></tbody>
+    </table>
+
+    <dialog id="userInput">
+      <form id="userForm" method="dialog" onsubmit="doSubmit()">
+        <input name="id" type="number" hidden />
+        <input name="username" type="text" placeholder="Enter Username:" />
+        <input name="password" type="text" placeholder="Enter Password:" />
+        <input name="firstname" type="text" placeholder="Enter First name:" />
+        <input name="lastname" type="text" placeholder="Enter Last name:" />
+        <input name="age" type="number" placeholder="Enter Age:" />
+        <select name="gender">
+          <option value="" hidden>Select Gender:</option>
+          <option value="1">Female</option>
+          <option value="2">Male</option>
+        </select>
+
+        <input type="submit" />
+        <button type="button" onclick="userInput.close()">close</button>
+      </form>
+    </dialog>
+  </body>
+
+  <script src="home.js"></script>
+</html>
