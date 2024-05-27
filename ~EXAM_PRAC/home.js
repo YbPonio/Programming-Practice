@@ -84,8 +84,6 @@ function openModal() {
   userInput.showModal();
 }
 
-function editUser(id) {}
-
 async function check() {
   let url =
     "http://localhost/Programming-Practice/~EXAM_PRAC/api/login.php?action=check";
